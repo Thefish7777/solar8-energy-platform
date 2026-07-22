@@ -1,6 +1,10 @@
 import PropertySummaryCard from "./PropertySummaryCard";
 import SystemCard from "./SystemCard";
 import type { RecommendationResult } from "../../lib/recommendationTypes";
+import ProposalHeader from "./ProposalHeader";
+import ExecutiveSummary from "./ExecutiveSummary";
+import EnergyPlanSummary from "./EnergyPlanSummary";
+import SolarJourney from "./SolarJourney";
 
 interface Props {
   recommendation: RecommendationResult;
@@ -16,36 +20,20 @@ export default function RecommendationCard({
 
     <div className="mx-auto max-w-4xl rounded-3xl bg-white shadow-2xl overflow-hidden">
 
-{/* Hero */}
+<ProposalHeader
+  customerName="Valued Customer"
+  consultant="Solar8 Energy Consultant"
+/>
 
-<div className="bg-gradient-to-br from-orange-500 via-orange-500 to-orange-600 px-10 py-16 text-center text-white">
+<ExecutiveSummary
+    recommendation={recommendation}
+/>
 
-  <div className="text-6xl">
-    ☀️
-  </div>
 
-  <h1 className="mt-6 text-5xl font-extrabold">
-    Solar8 Energy Plan
-  </h1>
+<EnergyPlanSummary
+    recommendation={recommendation}
+/>
 
-  <p className="mt-4 text-xl text-orange-100">
-    Prepared especially for you
-  </p>
-
-  <div className="mx-auto mt-10 max-w-3xl rounded-2xl bg-white/10 p-8 backdrop-blur-sm">
-
-    <p className="text-lg leading-8 text-orange-50">
-
-      Based on the information you've provided,
-      we've designed an energy solution that
-      balances affordability, backup power and
-      future expansion.
-
-    </p>
-
-  </div>
-
-</div>
 
 <PropertySummaryCard
   propertyType="Home"
@@ -193,7 +181,7 @@ export default function RecommendationCard({
 
         </div>
 
-import SolarJourney from "./SolarJourney";
+<SolarJourney />
 
         {/* CTA */}
 
