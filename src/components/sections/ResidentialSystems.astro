@@ -1,0 +1,43 @@
+---
+import { solutions } from "../../data/solutions";
+import SystemCard from "../SystemCard.astro";
+---
+
+<section class="bg-slate-100 py-24">
+
+    <div class="mx-auto max-w-7xl px-6">
+
+        <div class="text-center">
+
+            <h2 class="text-4xl font-extrabold">
+
+                Residential Solar Systems
+
+            </h2>
+
+            <p class="mx-auto mt-6 max-w-3xl text-lg text-slate-600">
+
+                Every home is different.
+                These recommended systems provide a great starting point,
+                but every Solar8 recommendation is customised to your
+                electricity usage.
+
+            </p>
+
+        </div>
+
+        <div class="mt-20 grid gap-8 lg:grid-cols-3">
+
+            {
+                solutions.map((system) => (
+
+                    <SystemCard system={system} />
+
+                ))
+            }
+
+        </div>
+
+    </div>
+
+</section>

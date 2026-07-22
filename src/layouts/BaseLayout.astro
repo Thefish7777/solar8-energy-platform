@@ -4,35 +4,152 @@ import "../styles/global.css";
 export interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  noIndex?: boolean;
 }
 
 const {
   title = "Solar8 | Helping South African Families Save on Electricity",
-  description = "Save money every month while gaining energy independence. Solar8 helps South African families reduce their electricity costs with quality solar and battery solutions."
+  description =
+    "Save money every month while gaining energy independence. Solar8 helps South African families reduce their electricity costs with quality solar and battery solutions.",
+  image = "/images/solar8-social.jpg",
+  noIndex = false,
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? "https://solar8.co.za");
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!doctype html>
+<html lang="en-ZA" class="scroll-smooth">
 
-    <title>{title}</title>
-    <meta name="description" content={description} />
+<head>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Basic -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <title>{title}</title>
 
-  <body class="bg-slate-50 text-slate-900 antialiased">
+  <meta
+    name="description"
+    content={description}
+  />
 
-    <slot />
+  <meta
+    name="robots"
+    content={noIndex ? "noindex,nofollow" : "index,follow"}
+  />
 
-  </body>
+  <link
+    rel="canonical"
+    href={canonicalURL.toString()}
+  />
+
+  <!-- Theme -->
+
+  <meta
+    name="theme-color"
+    content="#f97316"
+  />
+
+  <!-- Open Graph -->
+
+  <meta property="og:type" content="website" />
+
+  <meta
+    property="og:title"
+    content={title}
+  />
+
+  <meta
+    property="og:description"
+    content={description}
+  />
+
+  <meta
+    property="og:image"
+    content={image}
+  />
+
+  <meta
+    property="og:url"
+    content={canonicalURL.toString()}
+  />
+
+  <meta
+    property="og:site_name"
+    content="Solar8"
+  />
+
+  <meta
+    property="og:locale"
+    content="en_ZA"
+  />
+
+  <!-- Twitter / X -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+
+  <meta
+    name="twitter:title"
+    content={title}
+  />
+
+  <meta
+    name="twitter:description"
+    content={description}
+  />
+
+  <meta
+    name="twitter:image"
+    content={image}
+  />
+
+  <!-- Icons -->
+
+  <link
+    rel="icon"
+    href="/favicon.ico"
+  />
+
+  <link
+    rel="apple-touch-icon"
+    href="/apple-touch-icon.png"
+  />
+
+  <!-- Fonts -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- JSON-LD Placeholder -->
+  <!-- Organisation Schema will be added later -->
+
+</head>
+
+<body
+  class="bg-slate-50 text-slate-900 antialiased selection:bg-orange-500 selection:text-white"
+>
+
+  <slot />
+
+</body>
+
 </html>

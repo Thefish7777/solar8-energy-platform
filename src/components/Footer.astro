@@ -1,0 +1,225 @@
+---
+import logo from "../assets/images/solar8-logo-light.svg";
+
+import {
+  Phone,
+  Mail,
+  MapPin,
+  MessageCircle
+} from "lucide-astro";
+---
+
+<footer class="bg-slate-950 text-white">
+
+  <div class="mx-auto max-w-7xl px-6 py-20">
+
+    <div class="grid gap-14 md:grid-cols-2 lg:grid-cols-4">
+
+      <!-- Company -->
+
+      <div>
+
+        <img
+          src={logo.src}
+          alt="Solar8"
+          class="h-12 w-auto"
+        />
+
+        <p class="mt-6 leading-8 text-slate-400">
+          Helping homeowners and businesses across Gauteng reduce electricity
+          costs through premium solar systems, honest advice and professional
+          installation.
+        </p>
+
+        <p class="mt-6 text-sm font-semibold text-orange-400">
+          Designed for Gauteng homes & businesses.
+        </p>
+
+      </div>
+
+      <!-- Quick Links -->
+
+      <div>
+
+        <h3 class="text-lg font-bold">
+          Quick Links
+        </h3>
+
+        <ul class="mt-6 space-y-4">
+
+          <li>
+            <a href="/" class="text-slate-400 transition hover:text-orange-400">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="#packages" class="text-slate-400 transition hover:text-orange-400">
+              Recommended Systems
+            </a>
+          </li>
+
+          <li>
+            <a href="#calculator" class="text-slate-400 transition hover:text-orange-400">
+              Savings Calculator
+            </a>
+          </li>
+
+          <li>
+            <a href="#faq" class="text-slate-400 transition hover:text-orange-400">
+              FAQ
+            </a>
+          </li>
+
+          <li>
+            <a href="#contact" class="text-slate-400 transition hover:text-orange-400">
+              Contact
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <!-- Contact -->
+
+      <div>
+
+        <h3 class="text-lg font-bold">
+          Contact Us
+        </h3>
+
+        <div class="mt-6 space-y-5">
+
+          <a
+            href="tel:+27120043488"
+            class="flex items-center gap-3 text-slate-400 transition hover:text-orange-400"
+          >
+            <Phone size={18} />
+            012 004 3488
+          </a>
+
+          <a
+            href="https://wa.me/27813393346"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-3 text-slate-400 transition hover:text-orange-400"
+          >
+            <MessageCircle size={18} />
+            WhatsApp
+          </a>
+
+          <a
+            href="mailto:info@solar8.co.za"
+            class="flex items-center gap-3 text-slate-400 transition hover:text-orange-400"
+          >
+            <Mail size={18} />
+            info@solar8.co.za
+          </a>
+
+          <div class="flex items-center gap-3 text-slate-400">
+
+            <MapPin size={18} />
+
+            <span>
+              Pretoria • Centurion • Midrand • Johannesburg • Gauteng
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Our Promise -->
+
+      <div>
+
+        <h3 class="text-lg font-bold">
+          Our Promise
+        </h3>
+
+        <ul class="mt-6 space-y-4 text-slate-400">
+
+          <li>
+            ✓ 5-Year Workmanship Warranty
+          </li>
+
+          <li>
+            ✓ Premium Solar Equipment
+          </li>
+
+          <li>
+            ✓ Manufacturer Warranties*
+          </li>
+
+          <li>
+            ✓ Professional Installation
+          </li>
+
+          <li>
+            ✓ Ongoing Local Support
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+
+    <hr class="my-14 border-slate-800" />
+
+    <!-- Bottom -->
+
+    <div class="flex flex-col items-center justify-between gap-8 md:flex-row">
+
+      <div>
+
+        <p class="text-sm text-slate-500">
+          © 2026 Solar8. All Rights Reserved.
+        </p>
+
+        <p class="mt-2 text-xs text-slate-600">
+          *Equipment warranties are provided by the original equipment manufacturers and may vary by brand and product.
+        </p>
+
+      </div>
+
+      <div class="flex gap-8">
+
+        <a
+          href="https://www.facebook.com/Solar8.SA/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-slate-400 transition hover:text-orange-400"
+        >
+          Facebook
+        </a>
+
+        <a
+          href="https://www.instagram.com/solar8_sa/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-slate-400 transition hover:text-orange-400"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="https://x.com/Solar8_SA"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-slate-400 transition hover:text-orange-400"
+        >
+          X
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>

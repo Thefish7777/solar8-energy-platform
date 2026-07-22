@@ -1,16 +1,47 @@
 ---
+import Contact from "../components/Contact.astro";
+import TrustedBrands from "../components/TrustedBrands.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Navigation from "../components/Navigation.astro";
+import Navigation from '../components/Navigation.astro';
 import Hero from "../components/Hero.astro";
-import WhySolar8 from "../components/WhySolar8.astro";
+import WhySolar8 from '../components/WhySolar8.astro';
+import ElectricityCosts from "../components/ElectricityCosts.astro";
+import HowSolarWorks from "../components/HowSolarWorks.astro";
+import ElectricityCalculator from "../components/ElectricityCalculator.astro";
+import RecommendedSystems from "../components/RecommendedSystems.astro";
+import Footer from "../components/Footer.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import OurProcess from "../components/OurProcess.astro";
+import FAQ from "../components/FAQ.astro";
+
 ---
 
 <BaseLayout>
 
-  <Navigation />
+<Navigation />
 
-  <Hero />
+<Hero />
+
+<TrustedBrands />
+
+<ElectricityCosts />
+
+<HowSolarWorks />
+
+<ElectricityCalculator />
+
+<RecommendedSystems />
 
 <WhySolar8 />
+
+<OurProcess />
+
+<FAQ />
+
+<Contact />
+
+<Footer />
+
+<WhatsAppButton />
 
 </BaseLayout>

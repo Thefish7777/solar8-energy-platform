@@ -1,66 +1,105 @@
-<section class="bg-white">
-  <div class="mx-auto max-w-7xl px-6 py-24">
+---
+import heroImage from "../assets/images/hero-solar.jpg";
+---
 
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
+<section class="relative overflow-hidden bg-white">
 
-      <!-- Left Side -->
-      <div>
+  <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-16 lg:grid-cols-2">
 
-        <span class="rounded-full bg-blue-100 px-4 py-2 text-blue-700 text-sm font-semibold">
-          Helping South African Families Save Money
-        </span>
+    <!-- LEFT COLUMN -->
 
-        <h1 class="mt-8 text-5xl font-bold tracking-tight text-slate-900">
-          Stop Paying More Every Year
-          <br />
-          for Electricity
-        </h1>
+    <div class="max-w-2xl">
 
-        <p class="mt-6 text-xl text-slate-600">
-          Solar8 helps homeowners reduce electricity bills with affordable
-          solar and battery systems.
-        </p>
+      <!-- Badge -->
 
-        <div class="mt-10 flex gap-4">
+      <span class="inline-flex rounded-full bg-orange-100 px-5 py-2 text-sm font-semibold text-orange-600">
+        Residential & Commercial Solar Solutions
+      </span>
 
-          <a
-            href="#"
-            class="rounded-lg bg-blue-600 px-6 py-4 font-semibold text-white hover:bg-blue-700"
-          >
-            Free Savings Assessment
-          </a>
+      <!-- Heading -->
 
-          <a
-            href="#"
-            class="rounded-lg border border-slate-300 px-6 py-4 font-semibold hover:bg-slate-100"
-          >
-            Learn More
-          </a>
+      <h1 class="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 lg:text-5xl">
+        Take Control of Your
+        <br />
+        Electricity Costs.
+      </h1>
 
-        </div>
+      <!-- Intro -->
+
+      <p class="mt-6 max-w-xl text-lg leading-8 text-slate-600">
+        Electricity prices continue to rise every year. Solar8 designs and installs premium solar and battery systems that help Gauteng homeowners and businesses lower their monthly electricity bills while providing reliable backup power during outages.
+
+      </p>
+
+      <!-- Buttons -->
+
+      <div class="mt-8 flex flex-wrap gap-4">
+
+        <a
+          href="#contact"
+          class="rounded-xl bg-orange-500 px-8 py-4 font-semibold text-white shadow-md transition duration-300 hover:-translate-y-1 hover:bg-orange-600 hover:shadow-xl"
+        >
+          Get My FREE Assessment
+        </a>
+
+        <a
+          href="#packages"
+          class="rounded-xl border border-slate-300 bg-white px-8 py-4 font-semibold text-slate-700 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-orange-500 hover:text-orange-500 hover:shadow-lg"
+        >
+          Compare Systems
+        </a>
 
       </div>
 
-      <!-- Right Side -->
-      <div>
+      <!-- Trust Cards -->
 
-        <div class="rounded-3xl bg-gradient-to-r from-blue-600 to-cyan-500 p-8 shadow-2xl">
+      <div class="mt-12 grid gap-5 sm:grid-cols-3">
 
-          <div class="rounded-2xl bg-white p-10">
+        <!-- Card 1 -->
 
-            <h3 class="text-2xl font-bold">
-              Estimated Monthly Saving
-            </h3>
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
 
-            <p class="mt-8 text-6xl font-bold text-green-600">
-              R2 450
-            </p>
+          <div class="mb-4 text-4xl">🛡️</div>
 
-            <p class="mt-4 text-slate-600">
-              Based on an average South African household.
-            </p>
+          <h3 class="font-bold text-orange-500">
+            5-Year
+          </h3>
 
-          </div>
+          <p class="mt-2 text-slate-600">
+            Workmanship Warranty
+          </p>
+
+        </div>
+
+        <!-- Card 2 -->
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+          <div class="mb-4 text-4xl">⭐</div>
+
+          <h3 class="font-bold text-orange-500">
+            Premium
+          </h3>
+
+          <p class="mt-2 text-slate-600">
+            Solar Brands
+          </p>
+
+        </div>
+
+        <!-- Card 3 -->
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+          <div class="mb-4 text-4xl">📍</div>
+
+          <h3 class="font-bold text-orange-500">
+            Gauteng
+          </h3>
+
+          <p class="mt-2 text-slate-600">
+            Residential & Commercial
+          </p>
 
         </div>
 
@@ -68,5 +107,24 @@
 
     </div>
 
+    <!-- RIGHT COLUMN -->
+
+    <div class="relative lg:-translate-y-8">
+
+      <!-- Background Panel -->
+
+      <div class="rounded-[32px] bg-gradient-to-br from-orange-100 to-orange-300 p-8 shadow-2xl">
+
+        <img
+          src={heroImage.src}
+          alt="Solar installation in Gauteng"
+          class="w-full rounded-2xl object-cover"
+        />
+
+      </div>
+
+    </div>
+
   </div>
+
 </section>

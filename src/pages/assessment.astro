@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import AssessmentWizard from "../components/assessment/AssessmentWizard";
+---
+
+<BaseLayout
+    title="Free Solar Assessment | Solar8"
+    description="Discover which Solar8 solution is right for your home."
+>
+
+<section class="bg-slate-50 py-12">
+
+    <div class="mx-auto max-w-6xl px-6">
+
+        <div class="mb-14 text-center">
+
+            <h1 class="text-5xl font-extrabold text-slate-900">
+
+                FREE Solar Assessment
+
+            </h1>
+
+            <p class="mt-6 text-xl text-slate-600">
+
+                Answer a few quick questions and receive your
+                personalised Solar8 recommendation.
+
+            </p>
+
+        </div>
+
+        <AssessmentWizard client:load />
+
+    </div>
+
+</section>
+
+</BaseLayout>
