@@ -5,6 +5,9 @@ import ProposalHeader from "./ProposalHeader";
 import ExecutiveSummary from "./ExecutiveSummary";
 import EnergyPlanSummary from "./EnergyPlanSummary";
 import SolarJourney from "./SolarJourney";
+import EquipmentSchedule from "./EquipmentSchedule";
+import InvestmentSummary from "./InvestmentSummary";
+import FinancialProjection from "./FinancialProjection";
 
 interface Props {
   recommendation: RecommendationResult;
@@ -76,7 +79,31 @@ export default function RecommendationCard({
     panels={recommendation.configuration.panels}
 />
 
+<EquipmentSchedule
 
+    inverter={recommendation.configuration.inverter}
+
+    battery={recommendation.configuration.battery}
+
+    panels={recommendation.configuration.panels}
+
+/>
+
+<InvestmentSummary
+
+    equipmentValue={recommendation.equipmentValue}
+
+    monthlySaving={recommendation.savings.monthly}
+
+    annualSaving={recommendation.savings.annual}
+
+/>
+
+<FinancialProjection
+
+    annualSaving={recommendation.savings.annual}
+
+/>
 
         {/* Savings */}
 

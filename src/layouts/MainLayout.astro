@@ -1,0 +1,40 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Solar8 | Quality Today. Peace of Mind Tomorrow.",
+  description = "Professional residential and commercial solar energy solutions. Book your free home energy consultation today."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>{title}</title>
+
+<meta
+name="description"
+content={description}
+/>
+
+<link rel="icon" href="/favicon.ico" />
+
+</head>
+
+<body>
+
+<slot />
+
+</body>
+
+</html>

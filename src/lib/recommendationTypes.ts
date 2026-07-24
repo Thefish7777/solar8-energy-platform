@@ -101,19 +101,39 @@ export interface SavingsEstimate {
  */
 export interface RecommendationResult {
 
-  // The selected solution object
-  system: SolarSolution;
+    customer: CustomerProfile;
 
-  // The solution name
-  solution: SolarSolutionName;
+    system: SolarSolution;
 
-  configuration: SystemConfiguration;
+    solution: SolarSolutionName;
 
-  savings: SavingsEstimate;
+    configuration: SystemConfiguration;
 
-  confidence: number;
+    equipmentValue: number;
 
-  reasons: string[];
+    savings: SavingsEstimate;
+
+    confidence: number;
+
+    reasons: string[];
+
+}
+
+export interface CustomerProfile {
+
+    customerName: string;
+
+    propertyType: PropertyType;
+
+    occupants: number;
+
+    monthlyBill: number;
+
+    goal: CustomerGoal;
+
+    backupHours: string;
+
+    applianceCount: number;
 
 }
 
