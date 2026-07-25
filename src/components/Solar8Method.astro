@@ -1,0 +1,79 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Free Home Energy Consultation",
+    text: "We begin by understanding your home, lifestyle and energy goals."
+  },
+  {
+    number: "02",
+    title: "Professional System Design",
+    text: "Every recommendation is engineered specifically for your requirements."
+  },
+  {
+    number: "03",
+    title: "Transparent Quotation",
+    text: "Clear pricing, detailed specifications and no hidden surprises."
+  },
+  {
+    number: "04",
+    title: "Professional Installation",
+    text: "Installed safely, neatly and to the highest workmanship standards."
+  },
+  {
+    number: "05",
+    title: "Quality Inspection",
+    text: "Every installation is checked before handover."
+  },
+  {
+    number: "06",
+    title: "Warranty Registration",
+    text: "We register your inverter and batteries with the manufacturer for you."
+  },
+  {
+    number: "07",
+    title: "Lifetime Customer Care",
+    text: "Our relationship continues long after installation."
+  }
+];
+---
+
+<section class="method">
+
+<div class="container">
+
+<p class="section-tag">THE SOLAR8 METHOD™</p>
+
+<h2>Our Proven Process</h2>
+
+<p class="section-intro">
+A professional process that removes uncertainty and gives you confidence every step of the way.
+</p>
+
+<div class="timeline">
+
+{steps.map(step => (
+
+<div class="timeline-item">
+
+<div class="timeline-number">
+{step.number}
+</div>
+
+<div class="timeline-content">
+
+<h3>{step.title}</h3>
+
+<p>{step.text}</p>
+
+</div>
+
+</div>
+
+))}
+
+</div>
+
+</div>
+
+</section>

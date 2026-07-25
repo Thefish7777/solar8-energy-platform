@@ -1,130 +1,50 @@
----
-import {
-  Wallet,
-  Battery,
-  Wrench,
-  TrendingUp
-} from "lucide-astro";
+<section class="why-solar8">
 
-import Card from "./ui/Card.astro";
----
+  <div class="container">
 
-<section class="bg-slate-50 py-24">
+    <p class="section-tag">WHY HOMEOWNERS CHOOSE SOLAR8</p>
 
-  <div class="mx-auto max-w-7xl px-6">
+    <h2>Built on Trust. Backed by Quality.</h2>
 
-    <!-- Heading -->
+    <p class="section-intro">
+      We believe that every homeowner deserves honest advice,
+      professional workmanship and long-term peace of mind.
+    </p>
 
-    <div class="mx-auto max-w-3xl text-center">
+    <div class="feature-grid">
 
-      <span class="rounded-full bg-orange-100 px-5 py-2 text-sm font-semibold text-orange-600">
-        Why Choose Solar8
-      </span>
+      <div class="feature-card">
+        <h3>Professionally Engineered</h3>
+        <p>Every solution is designed around your home's unique energy requirements.</p>
+      </div>
 
-      <h2 class="mt-6 text-5xl font-bold tracking-tight text-slate-900">
-        Helping Gauteng Homeowners Take Control of Their Energy Future
-      </h2>
+      <div class="feature-card">
+        <h3>Premium Equipment</h3>
+        <p>We install trusted brands with proven performance and manufacturer support.</p>
+      </div>
 
-      <p class="mt-6 text-xl leading-8 text-slate-600">
-        We design and install premium solar systems that reduce electricity
-        costs, provide reliable backup power and deliver long-term value for
-        homes and businesses across Gauteng.
-      </p>
+      <div class="feature-card">
+        <h3>Honest Advice</h3>
+        <p>No pressure. No oversized systems. Just recommendations that make sense.</p>
+      </div>
 
-    </div>
+      <div class="feature-card">
+        <h3>Professional Installation</h3>
+        <p>Neat workmanship, attention to detail and compliance with industry standards.</p>
+      </div>
 
-    <!-- Cards -->
+      <div class="feature-card">
+        <h3>Warranty Registration Included</h3>
+        <p>We register your inverter and batteries with the manufacturer on your behalf.</p>
+      </div>
 
-    <div class="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-
-      <Card title="Lower Monthly Bills">
-
-        <span slot="icon" class="icon-circle">
-          <Wallet size={42} strokeWidth={2.2} />
-        </span>
-
-        Generate more of your own electricity and reduce your monthly electricity
-        costs with a professionally designed solar solution.
-
-      </Card>
-
-      <Card title="Reliable Backup Power">
-
-        <span slot="icon" class="icon-circle">
-          <Battery size={42} strokeWidth={2.2} />
-        </span>
-
-        Keep your home or business running during load shedding, cable theft,
-        damaged substations and unexpected grid failures.
-
-      </Card>
-
-      <Card title="Professional Installation">
-
-        <span slot="icon" class="icon-circle">
-          <Wrench size={42} strokeWidth={2.2} />
-        </span>
-
-        Every installation is completed by experienced professionals using
-        premium equipment from trusted global manufacturers.
-
-      </Card>
-
-      <Card title="Long-Term Investment">
-
-        <span slot="icon" class="icon-circle">
-          <TrendingUp size={42} strokeWidth={2.2} />
-        </span>
-
-        Lower future electricity costs while increasing the value and energy
-        independence of your property.
-
-      </Card>
-
-    </div>
-
-    <!-- Bottom CTA -->
-
-    <div class="mt-20 text-center">
-
-      <p class="mx-auto max-w-3xl text-lg leading-8 text-slate-600">
-        Whether you're installing solar for the first time or upgrading an
-        existing system, our team will recommend the right solution for your
-        property and budget.
-      </p>
-
-      <a
-        href="#contact"
-        class="mt-8 inline-flex rounded-xl bg-orange-500 px-8 py-4 font-semibold text-white shadow-md transition duration-300 hover:-translate-y-1 hover:bg-orange-600 hover:shadow-xl"
-      >
-        Request My FREE Solar Assessment
-      </a>
+      <div class="feature-card">
+        <h3>Ongoing Customer Care</h3>
+        <p>Our relationship doesn't end after installation. We're here when you need us.</p>
+      </div>
 
     </div>
 
   </div>
 
 </section>
-
-<style>
-
-.icon-circle{
-
-    width:72px;
-    height:72px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:9999px;
-
-    background:#fff7ed;
-
-    color:#f97316;
-
-    margin-bottom:1rem;
-
-}
-
-</style>

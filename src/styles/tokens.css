@@ -1,0 +1,111 @@
+/* ==========================================
+   SOLAR8 DESIGN TOKENS
+   Version 1.0
+========================================== */
+
+:root{
+
+/* Header */
+
+--header-height:90px;
+
+/* Brand Colours */
+
+--color-primary:#FF6800;
+--color-primary-dark:#E65E00;
+
+--color-dark:#1D1C1C;
+
+--color-background:#FAFAFA;
+
+--color-white:#FFFFFF;
+
+--color-light:#F4F5F7;
+
+--color-border:#E5E7EB;
+
+--color-muted:#6B7280;
+
+
+/* Typography */
+
+--font-heading:"Poppins",sans-serif;
+
+--font-body:"Inter",sans-serif;
+
+
+/* Font Sizes */
+
+--hero-size:60px;
+
+--section-size:42px;
+
+--card-title:24px;
+
+--body-size:18px;
+
+--small-size:15px;
+
+--logo-size:1.8rem;
+
+/* Spacing */
+
+--space-8:8px;
+
+--space-16:16px;
+
+--space-24:24px;
+
+--space-32:32px;
+
+--space-48:48px;
+
+--space-64:64px;
+
+--space-96:96px;
+
+
+/* Border Radius */
+
+--radius-small:8px;
+
+--radius-medium:16px;
+
+--radius-large:24px;
+
+
+/* Shadows */
+
+--shadow-light: 0 4px 12px rgba(0,0,0,.05);
+
+--shadow-medium: 0 12px 30px rgba(0,0,0,.08);
+
+--shadow-heavy: 0 24px 60px rgba(0,0,0,.12);
+
+/* Animation */
+
+--transition-fast: .2s ease;
+
+--transition-normal: .3s ease;
+
+--transition-slow: .5s ease;
+
+/* Layout */
+
+--container-width:1200px;
+
+--header-height:90px;
+
+/* Content Width */
+
+--content-width:580px;
+
+--article-width:720px;
+
+/* Website Width */
+
+--container-width:1200px;
+
+
+
+}
