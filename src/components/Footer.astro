@@ -1,225 +1,233 @@
 ---
-import logo from "../assets/images/solar8-logo-light.svg";
-
-import {
-  Phone,
-  Mail,
-  MapPin,
-  MessageCircle
-} from "lucide-astro";
+import logo from "../assets/logos/solar8-logo-light.svg";
 ---
 
-<footer class="bg-slate-950 text-white">
+<footer class="bg-slate-950 text-slate-300">
 
-  <div class="mx-auto max-w-7xl px-6 py-20">
+    <div class="container py-20">
 
-    <div class="grid gap-14 md:grid-cols-2 lg:grid-cols-4">
+        <div class="grid gap-14 lg:grid-cols-4">
 
-      <!-- Company -->
+            <!-- Brand -->
 
-      <div>
+            <div>
 
-        <img
-          src={logo.src}
-          alt="Solar8"
-          class="h-12 w-auto"
-        />
+                <img
+                    src={logo.src}
+                    alt="Solar8"
+                    class="h-14 w-auto"
+                />
 
-        <p class="mt-6 leading-8 text-slate-400">
-          Helping homeowners and businesses across Gauteng reduce electricity
-          costs through premium solar systems, honest advice and professional
-          installation.
-        </p>
+                <p class="mt-6 leading-8 text-slate-400">
 
-        <p class="mt-6 text-sm font-semibold text-orange-400">
-          Designed for Gauteng homes & businesses.
-        </p>
+                    Premium residential and commercial solar solutions,
+                    battery backup systems and hybrid inverter installations
+                    designed for long-term energy independence.
 
-      </div>
+                </p>
 
-      <!-- Quick Links -->
+                <div class="mt-8 flex gap-4">
 
-      <div>
+                    <a
+                        href="https://www.facebook.com/Solar8.SA"
+                        target="_blank"
+                        class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white"
+                        aria-label="Facebook"
+                    >
+                        FB
+                    </a>
 
-        <h3 class="text-lg font-bold">
-          Quick Links
-        </h3>
+                    <a
+                        href="https://www.instagram.com/solar8_sa/"
+                        target="_blank"
+                        class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white"
+                        aria-label="Instagram"
+                    >
+                        IG
+                    </a>
 
-        <ul class="mt-6 space-y-4">
+                    <a
+                        href="https://x.com/Solar8_SA"
+                        target="_blank"
+                        class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white"
+                        aria-label="X"
+                    >
+                        X
+                    </a>
 
-          <li>
-            <a href="/" class="text-slate-400 transition hover:text-orange-400">
-              Home
-            </a>
-          </li>
+                    <a
+                        href="https://www.tiktok.com/@solar8_sa"
+                        target="_blank"
+                        class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 transition hover:border-orange-500 hover:bg-orange-500 hover:text-white"
+                        aria-label="TikTok"
+                    >
+                        TT
+                    </a>
 
-          <li>
-            <a href="#packages" class="text-slate-400 transition hover:text-orange-400">
-              Recommended Systems
-            </a>
-          </li>
+                </div>
 
-          <li>
-            <a href="#calculator" class="text-slate-400 transition hover:text-orange-400">
-              Savings Calculator
-            </a>
-          </li>
+            </div>
 
-          <li>
-            <a href="#faq" class="text-slate-400 transition hover:text-orange-400">
-              FAQ
-            </a>
-          </li>
+            <!-- Solutions -->
 
-          <li>
-            <a href="#contact" class="text-slate-400 transition hover:text-orange-400">
-              Contact
-            </a>
-          </li>
+            <div>
 
-        </ul>
+                <h3 class="text-xl font-bold text-white">
 
-      </div>
+                    Solutions
 
-      <!-- Contact -->
+                </h3>
 
-      <div>
+                <ul class="mt-6 space-y-4">
 
-        <h3 class="text-lg font-bold">
-          Contact Us
-        </h3>
+                    <li><a href="/residential" class="transition hover:text-orange-400">Residential Solar</a></li>
 
-        <div class="mt-6 space-y-5">
+                    <li><a href="/commercial" class="transition hover:text-orange-400">Commercial Solar</a></li>
 
-          <a
-            href="tel:+27120043488"
-            class="flex items-center gap-3 text-slate-400 transition hover:text-orange-400"
-          >
-            <Phone size={18} />
-            012 004 3488
-          </a>
+                    <li><a href="/assessment" class="transition hover:text-orange-400">Free Solar Assessment</a></li>
 
-          <a
-            href="https://wa.me/27813393346"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex items-center gap-3 text-slate-400 transition hover:text-orange-400"
-          >
-            <MessageCircle size={18} />
-            WhatsApp
-          </a>
+                    <li><a href="/contact" class="transition hover:text-orange-400">Contact Solar8</a></li>
 
-          <a
-            href="mailto:info@solar8.co.za"
-            class="flex items-center gap-3 text-slate-400 transition hover:text-orange-400"
-          >
-            <Mail size={18} />
-            info@solar8.co.za
-          </a>
+                </ul>
 
-          <div class="flex items-center gap-3 text-slate-400">
+            </div>
 
-            <MapPin size={18} />
+            <!-- Company -->
 
-            <span>
-              Pretoria • Centurion • Midrand • Johannesburg • Gauteng
-            </span>
+            <div>
 
-          </div>
+                <h3 class="text-xl font-bold text-white">
+
+                    Company
+
+                </h3>
+
+                <ul class="mt-6 space-y-4">
+
+                    <li><a href="/" class="transition hover:text-orange-400">Home</a></li>
+
+                    <li><a href="/about" class="transition hover:text-orange-400">About Solar8</a></li>
+
+                    <li><a href="/faq" class="transition hover:text-orange-400">FAQ</a></li>
+
+                    <li><a href="/privacy" class="transition hover:text-orange-400">Privacy Policy</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Contact -->
+
+            <div>
+
+                <h3 class="text-xl font-bold text-white">
+
+                    Contact
+
+                </h3>
+
+                <div class="mt-6 space-y-5 text-slate-400 leading-7">
+
+                    <div>
+
+                        <strong class="text-white">
+
+                            Phone
+
+                        </strong>
+
+                        <br>
+
+                        012 004 3488
+
+                    </div>
+
+                    <div>
+
+                        <strong class="text-white">
+
+                            WhatsApp
+
+                        </strong>
+
+                        <br>
+
+                        081 339 3346
+
+                    </div>
+
+                    <div>
+
+                        <strong class="text-white">
+
+                            Email
+
+                        </strong>
+
+                        <br>
+
+                        info@solar8.co.za
+
+                    </div>
+
+                    <div>
+
+                        <strong class="text-white">
+
+                            Office
+
+                        </strong>
+
+                        <br>
+
+                        Lyttelton Manor<br>
+                        Centurion<br>
+                        Gauteng
+
+                    </div>
+
+                    <div>
+
+                        <strong class="text-white">
+
+                            Office Hours
+
+                        </strong>
+
+                        <br>
+
+                        Monday – Friday<br>
+
+                        08:30 – 17:30
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
-      </div>
-
-      <!-- Our Promise -->
-
-      <div>
-
-        <h3 class="text-lg font-bold">
-          Our Promise
-        </h3>
-
-        <ul class="mt-6 space-y-4 text-slate-400">
-
-          <li>
-            ✓ 5-Year Workmanship Warranty
-          </li>
-
-          <li>
-            ✓ Premium Solar Equipment
-          </li>
-
-          <li>
-            ✓ Manufacturer Warranties*
-          </li>
-
-          <li>
-            ✓ Professional Installation
-          </li>
-
-          <li>
-            ✓ Ongoing Local Support
-          </li>
-
-        </ul>
-
-      </div>
-
     </div>
 
-    <!-- Divider -->
+    <div class="border-t border-slate-800">
 
-    <hr class="my-14 border-slate-800" />
+        <div class="container flex flex-col items-center justify-between gap-3 py-6 text-sm text-slate-500 md:flex-row">
 
-    <!-- Bottom -->
+            <p>
 
-    <div class="flex flex-col items-center justify-between gap-8 md:flex-row">
+                © 2026 Solar8 (Pty) Ltd. All Rights Reserved.
 
-      <div>
+            </p>
 
-        <p class="text-sm text-slate-500">
-          © 2026 Solar8. All Rights Reserved.
-        </p>
+            <p>
 
-        <p class="mt-2 text-xs text-slate-600">
-          *Equipment warranties are provided by the original equipment manufacturers and may vary by brand and product.
-        </p>
+                Quality Today. Peace of Mind Tomorrow.
 
-      </div>
+            </p>
 
-      <div class="flex gap-8">
-
-        <a
-          href="https://www.facebook.com/Solar8.SA/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-slate-400 transition hover:text-orange-400"
-        >
-          Facebook
-        </a>
-
-        <a
-          href="https://www.instagram.com/solar8_sa/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-slate-400 transition hover:text-orange-400"
-        >
-          Instagram
-        </a>
-
-        <a
-          href="https://x.com/Solar8_SA"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-slate-400 transition hover:text-orange-400"
-        >
-          X
-        </a>
-
-      </div>
+        </div>
 
     </div>
-
-  </div>
 
 </footer>

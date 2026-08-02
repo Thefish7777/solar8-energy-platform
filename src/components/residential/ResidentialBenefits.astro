@@ -1,0 +1,84 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+import {
+    Wallet,
+    BatteryCharging,
+    House,
+    Leaf
+} from "lucide-react";
+
+const benefits = [
+    {
+        icon: Wallet,
+        title: "Lower Electricity Bills",
+        description:
+            "Generate your own electricity and significantly reduce your monthly energy costs while protecting yourself against future tariff increases."
+    },
+    {
+        icon: BatteryCharging,
+        title: "Backup During Load Shedding",
+        description:
+            "Keep your lights, Wi-Fi, security systems and essential appliances running automatically whenever the grid goes down."
+    },
+    {
+        icon: House,
+        title: "Increase Property Value",
+        description:
+            "Professionally installed solar systems increase the appeal and value of your property for future buyers."
+    },
+    {
+        icon: Leaf,
+        title: "Clean Renewable Energy",
+        description:
+            "Reduce your environmental impact while enjoying decades of reliable, sustainable energy generation."
+    }
+];
+---
+
+<section class="bg-slate-50 py-24">
+
+    <div class="container">
+
+        <SectionHeading
+            tag="WHY GO SOLAR?"
+            title="A smarter investment for your home."
+            intro="Solar is more than reducing your electricity bill. It's about protecting your family from load shedding, increasing your property's value and taking control of your long-term energy future."
+        />
+
+        <div class="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+
+            {
+                benefits.map(({ icon: Icon, title, description }) => (
+
+                    <div
+                        class="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-orange-200 hover:shadow-xl"
+                    >
+
+                        <div class="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-100 text-orange-500 transition duration-300 group-hover:bg-orange-500 group-hover:text-white">
+
+                            <Icon size={34} strokeWidth={2.2} />
+
+                        </div>
+
+                        <h3 class="mb-5 text-2xl font-bold text-slate-900">
+
+                            {title}
+
+                        </h3>
+
+                        <p class="leading-8 text-slate-600">
+
+                            {description}
+
+                        </p>
+
+                    </div>
+
+                ))
+            }
+
+        </div>
+
+    </div>
+
+</section>

@@ -1,39 +1,48 @@
 ---
 import "../styles/global.css";
 
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+
 interface Props {
-  title?: string;
-  description?: string;
+    title?: string;
 }
 
 const {
-  title = "Solar8 | Quality Today. Peace of Mind Tomorrow.",
-  description = "Professional residential and commercial solar energy solutions. Book your free home energy consultation today."
+    title = "Solar8 | Solar Energy Solutions"
 } = Astro.props;
 ---
 
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
+
 <head>
 
-<meta charset="UTF-8" />
+    <meta charset="UTF-8" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    />
 
-<title>{title}</title>
+    <title>{title}</title>
 
-<meta
-name="description"
-content={description}
-/>
-
-<link rel="icon" href="/favicon.ico" />
+    <link rel="icon" href="/favicon.ico" />
 
 </head>
 
-<body>
+<body class="bg-white text-slate-900 antialiased">
 
-<slot />
+    <Navigation />
+
+    <main class="pt-24">
+
+        <slot />
+
+    </main>
+
+    <Footer />
 
 </body>
 

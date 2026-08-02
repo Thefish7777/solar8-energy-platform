@@ -1,49 +1,88 @@
+---
+import heroImage from "../assets/images/hero-solar-installation.jpg";
+
+import PrimaryButton from "./ui/PrimaryButton.astro";
+import SecondaryButton from "./ui/SecondaryButton.astro";
+---
+
 <section class="hero">
 
-  <div class="container hero-grid">
+    <div class="container hero-grid">
 
-    <div class="hero-content">
+        <div class="hero-content">
 
-      <p class="hero-tag">
-        PROFESSIONAL HOME ENERGY SOLUTIONS
-      </p>
+            <p class="hero-tag">
+                SOLAR8 ENERGY
+            </p>
 
-      <h1>
-        Quality Today.<br />
-        Peace of Mind Tomorrow.
-      </h1>
+            <h1>
+                Power Your Home.<br />
+                Power Your Business.<br />
+                Power Your Future.
+            </h1>
 
-      <p class="hero-text">
-        Every Solar8 solution begins with understanding your home,
-        your family and your energy needs.
-        No generic packages.
-        No guesswork.
-        Just professionally engineered energy solutions.
-      </p>
+            <p class="hero-text">
+                Custom-designed residential and commercial solar systems engineered
+                to reduce electricity costs, eliminate load shedding and deliver
+                long-term energy independence using premium Tier-1 equipment.
+            </p>
 
-      <div class="hero-buttons">
+            <ul class="hero-features">
 
-        <a href="/consultation" class="cta">
-          Book My Free Home Energy Consultation
-        </a>
+                <li>✓ Custom System Design</li>
+                <li>✓ Tier-1 Equipment</li>
+                <li>✓ Professional Installation</li>
+                <li>✓ Manufacturer Warranties</li>
 
-        <a href="/process" class="secondary-button">
-          The Solar8 Method™
-        </a>
+            </ul>
 
-      </div>
+            <div class="hero-buttons">
+
+                <PrimaryButton href="/assessment">
+                    Get My Free Assessment
+                </PrimaryButton>
+
+                <SecondaryButton href="/residential">
+                    Explore Solar Solutions
+                </SecondaryButton>
+
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img
+                src={heroImage.src}
+                alt="Solar8 Solar Installation"
+            />
+
+            <div class="floating-card card-one">
+
+                <strong>Custom</strong>
+
+                <span>Engineered Systems</span>
+
+            </div>
+
+            <div class="floating-card card-two">
+
+                <strong>40+</strong>
+
+                <span>Years Combined Experience</span>
+
+            </div>
+
+            <div class="floating-card card-three">
+
+                <strong>Tier-1</strong>
+
+                <span>Premium Equipment</span>
+
+            </div>
+
+        </div>
 
     </div>
-
-<div class="hero-image">
-
-  <img
-    src="/images/hero-home.jpg"
-    alt="Modern South African home with rooftop solar installation"
-  />
-
-</div>
-
-  </div>
 
 </section>

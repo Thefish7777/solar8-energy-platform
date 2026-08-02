@@ -1,0 +1,171 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+import {
+    ShieldCheck,
+    Sun,
+    House,
+    Zap
+} from "lucide-react";
+
+const packages = [
+    {
+        icon: ShieldCheck,
+        title: "Essential Backup",
+        subtitle: "Perfect for apartments and small homes.",
+        features: [
+            "Lights & Plug Circuits",
+            "Wi-Fi & Entertainment",
+            "Fridge Protection",
+            "Battery Backup"
+        ],
+        featured: false
+    },
+    {
+        icon: Sun,
+        title: "Smart Home",
+        subtitle: "Reduce your electricity bill every day.",
+        features: [
+            "Solar Panels",
+            "Hybrid Inverter",
+            "Battery Storage",
+            "Expandable System"
+        ],
+        featured: true
+    },
+    {
+        icon: House,
+        title: "Family Energy",
+        subtitle: "Designed for larger family homes.",
+        features: [
+            "Air Conditioning",
+            "Pool Equipment",
+            "Geyser Integration",
+            "Maximum Savings"
+        ],
+        featured: false
+    },
+    {
+        icon: Zap,
+        title: "Premium Hybrid",
+        subtitle: "Near off-grid energy independence.",
+        features: [
+            "Whole Home Backup",
+            "Premium Components",
+            "Long Runtime",
+            "Future Ready"
+        ],
+        featured: false
+    }
+];
+---
+
+<section class="bg-slate-50 py-24">
+
+    <div class="container">
+
+        <SectionHeading
+            tag="SOLAR PACKAGES"
+            title="Residential systems designed around the way you live."
+            intro="Every home is different. These packages provide a starting point before our engineers design the ideal solar solution specifically for your property."
+        />
+
+        <div class="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+
+            {
+                packages.map((pkg) => {
+
+                    const Icon = pkg.icon;
+
+                    return (
+
+                        <article
+                            class:list={[
+                                "relative rounded-3xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl",
+                                pkg.featured
+                                    ? "border-orange-500 bg-orange-50 shadow-xl"
+                                    : "border-slate-200 bg-white shadow-sm"
+                            ]}
+                        >
+
+                            {
+                                pkg.featured && (
+
+                                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 rounded-full bg-orange-500 px-5 py-2 text-sm font-bold tracking-wide text-white shadow-lg">
+
+                                        MOST POPULAR
+
+                                    </div>
+
+                                )
+                            }
+
+                            <div class="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-100 text-orange-500">
+
+                                <Icon size={34} strokeWidth={2.2} />
+
+                            </div>
+
+                            <h3 class="mb-3 text-3xl font-bold text-slate-900">
+
+                                {pkg.title}
+
+                            </h3>
+
+                            <p class="mb-8 leading-7 text-slate-600">
+
+                                {pkg.subtitle}
+
+                            </p>
+
+                            <ul class="mb-10 space-y-4">
+
+                                {
+                                    pkg.features.map((feature) => (
+
+                                        <li class="flex items-center gap-3">
+
+                                            <span class="flex h-7 w-7 items-center justify-center rounded-full bg-orange-500 text-sm font-bold text-white">
+
+                                                ✓
+
+                                            </span>
+
+                                            <span class="font-medium text-slate-700">
+
+                                                {feature}
+
+                                            </span>
+
+                                        </li>
+
+                                    ))
+                                }
+
+                            </ul>
+
+                            <a
+                                href="/assessment"
+                                class:list={[
+                                    "inline-flex w-full justify-center rounded-xl px-6 py-4 text-lg font-semibold transition-all duration-300",
+                                    pkg.featured
+                                        ? "bg-orange-500 text-white shadow-lg hover:bg-orange-600 hover:shadow-xl"
+                                        : "border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white"
+                                ]}
+                            >
+
+                                View Solution
+
+                            </a>
+
+                        </article>
+
+                    );
+
+                })
+            }
+
+        </div>
+
+    </div>
+
+</section>

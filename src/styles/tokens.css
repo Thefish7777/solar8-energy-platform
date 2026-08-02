@@ -1,111 +1,223 @@
 /* ==========================================
-   SOLAR8 DESIGN TOKENS
-   Version 1.0
+   SOLAR8 DESIGN SYSTEM
+   Design Tokens v2.0
 ========================================== */
 
-:root{
+:root {
 
-/* Header */
+/* ===================================================
+   LAYOUT
+=================================================== */
 
---header-height:90px;
+--container-width: 1440px;
+--article-width: 760px;
+--content-width: 620px;
 
-/* Brand Colours */
-
---color-primary:#FF6800;
---color-primary-dark:#E65E00;
-
---color-dark:#1D1C1C;
-
---color-background:#FAFAFA;
-
---color-white:#FFFFFF;
-
---color-light:#F4F5F7;
-
---color-border:#E5E7EB;
-
---color-muted:#6B7280;
+--header-height: 90px;
+--nav-height: 90px;
 
 
-/* Typography */
+/* ===================================================
+   BRAND COLOURS
+=================================================== */
 
---font-heading:"Poppins",sans-serif;
+--color-primary: #FF6800;
+--color-primary-dark: #E65E00;
 
---font-body:"Inter",sans-serif;
+--color-background: #FAFAFA;
+--color-white: #FFFFFF;
+--color-light: #F4F5F7;
 
+--color-heading: #111827;
+--color-text: #374151;
+--color-muted: #6B7280;
 
-/* Font Sizes */
-
---hero-size:60px;
-
---section-size:42px;
-
---card-title:24px;
-
---body-size:18px;
-
---small-size:15px;
-
---logo-size:1.8rem;
-
-/* Spacing */
-
---space-8:8px;
-
---space-16:16px;
-
---space-24:24px;
-
---space-32:32px;
-
---space-48:48px;
-
---space-64:64px;
-
---space-96:96px;
+--color-border: #E5E7EB;
+--color-border-light: #F3F4F6;
 
 
-/* Border Radius */
+/* ===================================================
+   GRADIENTS
+=================================================== */
 
---radius-small:8px;
+--gradient-primary:
+linear-gradient(
+135deg,
+#FF6800 0%,
+#FF8C2A 100%
+);
 
---radius-medium:16px;
-
---radius-large:24px;
-
-
-/* Shadows */
-
---shadow-light: 0 4px 12px rgba(0,0,0,.05);
-
---shadow-medium: 0 12px 30px rgba(0,0,0,.08);
-
---shadow-heavy: 0 24px 60px rgba(0,0,0,.12);
-
-/* Animation */
-
---transition-fast: .2s ease;
-
---transition-normal: .3s ease;
-
---transition-slow: .5s ease;
-
-/* Layout */
-
---container-width:1200px;
-
---header-height:90px;
-
-/* Content Width */
-
---content-width:580px;
-
---article-width:720px;
-
-/* Website Width */
-
---container-width:1200px;
+--gradient-light:
+linear-gradient(
+180deg,
+#FFFFFF 0%,
+#F8F9FA 100%
+);
 
 
+/* ===================================================
+   TYPOGRAPHY
+=================================================== */
+
+--font-heading: "Poppins", sans-serif;
+--font-body: "Inter", sans-serif;
+
+
+/* ===================================================
+   FONT SIZES
+=================================================== */
+
+--hero-size: clamp(3.6rem, 6vw, 5.5rem);
+
+--section-size: clamp(2.2rem, 4vw, 3rem);
+
+--card-title: 24px;
+
+--body-size: 18px;
+
+--small-size: 15px;
+
+--logo-size: 1.8rem;
+
+
+/* ===================================================
+   SPACING
+=================================================== */
+
+--space-8: 8px;
+--space-12: 12px;
+--space-16: 16px;
+--space-20: 20px;
+--space-24: 24px;
+--space-32: 32px;
+--space-40: 40px;
+--space-48: 48px;
+--space-64: 64px;
+--space-80: 80px;
+--space-96: 96px;
+--space-120: 120px;
+
+
+/* ===================================================
+   BORDER RADIUS
+=================================================== */
+
+--radius-small: 8px;
+--radius-medium: 16px;
+--radius-large: 24px;
+
+--button-radius: 14px;
+
+
+/* ===================================================
+   SHADOWS
+=================================================== */
+
+--shadow-light:
+0 4px 12px rgba(0,0,0,.05);
+
+--shadow-medium:
+0 12px 30px rgba(0,0,0,.08);
+
+--shadow-heavy:
+0 24px 60px rgba(0,0,0,.12);
+
+
+/* ===================================================
+   TRANSITIONS
+=================================================== */
+
+--transition-fast: .20s ease;
+
+--transition-normal: .30s ease;
+
+--transition-slow: .50s ease;
+
+--transition:
+all .30s ease;
+
+
+/* ===================================================
+   Z-INDEX
+=================================================== */
+
+--z-header: 100;
+--z-dropdown: 200;
+--z-modal: 500;
+--z-overlay: 900;
+
+/* ===================================================
+   WEBSITE SECTIONS
+=================================================== */
+
+--section-padding: 120px;
+--section-padding-small: 80px;
+
+
+/* ===================================================
+   BUTTONS
+=================================================== */
+
+--button-height: 56px;
+--button-padding: 18px 36px;
+
+
+/* ===================================================
+   HERO
+=================================================== */
+
+--hero-max-width: 720px;
+
+
+/* ===================================================
+   IMAGES
+=================================================== */
+
+--image-radius: 28px;
+
+
+/* ===================================================
+   CARDS
+=================================================== */
+
+--card-padding: 36px;
+--card-gap: 32px;
+
+
+/* ===================================================
+   ICONS
+=================================================== */
+
+--icon-size-small: 22px;
+--icon-size-medium: 34px;
+--icon-size-large: 48px;
+
+
+/* ===================================================
+   ACCENT COLOURS
+=================================================== */
+
+--color-success: #16A34A;
+--color-warning: #F59E0B;
+--color-info: #0EA5E9;
+
+
+/* ===================================================
+   HERO SHADOW
+=================================================== */
+
+--shadow-hero:
+0 35px 80px rgba(0,0,0,.18);
+
+
+/* ===================================================
+   GLASS EFFECT
+=================================================== */
+
+--glass:
+rgba(255,255,255,.75);
+
+--glass-border:
+rgba(255,255,255,.35);
 
 }

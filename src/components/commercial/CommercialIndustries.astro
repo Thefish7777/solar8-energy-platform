@@ -1,0 +1,101 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+
+import {
+    Factory,
+    Tractor,
+    ShoppingBag,
+    Warehouse,
+    Building2,
+    GraduationCap
+} from "lucide-react";
+
+const industries = [
+    {
+        icon: Factory,
+        title: "Manufacturing",
+        description:
+            "Reduce operating costs while keeping production running efficiently."
+    },
+    {
+        icon: Tractor,
+        title: "Agriculture",
+        description:
+            "Reliable energy for irrigation, packhouses and cold-storage facilities."
+    },
+    {
+        icon: ShoppingBag,
+        title: "Retail",
+        description:
+            "Lower electricity costs while protecting trading hours during outages."
+    },
+    {
+        icon: Warehouse,
+        title: "Warehousing",
+        description:
+            "Large roof areas make warehouses ideal for high-output solar generation."
+    },
+    {
+        icon: Building2,
+        title: "Office Parks",
+        description:
+            "Reduce monthly operating expenses while improving sustainability goals."
+    },
+    {
+        icon: GraduationCap,
+        title: "Schools & Healthcare",
+        description:
+            "Reliable electricity for critical daily operations and essential services."
+    }
+];
+---
+
+<section class="bg-slate-50 py-24">
+
+    <div class="container">
+
+        <SectionHeading
+            tag="INDUSTRIES WE SERVE"
+            title="Solar solutions for every type of business."
+            intro="Every industry has unique energy demands. Solar8 engineers systems tailored to maximise savings while ensuring reliable power."
+        />
+
+        <div class="mt-20 grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
+
+            {
+                industries.map(({ icon: Icon, title, description }) => (
+
+                    <article
+                        class="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-orange-200 hover:shadow-xl"
+                    >
+
+                        <div
+                            class="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-100 text-orange-500 transition duration-300 group-hover:bg-orange-500 group-hover:text-white"
+                        >
+
+                            <Icon size={34} strokeWidth={2.2} />
+
+                        </div>
+
+                        <h3 class="mb-4 text-2xl font-bold text-slate-900">
+
+                            {title}
+
+                        </h3>
+
+                        <p class="leading-8 text-slate-600">
+
+                            {description}
+
+                        </p>
+
+                    </article>
+
+                ))
+            }
+
+        </div>
+
+    </div>
+
+</section>

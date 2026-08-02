@@ -1,99 +1,154 @@
 ---
-import logo from "../assets/images/solar8-logo-dark.svg";
+import logo from "../assets/logos/solar8-logo-dark.svg";
 import { navigation } from "../data/navigation";
 
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-lg shadow-sm">
+<header
+    id="mainHeader"
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+>
 
-  <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-
-    <!-- Logo -->
-
-    <a
-      href="/"
-      aria-label="Solar8 Home"
-      class="flex items-center transition duration-300 hover:scale-105"
-    >
-      <img
-        src={logo.src}
-        alt="Solar8"
-        class="h-12 w-auto"
-      />
-    </a>
-
-    <!-- Desktop Navigation -->
-
-    <nav
-      class="hidden items-center gap-8 lg:flex"
-      aria-label="Primary Navigation"
+    <div
+        id="headerInner"
+        class="container flex h-20 items-center justify-between rounded-2xl transition-all duration-300"
     >
 
-      {
-        navigation
-          .filter((item) => !item.cta)
-          .map((item) => (
+        <!-- Logo -->
+
+        <a
+            href="/"
+            aria-label="Solar8 Home"
+            class="flex items-center transition duration-300 hover:scale-105"
+        >
+
+            <img
+                src={logo.src}
+                alt="Solar8"
+                class="h-14 w-auto transition duration-300"
+            />
+
+        </a>
+
+        <!-- Desktop Navigation -->
+
+        <nav
+            class="hidden items-center gap-10 lg:flex"
+            aria-label="Primary Navigation"
+        >
+
+            {
+                navigation
+                    .filter((item) => !item.cta)
+                    .map((item) => (
+
+                        <a
+                            href={item.href}
+                            class:list={[
+                                "group relative font-semibold tracking-wide transition duration-300",
+                                currentPath === item.href
+                                    ? "text-orange-500"
+                                    : "text-slate-700 hover:text-orange-500",
+                            ]}
+                        >
+
+                            {item.label}
+
+                            <span
+                                class:list={[
+                                    "absolute left-0 -bottom-2 h-0.5 bg-orange-500 transition-all duration-300",
+                                    currentPath === item.href
+                                        ? "w-full"
+                                        : "w-0 group-hover:w-full",
+                                ]}
+                            />
+
+                        </a>
+
+                    ))
+            }
+
+        </nav>
+
+        <!-- CTA -->
+
+        <div class="hidden lg:flex items-center">
+
             <a
-              href={item.href}
-              class:list={[
-                "relative font-medium transition duration-300",
-                currentPath === item.href
-                  ? "text-orange-500"
-                  : "text-slate-700 hover:text-orange-500",
-              ]}
+                href="/assessment"
+                class="inline-flex items-center justify-center rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-orange-600 hover:shadow-2xl"
             >
-              {item.label}
 
-              <span
-                class:list={[
-                  "absolute left-0 -bottom-2 h-0.5 bg-orange-500 transition-all duration-300",
-                  currentPath === item.href
-                    ? "w-full"
-                    : "w-0 group-hover:w-full",
-                ]}
-              />
+                Get My FREE Assessment
+
             </a>
-          ))
-      }
 
-    </nav>
+        </div>
 
-    <!-- Right Side -->
+        <!-- Mobile Menu Button -->
 
-    <div class="hidden lg:flex items-center">
+        <button
+            class="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-300 bg-white lg:hidden"
+            aria-label="Open navigation menu"
+        >
 
-      <a
-        href="/assessment"
-        class="inline-flex items-center rounded-xl bg-orange-500 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-600 hover:shadow-xl"
-      >
-        Get My FREE Assessment
-      </a>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-slate-700"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+            >
+
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                />
+
+            </svg>
+
+        </button>
 
     </div>
 
-    <!-- Mobile Button Placeholder -->
-
-    <button
-      class="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-300 lg:hidden"
-      aria-label="Open navigation menu"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6 text-slate-700"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        stroke-width="2"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M4 6h16M4 12h16M4 18h16"
-        />
-      </svg>
-    </button>
-
-  </div>
-
 </header>
+
+<script lang="ts">
+
+function updateHeader() {
+
+    const inner = document.getElementById("headerInner");
+
+    if (!inner) return;
+
+    if (window.scrollY > 40) {
+
+        inner.classList.add(
+            "bg-white/90",
+            "backdrop-blur-xl",
+            "shadow-xl",
+            "border",
+            "border-slate-200"
+        );
+
+    } else {
+
+        inner.classList.remove(
+            "bg-white/90",
+            "backdrop-blur-xl",
+            "shadow-xl",
+            "border",
+            "border-slate-200"
+        );
+
+    }
+
+}
+
+window.addEventListener("load", updateHeader);
+window.addEventListener("scroll", updateHeader);
+
+</script>

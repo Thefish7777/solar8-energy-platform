@@ -1,0 +1,114 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+import commercial from "../../assets/images/commercial-solar.jpg";
+
+const projects = [
+    {
+        category: "Manufacturing",
+        title: "120 kW Factory Installation",
+        location: "Gauteng",
+        saving: "Estimated annual saving: R1.4 million",
+        feature: "Battery backup included"
+    },
+    {
+        category: "Logistics",
+        title: "250 kW Distribution Centre",
+        location: "Johannesburg",
+        saving: "Estimated annual saving: R2.9 million",
+        feature: "Live energy monitoring"
+    },
+    {
+        category: "Office Park",
+        title: "80 kW Office Complex",
+        location: "Pretoria",
+        saving: "Reduced peak demand charges",
+        feature: "25-year design life"
+    }
+];
+---
+
+<section class="bg-white py-24">
+
+    <div class="container">
+
+        <SectionHeading
+            tag="RECENT PROJECTS"
+            title="Commercial installations engineered for performance."
+            intro="Every project is custom designed to maximise energy production, reduce operating costs and deliver reliable long-term performance."
+        />
+
+        <div class="mt-20 grid gap-10 lg:grid-cols-3">
+
+            {
+                projects.map((project) => (
+
+                    <article
+                        class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-orange-200 hover:shadow-2xl"
+                    >
+
+                        <div class="overflow-hidden">
+
+                            <img
+                                src={commercial.src}
+                                alt={project.title}
+                                class="h-72 w-full object-cover transition duration-500 group-hover:scale-105"
+                            />
+
+                        </div>
+
+                        <div class="p-8">
+
+                            <span
+                                class="inline-flex rounded-full bg-orange-100 px-4 py-2 text-sm font-bold uppercase tracking-wide text-orange-600"
+                            >
+
+                                {project.category}
+
+                            </span>
+
+                            <h3 class="mt-6 text-2xl font-bold text-slate-900">
+
+                                {project.title}
+
+                            </h3>
+
+                            <ul class="mt-8 space-y-4 text-slate-600">
+
+                                <li class="flex gap-3">
+
+                                    <span class="text-green-600">✓</span>
+
+                                    {project.location}
+
+                                </li>
+
+                                <li class="flex gap-3">
+
+                                    <span class="text-green-600">✓</span>
+
+                                    {project.saving}
+
+                                </li>
+
+                                <li class="flex gap-3">
+
+                                    <span class="text-green-600">✓</span>
+
+                                    {project.feature}
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+                ))
+            }
+
+        </div>
+
+    </div>
+
+</section>

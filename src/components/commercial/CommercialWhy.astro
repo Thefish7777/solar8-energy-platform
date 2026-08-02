@@ -1,0 +1,101 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+
+import {
+    TrendingUp,
+    ShieldCheck,
+    Briefcase,
+    Clock3,
+    Activity,
+    Handshake
+} from "lucide-react";
+
+const reasons = [
+    {
+        icon: TrendingUp,
+        title: "Engineered for ROI",
+        description:
+            "Every commercial system is designed around your energy profile to maximise long-term return on investment."
+    },
+    {
+        icon: ShieldCheck,
+        title: "Premium Tier-1 Equipment",
+        description:
+            "We install globally recognised equipment backed by strong manufacturer warranties and local support."
+    },
+    {
+        icon: Briefcase,
+        title: "Professional Project Management",
+        description:
+            "Dedicated project managers coordinate every stage of your installation from planning to commissioning."
+    },
+    {
+        icon: Clock3,
+        title: "Minimal Business Disruption",
+        description:
+            "Installation schedules are carefully planned to minimise downtime and keep your operations running."
+    },
+    {
+        icon: Activity,
+        title: "Monitoring & Maintenance",
+        description:
+            "Remote monitoring and ongoing maintenance ensure your investment continues performing at its best."
+    },
+    {
+        icon: Handshake,
+        title: "Long-Term Partnership",
+        description:
+            "Solar8 provides continued technical support, optimisation and assistance long after installation."
+    }
+];
+---
+
+<section class="bg-slate-50 py-24">
+
+    <div class="container">
+
+        <SectionHeading
+            tag="WHY SOLAR8"
+            title="A commercial solar partner you can trust."
+            intro="From engineering and procurement to installation and ongoing support, Solar8 delivers commercial solar projects that perform exactly as promised."
+        />
+
+        <div class="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+
+            {
+                reasons.map(({ icon: Icon, title, description }) => (
+
+                    <article
+                        class="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-orange-200 hover:shadow-xl"
+                    >
+
+                        <div
+                            class="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-100 text-orange-500 transition duration-300 group-hover:bg-orange-500 group-hover:text-white"
+                        >
+
+                            <Icon size={34} strokeWidth={2.2} />
+
+                        </div>
+
+                        <h3 class="mb-4 text-2xl font-bold text-slate-900">
+
+                            {title}
+
+                        </h3>
+
+                        <p class="leading-8 text-slate-600">
+
+                            {description}
+
+                        </p>
+
+                    </article>
+
+                ))
+            }
+
+        </div>
+
+    </div>
+
+</section>

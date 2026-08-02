@@ -1,0 +1,64 @@
+---
+import SectionHeading from "./ui/SectionHeading.astro";
+import PrimaryButton from "./ui/PrimaryButton.astro";
+import SecondaryButton from "./ui/SecondaryButton.astro";
+
+const features = [
+    "Residential Solar",
+    "Commercial Solar",
+    "Battery Backup",
+    "Hybrid Inverter Systems"
+];
+---
+
+<section class="py-24">
+
+    <div class="container">
+
+        <div class="overflow-hidden rounded-[36px] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 px-10 py-20 text-center text-white shadow-2xl lg:px-20">
+
+            <SectionHeading
+                tag="READY TO GET STARTED?"
+                title="Reduce your electricity bill. Eliminate load shedding. Invest in energy independence."
+                intro="Speak to one of our solar specialists for a professional assessment and customised quotation. Every Solar8 system is engineered around your property, your budget and your long-term energy goals."
+            />
+
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+
+                {
+                    features.map((feature) => (
+
+                        <div
+                            class="rounded-full border border-white/20 bg-white/10 px-5 py-3 font-semibold text-white backdrop-blur"
+                        >
+
+                            ✓ {feature}
+
+                        </div>
+
+                    ))
+                }
+
+            </div>
+
+            <div class="mt-14 flex flex-col items-center justify-center gap-5 sm:flex-row">
+
+                <PrimaryButton href="/assessment">
+
+                    Book Your Free Assessment
+
+                </PrimaryButton>
+
+                <SecondaryButton href="/contact">
+
+                    Speak to a Solar Specialist
+
+                </SecondaryButton>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

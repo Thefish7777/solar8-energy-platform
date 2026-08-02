@@ -1,0 +1,96 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+import {
+    CheckCircle2,
+    ShieldCheck,
+    Wrench,
+    BadgeCheck,
+    Headset,
+    Cpu
+} from "lucide-react";
+
+const advantages = [
+    {
+        icon: Cpu,
+        title: "Custom Engineered Systems",
+        description:
+            "Every solar solution is designed specifically for your property's energy usage and future requirements."
+    },
+    {
+        icon: ShieldCheck,
+        title: "Premium Tier-1 Equipment",
+        description:
+            "We install globally recognised equipment selected for reliability, efficiency and long-term performance."
+    },
+    {
+        icon: Wrench,
+        title: "Qualified Installation Teams",
+        description:
+            "Professional installation by experienced specialists following South African electrical standards."
+    },
+    {
+        icon: BadgeCheck,
+        title: "Professional Energy Assessment",
+        description:
+            "Every recommendation is based on your home's actual electricity consumption and energy goals."
+    },
+    {
+        icon: Headset,
+        title: "Ongoing Support",
+        description:
+            "Technical assistance, monitoring support and after-sales service long after installation."
+    },
+    {
+        icon: CheckCircle2,
+        title: "Manufacturer Warranties",
+        description:
+            "Complete warranty support from trusted international manufacturers together with Solar8 workmanship assurance."
+    }
+];
+---
+
+<section class="bg-white py-24">
+
+    <div class="container">
+
+        <SectionHeading
+            tag="WHY SOLAR8"
+            title="Why homeowners choose Solar8."
+            intro="A solar system is a long-term investment. That's why every Solar8 installation is professionally engineered, carefully installed and fully supported long after commissioning."
+        />
+
+        <div class="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+
+            {
+                advantages.map(({ icon: Icon, title, description }) => (
+
+                    <div class="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-orange-200 hover:shadow-xl">
+
+                        <div class="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-100 text-orange-500 transition duration-300 group-hover:bg-orange-500 group-hover:text-white">
+
+                            <Icon size={34} strokeWidth={2.2} />
+
+                        </div>
+
+                        <h3 class="mb-5 text-2xl font-bold text-slate-900">
+
+                            {title}
+
+                        </h3>
+
+                        <p class="leading-8 text-slate-600">
+
+                            {description}
+
+                        </p>
+
+                    </div>
+
+                ))
+            }
+
+        </div>
+
+    </div>
+
+</section>

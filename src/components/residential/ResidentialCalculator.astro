@@ -1,0 +1,53 @@
+<script lang="ts">
+document.addEventListener("DOMContentLoaded", () => {
+
+    const slider = document.getElementById("bill") as HTMLInputElement | null;
+    const bill = document.getElementById("billValue");
+    const saving = document.getElementById("saving");
+    const annual = document.getElementById("annual");
+    const system = document.getElementById("system");
+
+    if (
+        !slider ||
+        !bill ||
+        !saving ||
+        !annual ||
+        !system
+    ) {
+        return;
+    }
+
+    function updateCalculator() {
+
+        const value = Number(slider.value);
+
+        bill.textContent = `R${value.toLocaleString()}`;
+
+        const monthlySaving = Math.round(value * 0.6);
+
+        saving.textContent = `R${monthlySaving.toLocaleString()}`;
+
+        annual.textContent = `R${(monthlySaving * 12).toLocaleString()}`;
+
+        if (value < 2500) {
+
+            system.textContent = "5 kW Hybrid";
+
+        } else if (value < 4500) {
+
+            system.textContent = "8 kW Hybrid";
+
+        } else {
+
+            system.textContent = "12 kW Hybrid";
+
+        }
+
+    }
+
+    slider.addEventListener("input", updateCalculator);
+
+    updateCalculator();
+
+});
+</script>

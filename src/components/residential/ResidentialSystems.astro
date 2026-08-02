@@ -1,0 +1,150 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const systems = [
+    {
+        title: "Essential Home",
+        inverter: "5 kW Hybrid",
+        battery: "5–10 kWh Battery",
+        features: [
+            "Apartments",
+            "Townhouses",
+            "Small Homes",
+            "Essential Backup"
+        ],
+        featured: false,
+        button: "Request Quote"
+    },
+    {
+        title: "Family Home",
+        inverter: "8 kW Hybrid",
+        battery: "10–15 kWh Battery",
+        features: [
+            "3–5 Bedroom Homes",
+            "Swimming Pool",
+            "Air Conditioning",
+            "Home Office"
+        ],
+        featured: true,
+        button: "Book Assessment"
+    },
+    {
+        title: "Luxury Home",
+        inverter: "12 kW Hybrid",
+        battery: "15–20 kWh Battery",
+        features: [
+            "Large Homes",
+            "Whole Home Backup",
+            "EV Charging",
+            "High Energy Usage"
+        ],
+        featured: false,
+        button: "Request Quote"
+    }
+];
+---
+
+<section id="systems" class="bg-white py-24">
+
+    <div class="container">
+
+        <SectionHeading
+            tag="POPULAR SYSTEMS"
+            title="Find the right solar solution for your home."
+            intro="Every Solar8 installation is custom engineered for your property, but these examples illustrate our most popular residential solar packages."
+        />
+
+        <div class="mt-16 grid gap-10 lg:grid-cols-3">
+
+            {
+                systems.map((system) => (
+
+                    <div
+                        class:list={[
+                            "relative rounded-3xl border p-10 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl",
+                            system.featured
+                                ? "border-orange-500 bg-orange-50 shadow-xl"
+                                : "border-slate-200 bg-white shadow-sm"
+                        ]}
+                    >
+
+                        {
+                            system.featured && (
+
+                                <div class="absolute -top-5 left-1/2 -translate-x-1/2 rounded-full bg-orange-500 px-5 py-2 text-sm font-bold tracking-wide text-white shadow-lg">
+
+                                    MOST POPULAR
+
+                                </div>
+
+                            )
+                        }
+
+                        <h3 class="mb-6 text-3xl font-bold text-slate-900">
+
+                            {system.title}
+
+                        </h3>
+
+                        <div class="mb-2 text-4xl font-extrabold text-orange-500">
+
+                            {system.inverter}
+
+                        </div>
+
+                        <p class="mb-8 text-lg font-semibold text-slate-600">
+
+                            {system.battery}
+
+                        </p>
+
+                        <ul class="mb-10 space-y-4">
+
+                            {
+                                system.features.map((feature) => (
+
+                                    <li class="flex items-center gap-3">
+
+                                        <span class="flex h-7 w-7 items-center justify-center rounded-full bg-orange-500 text-sm font-bold text-white">
+
+                                            ✓
+
+                                        </span>
+
+                                        <span class="font-medium text-slate-700">
+
+                                            {feature}
+
+                                        </span>
+
+                                    </li>
+
+                                ))
+                            }
+
+                        </ul>
+
+                        <a
+                            href="/assessment"
+                            class:list={[
+                                "inline-flex w-full justify-center rounded-xl px-8 py-4 text-lg font-semibold transition-all duration-300",
+                                system.featured
+                                    ? "bg-orange-500 text-white shadow-lg hover:bg-orange-600 hover:shadow-xl"
+                                    : "border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white"
+                            ]}
+                        >
+
+                            {system.button}
+
+                        </a>
+
+                    </div>
+
+                ))
+            }
+
+        </div>
+
+    </div>
+
+</section>

@@ -1,22 +1,29 @@
 ---
 interface Props {
-  title: string;
-  subtitle?: string;
+    tag: string;
+    title: string;
+    intro?: string;
 }
 
-const { title, subtitle } = Astro.props;
+const { tag, title, intro } = Astro.props;
 ---
 
-<div class="mx-auto mb-16 max-w-3xl text-center">
+<div class="mx-auto max-w-3xl text-center">
 
-    <h2 class="text-4xl font-bold text-slate-900">
+    <p class="section-tag">
+        {tag}
+    </p>
+
+    <h2 class="section-title">
         {title}
     </h2>
 
-    {subtitle && (
-        <p class="mt-6 text-lg text-slate-600">
-            {subtitle}
-        </p>
-    )}
+    {
+        intro && (
+            <p class="section-intro">
+                {intro}
+            </p>
+        )
+    }
 
 </div>

@@ -1,0 +1,130 @@
+---
+import hero from "../../assets/images/residential-home.jpg";
+
+import PrimaryButton from "../ui/PrimaryButton.astro";
+import SecondaryButton from "../ui/SecondaryButton.astro";
+---
+
+<section class="bg-gradient-to-b from-white to-slate-50 pt-36 pb-24">
+
+    <div class="container">
+
+        <div class="grid items-center gap-16 lg:grid-cols-2">
+
+            <!-- LEFT -->
+
+            <div>
+
+                <p class="section-tag">
+                    RESIDENTIAL SOLAR
+                </p>
+
+                <h1 class="mb-8 text-5xl font-extrabold leading-tight tracking-tight text-slate-900 lg:text-6xl">
+
+                    Lower your electricity bill.
+                    <br />
+                    Protect your family from load shedding.
+
+                </h1>
+
+                <p class="mb-10 max-w-xl text-xl leading-9 text-slate-600">
+
+                    Every Solar8 residential system is custom designed to maximise
+                    savings, provide uninterrupted backup power and deliver reliable
+                    clean energy for decades using premium Tier-1 equipment.
+
+                </p>
+
+                <div class="mb-12 grid gap-5 sm:grid-cols-2">
+
+                    <div class="flex items-center gap-3 rounded-xl bg-white p-4 shadow-sm">
+
+                        <span class="text-xl text-orange-500">✓</span>
+
+                        <span class="font-medium">
+                            Lower electricity costs
+                        </span>
+
+                    </div>
+
+                    <div class="flex items-center gap-3 rounded-xl bg-white p-4 shadow-sm">
+
+                        <span class="text-xl text-orange-500">✓</span>
+
+                        <span class="font-medium">
+                            Battery backup
+                        </span>
+
+                    </div>
+
+                    <div class="flex items-center gap-3 rounded-xl bg-white p-4 shadow-sm">
+
+                        <span class="text-xl text-orange-500">✓</span>
+
+                        <span class="font-medium">
+                            Increase property value
+                        </span>
+
+                    </div>
+
+                    <div class="flex items-center gap-3 rounded-xl bg-white p-4 shadow-sm">
+
+                        <span class="text-xl text-orange-500">✓</span>
+
+                        <span class="font-medium">
+                            Premium Tier-1 equipment
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="flex flex-wrap gap-5">
+
+                    <PrimaryButton href="/assessment">
+                        Book Free Assessment
+                    </PrimaryButton>
+
+                    <SecondaryButton href="#systems">
+                        View Popular Systems
+                    </SecondaryButton>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="relative">
+
+                <img
+                    src={hero.src}
+                    alt="Residential Solar Installation"
+                    class="rounded-3xl shadow-2xl"
+                />
+
+                <!-- Floating Card -->
+
+                <div class="absolute bottom-8 right-8 rounded-2xl bg-white px-8 py-6 shadow-2xl">
+
+                    <p class="text-4xl font-extrabold text-orange-500">
+
+                        30–70%
+
+                    </p>
+
+                    <p class="mt-2 font-semibold text-slate-700">
+
+                        Typical Electricity Savings
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

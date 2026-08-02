@@ -1,10 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
-
 import { company } from "../data/company";
+import AboutHero from "../components/about/AboutHero.astro";
 ---
 
 <BaseLayout
@@ -15,322 +14,209 @@ import { company } from "../data/company";
 <Navigation />
 
 <!-- ========================================================= -->
-<!-- Hero                                                      -->
+<!-- Hero -->
 <!-- ========================================================= -->
 
 <section class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-white">
 
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(249,115,22,0.18),transparent_40%)]"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(249,115,22,0.18),transparent_40%)]"></div>
 
-    <div class="relative mx-auto max-w-7xl px-6 py-24 lg:py-32">
+  <div class="relative mx-auto max-w-7xl px-6 py-28 lg:py-36">
 
-        <div class="max-w-3xl">
+    <div class="max-w-3xl">
 
-            <span class="inline-flex rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-1 text-sm font-semibold tracking-wide text-orange-300">
-                ABOUT SOLAR8
-            </span>
+      <p class="inline-flex rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-1 text-sm font-semibold tracking-wide text-orange-300">
+        ABOUT SOLAR8
+      </p>
 
-            <h1 class="mt-8 text-5xl font-extrabold leading-tight tracking-tight lg:text-6xl">
+      <h1 class="mt-8 text-5xl font-extrabold leading-tight tracking-tight lg:text-6xl">
 
-                Helping South Africans Take Control of Their Electricity Costs
+        Helping South Africans
+        <br />
+        Take Control of
+        <br />
+        Their Electricity Costs
 
-            </h1>
+      </h1>
 
-            <p class="mt-8 max-w-2xl text-xl leading-9 text-slate-300">
+      <p class="mt-8 max-w-2xl text-xl leading-9 text-slate-300">
 
-                At Solar8, we believe every family and every business deserves
-                reliable electricity, lower monthly costs and honest advice.
-                We don't believe in selling the biggest system —
-                we believe in recommending the right one.
+        Solar8 exists to help homeowners and businesses reduce electricity
+        costs through honest advice, premium solar equipment and professional
+        installations designed around your needs—not around sales targets.
 
-            </p>
+      </p>
 
-            <div class="mt-10 flex flex-wrap gap-4">
+      <div class="mt-10 flex flex-wrap gap-4">
 
-                <a
-                    href="/assessment"
-                    class="rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white shadow-xl transition hover:-translate-y-1 hover:bg-orange-600"
-                >
-                    {company.cta.primary}
-                </a>
+        <a
+          href="/assessment"
+          class="rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white shadow-xl transition hover:-translate-y-1 hover:bg-orange-600"
+        >
+          {company.cta.primary}
+        </a>
 
-                <a
-                    href="/systems"
-                    class="rounded-xl border border-white/20 px-8 py-4 text-lg font-semibold transition hover:border-orange-400 hover:text-orange-300"
-                >
-                    View Solar Systems
-                </a>
+        <a
+          href="/systems"
+          class="rounded-xl border border-white/20 px-8 py-4 text-lg font-semibold transition hover:border-orange-400 hover:text-orange-300"
+        >
+          View Solar Systems
+        </a>
 
-            </div>
-
-        </div>
+      </div>
 
     </div>
+
+  </div>
 
 </section>
 
 <!-- ========================================================= -->
-<!-- Company Introduction                                      -->
+<!-- Who We Are -->
 <!-- ========================================================= -->
 
 <section class="bg-white py-24">
 
-    <div class="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-2 lg:items-center">
+  <div class="mx-auto max-w-7xl px-6 lg:grid lg:grid-cols-2 lg:gap-20 lg:items-center">
 
-        <div>
+    <!-- Left -->
 
-            <span class="text-sm font-bold uppercase tracking-[0.25em] text-orange-500">
+    <div>
 
-                WHO WE ARE
+      <p class="text-sm font-bold uppercase tracking-[0.25em] text-orange-500">
+        WHO WE ARE
+      </p>
 
-            </span>
+      <h2 class="mt-4 text-4xl font-extrabold text-slate-900">
 
-            <h2 class="mt-4 text-4xl font-extrabold text-slate-900">
+        More Than
+        <br />
+        Solar Installers
 
-                More Than Solar Installers
+      </h2>
 
-            </h2>
+      <p class="mt-8 text-lg leading-9 text-slate-600">
 
-            <p class="mt-8 text-lg leading-9 text-slate-600">
+        Solar8 was founded with one simple goal: help South African
+        homeowners and businesses reduce their electricity costs while
+        investing in reliable, long-term energy solutions.
 
-                Solar8 was founded with a simple goal:
-                to help South African homeowners and businesses become less
-                dependent on rising electricity costs while investing in
-                quality energy solutions that deliver value for years to come.
+      </p>
 
-            </p>
+      <p class="mt-6 text-lg leading-9 text-slate-600">
 
-            <p class="mt-6 text-lg leading-9 text-slate-600">
+        We understand that installing solar is a significant investment.
+        That's why every recommendation begins with understanding your
+        electricity usage, your property and your goals before recommending
+        the most suitable solution.
 
-                We understand that investing in solar is a major financial
-                decision. That's why every recommendation we make is based on
-                your actual electricity usage, your goals and your budget —
-                not on selling the most expensive equipment.
+      </p>
 
-            </p>
+      <p class="mt-6 text-lg leading-9 text-slate-600">
 
-            <p class="mt-6 text-lg leading-9 text-slate-600">
+        Whether you're looking for backup power during load shedding,
+        lower monthly electricity bills or complete energy independence,
+        our commitment remains the same:
+        honest advice, quality workmanship and long-term support.
 
-                Whether you're looking for backup power during load shedding or
-                complete energy independence, our approach remains the same:
-                honest advice, quality workmanship and long-term support.
-
-            </p>
-
-        </div>
-
-        <div>
-
-            <div class="rounded-3xl border border-slate-200 bg-slate-50 p-10 shadow-xl">
-
-                <h3 class="text-2xl font-bold text-slate-900">
-
-                    Why Customers Choose Solar8
-
-                </h3>
-
-                <ul class="mt-8 space-y-6">
-
-                    <li class="flex gap-4">
-
-                        <div class="mt-1 h-3 w-3 rounded-full bg-orange-500"></div>
-
-                        <div>
-
-                            <h4 class="font-semibold text-slate-900">
-
-                                Honest Recommendations
-
-                            </h4>
-
-                            <p class="mt-2 text-slate-600">
-
-                                Every system is designed around your
-                                electricity usage rather than pushing a
-                                one-size-fits-all package.
-
-                            </p>
-
-                        </div>
-
-                    </li>
-
-                    <li class="flex gap-4">
-
-                        <div class="mt-1 h-3 w-3 rounded-full bg-orange-500"></div>
-
-                        <div>
-
-                            <h4 class="font-semibold text-slate-900">
-
-                                Premium Equipment
-
-                            </h4>
-
-                            <p class="mt-2 text-slate-600">
-
-                                We work with trusted manufacturers known for
-                                performance, reliability and long-term
-                                warranties.
-
-                            </p>
-
-                        </div>
-
-                    </li> 
-                                        <li class="flex gap-4">
-
-                        <div class="mt-1 h-3 w-3 rounded-full bg-orange-500"></div>
-
-                        <div>
-
-                            <h4 class="font-semibold text-slate-900">
-
-                                Professional Installation
-
-                            </h4>
-
-                            <p class="mt-2 text-slate-600">
-
-                                Every installation is completed using industry
-                                best practices with safety, neat workmanship
-                                and long-term reliability as our priorities.
-
-                            </p>
-
-                        </div>
-
-                    </li>
-
-                    <li class="flex gap-4">
-
-                        <div class="mt-1 h-3 w-3 rounded-full bg-orange-500"></div>
-
-                        <div>
-
-                            <h4 class="font-semibold text-slate-900">
-
-                                Local Support
-
-                            </h4>
-
-                            <p class="mt-2 text-slate-600">
-
-                                Our relationship doesn't end after
-                                installation. We're here to support you
-                                throughout the life of your solar investment.
-
-                            </p>
-
-                        </div>
-
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
+      </p>
 
     </div>
 
-</section>
-
-<!-- ========================================================= -->
-<!-- Mission & Vision                                           -->
+    <!-- ========================================================= -->
+<!-- Mission & Vision -->
 <!-- ========================================================= -->
 
 <section class="bg-slate-100 py-24">
 
-    <div class="mx-auto max-w-7xl px-6">
+  <div class="mx-auto max-w-7xl px-6">
 
-        <div class="mx-auto max-w-3xl text-center">
+    <div class="mx-auto max-w-3xl text-center">
 
-            <span class="text-sm font-bold uppercase tracking-[0.25em] text-orange-500">
+      <p class="text-sm font-bold uppercase tracking-[0.25em] text-orange-500">
+        OUR PURPOSE
+      </p>
 
-                OUR PURPOSE
+      <h2 class="mt-4 text-4xl font-extrabold text-slate-900">
 
-            </span>
+        Building Trust Through
+        Better Energy Solutions
 
-            <h2 class="mt-4 text-4xl font-extrabold text-slate-900">
+      </h2>
 
-                Building Trust Through Better Energy Solutions
+      <p class="mt-8 text-lg leading-9 text-slate-600">
 
-            </h2>
+        Solar8 exists to simplify solar.
+        We remove the confusion, explain every option clearly and design
+        systems that genuinely suit each customer's needs and budget.
 
-            <p class="mt-8 text-lg leading-9 text-slate-600">
-
-                Solar8 exists to make solar simple.
-
-                We remove confusion, explain every option clearly and recommend
-                systems that genuinely suit our customers' homes, businesses
-                and budgets.
-
-            </p>
-
-        </div>
-
-        <div class="mt-20 grid gap-8 lg:grid-cols-2">
-
-            <div class="rounded-3xl bg-white p-10 shadow-xl">
-
-                <div class="inline-flex rounded-xl bg-orange-100 px-4 py-2 text-sm font-bold text-orange-600">
-
-                    OUR MISSION
-
-                </div>
-
-                <h3 class="mt-8 text-3xl font-bold text-slate-900">
-
-                    Helping Families Spend Less on Electricity
-
-                </h3>
-
-                <p class="mt-6 leading-8 text-slate-600">
-
-                    Our mission is to provide honest advice, premium equipment
-                    and professional installations that reduce electricity
-                    costs while increasing energy independence for every
-                    customer we serve.
-
-                </p>
-
-            </div>
-
-            <div class="rounded-3xl bg-slate-900 p-10 text-white shadow-xl">
-
-                <div class="inline-flex rounded-xl bg-orange-500 px-4 py-2 text-sm font-bold">
-
-                    OUR VISION
-
-                </div>
-
-                <h3 class="mt-8 text-3xl font-bold">
-
-                    Becoming Gauteng's Most Trusted Solar Company
-
-                </h3>
-
-                <p class="mt-6 leading-8 text-slate-300">
-
-                    We aren't trying to become the biggest installer.
-
-                    We aim to become the company homeowners and businesses
-                    trust first when making one of the most important
-                    investments in their property.
-
-                </p>
-
-            </div>
-
-        </div>
+      </p>
 
     </div>
+
+    <div class="mt-20 grid gap-8 lg:grid-cols-2">
+
+      <!-- Mission -->
+
+      <div class="rounded-3xl bg-white p-10 shadow-xl">
+
+        <div class="inline-flex rounded-xl bg-orange-100 px-4 py-2 text-sm font-bold text-orange-600">
+
+          OUR MISSION
+
+        </div>
+
+        <h3 class="mt-8 text-3xl font-bold text-slate-900">
+
+          Helping South Africans Spend Less On Electricity
+
+        </h3>
+
+        <p class="mt-6 leading-8 text-slate-600">
+
+          We provide honest advice, premium equipment and professional
+          installations that lower electricity costs while increasing
+          energy independence for every customer.
+
+        </p>
+
+      </div>
+
+      <!-- Vision -->
+
+      <div class="rounded-3xl bg-slate-900 p-10 text-white shadow-xl">
+
+        <div class="inline-flex rounded-xl bg-orange-500 px-4 py-2 text-sm font-bold">
+
+          OUR VISION
+
+        </div>
+
+        <h3 class="mt-8 text-3xl font-bold">
+
+          Gauteng's Most Trusted Solar Company
+
+        </h3>
+
+        <p class="mt-6 leading-8 text-slate-300">
+
+          We aren't trying to become the biggest installer.
+
+          Our goal is to become the company that homeowners and businesses
+          trust first when investing in solar energy.
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 <!-- ========================================================= -->
-<!-- Company Values                                              -->
+<!-- Our Values -->
 <!-- ========================================================= -->
 
 <section class="bg-white py-24">
@@ -339,217 +225,109 @@ import { company } from "../data/company";
 
         <div class="mx-auto max-w-3xl text-center">
 
-            <span class="text-sm font-bold uppercase tracking-[0.25em] text-orange-500">
+            <p class="text-sm font-bold uppercase tracking-[0.25em] text-orange-500">
 
                 OUR VALUES
 
-            </span>
+            </p>
 
             <h2 class="mt-4 text-4xl font-extrabold text-slate-900">
 
-                The Principles Behind Every Recommendation
+                The Principles Behind
+                Every Recommendation
 
             </h2>
+
+            <p class="mt-8 text-lg leading-9 text-slate-600">
+
+                Everything we do is built around honesty, quality and
+                creating long-term value for every customer.
+
+            </p>
 
         </div>
 
         <div class="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
 
-            <div class="rounded-2xl border border-slate-200 p-8 transition hover:-translate-y-2 hover:shadow-xl">
+            <!-- Card 1 -->
 
-                <h3 class="text-xl font-bold text-slate-900">
+            <div class="group rounded-3xl border border-slate-200 bg-white p-10 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+
+                <div class="mb-6 text-5xl">🎓</div>
+
+                <h3 class="text-2xl font-bold text-slate-900">
 
                     Educate First
 
                 </h3>
 
-                <p class="mt-4 leading-8 text-slate-600">
+                <p class="mt-5 leading-8 text-slate-600">
 
-                    We believe informed customers make better long-term
-                    decisions.
+                    We explain every option clearly so customers can make
+                    informed decisions with confidence.
 
                 </p>
 
             </div>
 
-            <div class="rounded-2xl border border-slate-200 p-8 transition hover:-translate-y-2 hover:shadow-xl">
+            <!-- Card 2 -->
 
-                <h3 class="text-xl font-bold text-slate-900">
+            <div class="group rounded-3xl border border-slate-200 bg-white p-10 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+
+                <div class="mb-6 text-5xl">⭐</div>
+
+                <h3 class="text-2xl font-bold text-slate-900">
 
                     Quality Always
 
                 </h3>
 
-                <p class="mt-4 leading-8 text-slate-600">
+                <p class="mt-5 leading-8 text-slate-600">
 
-                    We choose reliable equipment backed by proven performance
-                    and strong manufacturer warranties.
+                    We recommend equipment that we would confidently install
+                    in our own homes.
 
                 </p>
 
             </div>
 
-            <div class="rounded-2xl border border-slate-200 p-8 transition hover:-translate-y-2 hover:shadow-xl">
+            <!-- Card 3 -->
 
-                <h3 class="text-xl font-bold text-slate-900">
+            <div class="group rounded-3xl border border-slate-200 bg-white p-10 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+
+                <div class="mb-6 text-5xl">🤝</div>
+
+                <h3 class="text-2xl font-bold text-slate-900">
 
                     Honest Advice
 
                 </h3>
 
-                <p class="mt-4 leading-8 text-slate-600">
+                <p class="mt-5 leading-8 text-slate-600">
 
-                    Recommendations are based on your needs, never on selling
-                    the largest system.
+                    We recommend the right solution—not the most expensive
+                    solution.
 
                 </p>
 
             </div>
 
-            <div class="rounded-2xl border border-slate-200 p-8 transition hover:-translate-y-2 hover:shadow-xl">
+            <!-- Card 4 -->
 
-                <h3 class="text-xl font-bold text-slate-900">
+            <div class="group rounded-3xl border border-slate-200 bg-white p-10 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+
+                <div class="mb-6 text-5xl">🛠️</div>
+
+                <h3 class="text-2xl font-bold text-slate-900">
 
                     Long-Term Support
 
                 </h3>
 
-                <p class="mt-4 leading-8 text-slate-600">
+                <p class="mt-5 leading-8 text-slate-600">
 
-                    Our commitment continues long after your installation has
-                    been completed.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-<!-- ========================================================= -->
-<!-- Why Choose Solar8                                         -->
-<!-- ========================================================= -->
-
-<section class="bg-slate-950 py-24 text-white">
-
-    <div class="mx-auto max-w-7xl px-6">
-
-        <div class="mx-auto max-w-3xl text-center">
-
-            <span class="text-sm font-bold uppercase tracking-[0.25em] text-orange-400">
-
-                WHY SOLAR8
-
-            </span>
-
-            <h2 class="mt-4 text-4xl font-extrabold">
-
-                Why Customers Trust Solar8
-
-            </h2>
-
-            <p class="mt-8 text-lg leading-9 text-slate-300">
-
-                Choosing a solar installer is just as important as choosing the
-                equipment itself. Our focus is on delivering solutions that
-                perform reliably for years while providing honest advice every
-                step of the way.
-
-            </p>
-
-        </div>
-
-        <div class="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-
-            <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
-
-                <div class="text-5xl font-extrabold text-orange-500">
-
-                    ✓
-
-                </div>
-
-                <h3 class="mt-6 text-xl font-bold">
-
-                    Professional Design
-
-                </h3>
-
-                <p class="mt-4 leading-8 text-slate-400">
-
-                    Every solar system is designed around your electricity
-                    usage, roof space and future energy requirements.
-
-                </p>
-
-            </div>
-
-            <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
-
-                <div class="text-5xl font-extrabold text-orange-500">
-
-                    ✓
-
-                </div>
-
-                <h3 class="mt-6 text-xl font-bold">
-
-                    Premium Equipment
-
-                </h3>
-
-                <p class="mt-4 leading-8 text-slate-400">
-
-                    We recommend trusted manufacturers known for performance,
-                    reliability and long-term support.
-
-                </p>
-
-            </div>
-
-            <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
-
-                <div class="text-5xl font-extrabold text-orange-500">
-
-                    ✓
-
-                </div>
-
-                <h3 class="mt-6 text-xl font-bold">
-
-                    Expert Installation
-
-                </h3>
-
-                <p class="mt-4 leading-8 text-slate-400">
-
-                    Professional workmanship, compliant installations and
-                    attention to detail on every project.
-
-                </p>
-
-            </div>
-
-            <div class="rounded-3xl border border-slate-800 bg-slate-900 p-8">
-
-                <div class="text-5xl font-extrabold text-orange-500">
-
-                    ✓
-
-                </div>
-
-                <h3 class="mt-6 text-xl font-bold">
-
-                    Ongoing Support
-
-                </h3>
-
-                <p class="mt-4 leading-8 text-slate-400">
-
-                    We're available long after installation to help with
-                    upgrades, support and future expansion.
+                    Our relationship continues long after installation with
+                    dependable support whenever you need us.
 
                 </p>
 
@@ -562,55 +340,57 @@ import { company } from "../data/company";
 </section>
 
 <!-- ========================================================= -->
-<!-- Installation Process                                      -->
+<!-- Our Process -->
 <!-- ========================================================= -->
 
-<section class="bg-white py-24">
+<section class="bg-slate-50 py-24">
 
     <div class="mx-auto max-w-7xl px-6">
 
         <div class="mx-auto max-w-3xl text-center">
 
-            <span class="text-sm font-bold uppercase tracking-[0.25em] text-orange-500">
+            <p class="text-sm font-bold uppercase tracking-[0.25em] text-orange-500">
 
                 OUR PROCESS
 
-            </span>
+            </p>
 
             <h2 class="mt-4 text-4xl font-extrabold text-slate-900">
 
-                From Assessment to Installation
+                From First Conversation
+                <br />
+                To Power Independence
 
             </h2>
 
             <p class="mt-8 text-lg leading-9 text-slate-600">
 
-                We've simplified the solar journey into a clear, transparent
-                process so you'll always know what comes next.
+                We've simplified the solar journey into five straightforward
+                steps so you'll always know what happens next.
 
             </p>
 
         </div>
 
-        <div class="mt-20 grid gap-10 md:grid-cols-5">
+        <div class="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-5">
 
             <div class="text-center">
 
-                <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-orange-500 text-3xl font-bold text-white">
+                <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-orange-500 text-3xl font-bold text-white shadow-lg">
 
                     1
 
                 </div>
 
-                <h3 class="mt-6 text-xl font-bold">
+                <h3 class="mt-6 text-xl font-bold text-slate-900">
 
                     Assessment
 
                 </h3>
 
-                <p class="mt-4 text-slate-600 leading-7">
+                <p class="mt-4 leading-7 text-slate-600">
 
-                    Understand your electricity usage and goals.
+                    We learn about your electricity usage, property and goals.
 
                 </p>
 
@@ -618,21 +398,21 @@ import { company } from "../data/company";
 
             <div class="text-center">
 
-                <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-orange-500 text-3xl font-bold text-white">
+                <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-orange-500 text-3xl font-bold text-white shadow-lg">
 
                     2
 
                 </div>
 
-                <h3 class="mt-6 text-xl font-bold">
+                <h3 class="mt-6 text-xl font-bold text-slate-900">
 
                     System Design
 
                 </h3>
 
-                <p class="mt-4 text-slate-600 leading-7">
+                <p class="mt-4 leading-7 text-slate-600">
 
-                    A tailored recommendation designed around your property.
+                    We recommend the right inverter, batteries and solar panels.
 
                 </p>
 
@@ -640,21 +420,21 @@ import { company } from "../data/company";
 
             <div class="text-center">
 
-                <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-orange-500 text-3xl font-bold text-white">
+                <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-orange-500 text-3xl font-bold text-white shadow-lg">
 
                     3
 
                 </div>
 
-                <h3 class="mt-6 text-xl font-bold">
+                <h3 class="mt-6 text-xl font-bold text-slate-900">
 
-                    Quotation
+                    Proposal
 
                 </h3>
 
-                <p class="mt-4 text-slate-600 leading-7">
+                <p class="mt-4 leading-7 text-slate-600">
 
-                    Transparent pricing with no hidden surprises.
+                    Receive a clear quotation with no hidden surprises.
 
                 </p>
 
@@ -662,21 +442,21 @@ import { company } from "../data/company";
 
             <div class="text-center">
 
-                <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-orange-500 text-3xl font-bold text-white">
+                <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-orange-500 text-3xl font-bold text-white shadow-lg">
 
                     4
 
                 </div>
 
-                <h3 class="mt-6 text-xl font-bold">
+                <h3 class="mt-6 text-xl font-bold text-slate-900">
 
                     Installation
 
                 </h3>
 
-                <p class="mt-4 text-slate-600 leading-7">
+                <p class="mt-4 leading-7 text-slate-600">
 
-                    Professional installation by experienced technicians.
+                    Professional installation completed safely and efficiently.
 
                 </p>
 
@@ -684,21 +464,21 @@ import { company } from "../data/company";
 
             <div class="text-center">
 
-                <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-orange-500 text-3xl font-bold text-white">
+                <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-orange-500 text-3xl font-bold text-white shadow-lg">
 
                     5
 
                 </div>
 
-                <h3 class="mt-6 text-xl font-bold">
+                <h3 class="mt-6 text-xl font-bold text-slate-900">
 
                     Support
 
                 </h3>
 
-                <p class="mt-4 text-slate-600 leading-7">
+                <p class="mt-4 leading-7 text-slate-600">
 
-                    Long-term assistance throughout the life of your system.
+                    Ongoing advice, monitoring and assistance throughout the life of your system.
 
                 </p>
 
@@ -711,36 +491,41 @@ import { company } from "../data/company";
 </section>
 
 <!-- ========================================================= -->
-<!-- Warranty Promise                                          -->
+<!-- Warranty & Peace of Mind -->
 <!-- ========================================================= -->
 
 <section class="bg-orange-500 py-24 text-white">
 
     <div class="mx-auto max-w-7xl px-6 text-center">
 
-        <span class="text-sm font-bold uppercase tracking-[0.25em] text-orange-100">
+        <p class="text-sm font-bold uppercase tracking-[0.25em] text-orange-100">
 
-            OUR PROMISE
+            PEACE OF MIND
 
-        </span>
+        </p>
 
         <h2 class="mt-4 text-4xl font-extrabold">
 
-            Built for Long-Term Confidence
+            Built to Perform.
+            <br />
+            Backed for Years.
 
         </h2>
 
         <p class="mx-auto mt-8 max-w-3xl text-xl leading-9 text-orange-100">
 
-            We partner with reputable manufacturers and back our workmanship
-            because we believe your investment should continue delivering value
-            for many years to come.
+            Every Solar8 installation uses premium equipment backed by
+            manufacturer warranties and installed to the highest professional
+            standards. Our goal is to give you confidence that your investment
+            will continue delivering value for many years to come.
 
         </p>
 
-        <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div class="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
 
-            <div class="rounded-2xl bg-white/10 p-8 backdrop-blur">
+            <!-- Panels -->
+
+            <div class="rounded-3xl bg-white/10 p-10 backdrop-blur">
 
                 <div class="text-5xl font-extrabold">
 
@@ -750,13 +535,15 @@ import { company } from "../data/company";
 
                 <p class="mt-4 text-lg font-semibold">
 
-                    Year Panel Warranty*
+                    Year Solar Panel Performance*
 
                 </p>
 
             </div>
 
-            <div class="rounded-2xl bg-white/10 p-8 backdrop-blur">
+            <!-- Batteries -->
+
+            <div class="rounded-3xl bg-white/10 p-10 backdrop-blur">
 
                 <div class="text-5xl font-extrabold">
 
@@ -772,7 +559,9 @@ import { company } from "../data/company";
 
             </div>
 
-            <div class="rounded-2xl bg-white/10 p-8 backdrop-blur">
+            <!-- Inverter -->
+
+            <div class="rounded-3xl bg-white/10 p-10 backdrop-blur">
 
                 <div class="text-5xl font-extrabold">
 
@@ -788,17 +577,19 @@ import { company } from "../data/company";
 
             </div>
 
-            <div class="rounded-2xl bg-white/10 p-8 backdrop-blur">
+            <!-- Installation -->
+
+            <div class="rounded-3xl bg-white/10 p-10 backdrop-blur">
 
                 <div class="text-5xl font-extrabold">
 
-                    5
+                    ✓
 
                 </div>
 
                 <p class="mt-4 text-lg font-semibold">
 
-                    Year Workmanship Warranty
+                    Professional Installation Standards
 
                 </p>
 
@@ -806,37 +597,162 @@ import { company } from "../data/company";
 
         </div>
 
+        <p class="mt-10 text-sm text-orange-100">
+
+            *Warranty periods vary depending on manufacturer and selected equipment.
+
+        </p>
+
     </div>
 
 </section>
+
+    <!-- Right Card -->
+
+    <div class="mt-16 lg:mt-0">
+
+      <div class="rounded-3xl border border-slate-200 bg-slate-50 p-10 shadow-xl">
+
+        <h3 class="text-2xl font-bold text-slate-900">
+
+          Why Customers Choose Solar8
+
+        </h3>
+
+        <div class="mt-10 space-y-8">
+
+          <div class="flex gap-4">
+
+            <div class="mt-2 h-3 w-3 rounded-full bg-orange-500"></div>
+
+            <div>
+
+              <h4 class="font-semibold text-slate-900">
+
+                Honest Recommendations
+
+              </h4>
+
+              <p class="mt-2 text-slate-600">
+
+                Every recommendation is based on your energy needs,
+                not on selling the largest system.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="flex gap-4">
+
+            <div class="mt-2 h-3 w-3 rounded-full bg-orange-500"></div>
+
+            <div>
+
+              <h4 class="font-semibold text-slate-900">
+
+                Premium Equipment
+
+              </h4>
+
+              <p class="mt-2 text-slate-600">
+
+                We partner with trusted manufacturers known for
+                reliability, performance and excellent warranties.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="flex gap-4">
+
+            <div class="mt-2 h-3 w-3 rounded-full bg-orange-500"></div>
+
+            <div>
+
+              <h4 class="font-semibold text-slate-900">
+
+                Professional Installation
+
+              </h4>
+
+              <p class="mt-2 text-slate-600">
+
+                Every installation is completed using industry best
+                practices with safety and workmanship as our priority.
+
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="flex gap-4">
+
+            <div class="mt-2 h-3 w-3 rounded-full bg-orange-500"></div>
+
+            <div>
+
+              <h4 class="font-semibold text-slate-900">
+
+                Ongoing Support
+
+              </h4>
+
+              <p class="mt-2 text-slate-600">
+
+                Our relationship continues long after installation with
+                support whenever you need us.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 <!-- ========================================================= -->
-<!-- Final Call To Action                                      -->
+<!-- Final Call To Action -->
 <!-- ========================================================= -->
 
 <section class="bg-slate-950 py-24 text-white">
 
     <div class="mx-auto max-w-5xl px-6 text-center">
 
-        <span class="text-sm font-bold uppercase tracking-[0.25em] text-orange-400">
+        <p class="text-sm font-bold uppercase tracking-[0.25em] text-orange-400">
 
-            READY TO GET STARTED?
+            READY TO START YOUR SOLAR JOURNEY?
 
-        </span>
+        </p>
 
         <h2 class="mt-6 text-5xl font-extrabold leading-tight">
 
-            Let's Find the Right Solar Solution
+            Let's Design the Right
             <br />
-            for Your Property
+            Solar Solution
+            <br />
+            For You
 
         </h2>
 
         <p class="mx-auto mt-8 max-w-3xl text-xl leading-9 text-slate-300">
 
-            Whether you're looking for reliable backup power, lower monthly
-            electricity bills or complete energy independence, we'll help you
-            choose a system that's designed around your needs—not a generic
-            package.
+            Whether you're looking for backup power during load shedding,
+            lower electricity bills or complete energy independence,
+            our team is ready to design a system that fits your property,
+            your budget and your future.
 
         </p>
 
