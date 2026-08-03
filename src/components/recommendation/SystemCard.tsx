@@ -14,9 +14,7 @@ export default function SystemCard({
 
       <div className="text-center">
 
-        <div className="text-5xl">
-          ⭐
-        </div>
+        <div className="text-5xl">⭐</div>
 
         <h2 className="mt-4 text-3xl font-extrabold text-slate-900">
           Your Recommended Energy System
@@ -37,19 +35,12 @@ export default function SystemCard({
           </h3>
 
           <ul className="mt-6 space-y-4 text-lg">
-
             <li>🔋 {inverter}</li>
-
             <li>⚡ {battery}</li>
-
             <li>☀️ {panels}</li>
-
             <li>📱 Smart Monitoring</li>
-
             <li>🛡 Professional Installation</li>
-
             <li>📈 Expansion Ready</li>
-
           </ul>
 
         </div>
@@ -61,12 +52,9 @@ export default function SystemCard({
           </h3>
 
           <p className="mt-6 leading-8 text-slate-700">
-
-            This energy system has been selected to provide
-            excellent backup power while reducing your monthly
-            electricity costs. It also allows future expansion
-            as your energy needs grow.
-
+            This energy system has been selected to provide excellent
+            backup power while reducing your monthly electricity costs.
+            It also allows future expansion as your energy needs grow.
           </p>
 
         </div>

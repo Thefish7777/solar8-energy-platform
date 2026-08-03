@@ -1,7 +1,9 @@
 <script lang="ts">
 document.addEventListener("DOMContentLoaded", () => {
 
-    const slider = document.getElementById("bill") as HTMLInputElement | null;
+    const slider = document.getElementById("bill");
+
+if (!slider) return;
     const bill = document.getElementById("billValue");
     const saving = document.getElementById("saving");
     const annual = document.getElementById("annual");
