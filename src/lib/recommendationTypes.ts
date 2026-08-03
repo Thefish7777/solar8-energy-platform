@@ -24,19 +24,25 @@ export type PropertyType =
 /**
  * Appliance Selection
  */
-export interface Appliances {
+export interface ApplianceSelection {
 
-  airConditioning: boolean;
+    applianceId: string;
 
-  poolPump: boolean;
+    quantity: number;
 
-  borehole: boolean;
+}
 
-  electricGeyser: boolean;
+export interface AssessmentAnswers {
 
-  homeOffice: boolean;
+    propertyType: PropertyType;
 
-  electricVehicle: boolean;
+    monthlyBill: number;
+
+    occupants: number;
+
+    goal: CustomerGoal;
+
+    appliances: ApplianceSelection[];
 
 }
 

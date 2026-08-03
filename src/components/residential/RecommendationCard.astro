@@ -1,0 +1,165 @@
+---
+export interface Props {
+    solution?: string;
+    inverter?: string;
+    battery?: string;
+    panels?: string;
+    monthlySaving?: number;
+    annualSaving?: number;
+    confidence?: number;
+}
+
+const {
+    solution = "Solar8 Smart",
+    inverter = "8kW Hybrid",
+    battery = "2 × 5kWh Lithium Batteries",
+    panels = "12 Solar Panels",
+    monthlySaving = 2850,
+    annualSaving = 34200,
+    confidence = 92
+} = Astro.props;
+---
+
+<div class="recommendation-card">
+
+    <h2>Your Recommended Solution</h2>
+
+    <h1>{solution}</h1>
+
+    <ul>
+
+        <li>✓ {inverter}</li>
+
+        <li>✓ {battery}</li>
+
+        <li>✓ {panels}</li>
+
+    </ul>
+
+    <div class="savings">
+
+        <div>
+
+            <span class="label">Estimated Monthly Savings</span>
+
+            <strong>R{monthlySaving.toLocaleString()}</strong>
+
+        </div>
+
+        <div>
+
+            <span class="label">Estimated Annual Savings</span>
+
+            <strong>R{annualSaving.toLocaleString()}</strong>
+
+        </div>
+
+    </div>
+
+    <div class="confidence">
+
+        Confidence Score
+
+        <strong>{confidence}%</strong>
+
+    </div>
+
+    <button>
+
+        Book My FREE Solar Assessment
+
+    </button>
+
+</div>
+
+<style>
+
+.recommendation-card{
+
+    padding:2rem;
+
+    border-radius:16px;
+
+    background:#ffffff;
+
+    border:2px solid #0a7d3b;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    display:grid;
+
+    gap:1.5rem;
+
+}
+
+.recommendation-card h1{
+
+    color:#0a7d3b;
+
+    margin:0;
+
+}
+
+.recommendation-card ul{
+
+    list-style:none;
+
+    padding:0;
+
+    display:grid;
+
+    gap:.5rem;
+
+}
+
+.savings{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:1rem;
+
+}
+
+.label{
+
+    display:block;
+
+    font-size:.85rem;
+
+    color:#666;
+
+}
+
+.confidence{
+
+    font-size:1.1rem;
+
+}
+
+button{
+
+    background:#0a7d3b;
+
+    color:white;
+
+    border:none;
+
+    padding:1rem;
+
+    border-radius:10px;
+
+    font-size:1rem;
+
+    cursor:pointer;
+
+}
+
+button:hover{
+
+    background:#08652f;
+
+}
+
+</style>

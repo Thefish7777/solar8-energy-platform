@@ -1,0 +1,77 @@
+<div class="property-form">
+
+  <div class="field">
+    <label for="propertyType">Property Type</label>
+
+    <select id="propertyType" name="propertyType">
+      <option value="home">Home</option>
+      <option value="business">Business</option>
+      <option value="farm">Farm</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="bill">
+      Monthly Electricity Bill
+    </label>
+
+    <input
+      id="bill"
+      type="range"
+      min="500"
+      max="15000"
+      step="100"
+      value="2500"
+    />
+
+    <div class="value">
+      <span id="billValue">R2,500</span>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="occupants">
+      Number of Occupants
+    </label>
+
+    <input
+      id="occupants"
+      type="number"
+      min="1"
+      max="20"
+      value="4"
+    />
+  </div>
+
+</div>
+
+<style>
+.property-form{
+    display:grid;
+    gap:1.5rem;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:.5rem;
+}
+
+label{
+    font-weight:600;
+}
+
+input,
+select{
+    padding:.75rem;
+    border:1px solid #d8d8d8;
+    border-radius:8px;
+    font-size:1rem;
+}
+
+.value{
+    font-size:1.1rem;
+    font-weight:bold;
+    color:#0a7d3b;
+}
+</style>
