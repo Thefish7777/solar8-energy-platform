@@ -1,24 +1,10 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-
-import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro";
-
-import AssessmentHero from "../components/assessment/AssessmentHero.astro";
-import AssessmentForm from "../components/assessment/AssessmentForm.jsx";
+import MainLayout from "../layouts/MainLayout.astro";
+import AssessmentWizard from "../components/assessment/AssessmentWizard";
 ---
 
-<BaseLayout
-    title="Free Solar Assessment | Solar8"
-    description="Receive a free professional solar assessment tailored to your home or business."
->
+<MainLayout title="FREE Solar Assessment">
 
-<Navigation />
+    <AssessmentWizard client:load />
 
-<AssessmentHero />
-
-<AssessmentForm client:load />
-
-<Footer />
-
-</BaseLayout>
+</MainLayout>

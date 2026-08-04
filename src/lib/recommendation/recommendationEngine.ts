@@ -8,7 +8,7 @@ import type {
     SolarSolutionName,
     SavingsEstimate,
     CustomerProfile
-} from "../recommendationTypes";
+} from "./recommendationTypes";
 
 import { calculateLoad } from "./loadCalculator";
 import { calculateBattery } from "./batteryCalculator";
@@ -131,8 +131,7 @@ export function generateRecommendation(
         goal:
             assessment.goal,
 
-        backupHours:
-            `${backupHours} Hours`,
+        backupHours: 8,
 
         applianceCount:
             Object.values(

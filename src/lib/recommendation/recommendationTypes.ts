@@ -2,7 +2,7 @@
 // Solar8 Recommendation Engine Types
 // ============================================================================
 
-import type { SolarSolution } from "../data/solutions";
+import type { SolarSolution } from "../../data/solutions";
 
 /**
  * Customer Goals
@@ -22,7 +22,7 @@ export type PropertyType =
   | "farm";
 
 /**
- * Appliance Selection
+ * Assessment Answers
  */
 export interface ApplianceSelection {
 
@@ -31,7 +31,6 @@ export interface ApplianceSelection {
     quantity: number;
 
 }
-
 export interface AssessmentAnswers {
 
     propertyType: PropertyType;
@@ -42,50 +41,31 @@ export interface AssessmentAnswers {
 
     goal: CustomerGoal;
 
+    backupHours: number;
+
     appliances: ApplianceSelection[];
 
 }
 
 /**
- * Assessment Answers
- */
-export interface AssessmentAnswers {
-
-  propertyType: PropertyType;
-
-  monthlyBill: number;
-
-  occupants: number;
-
-  goal: CustomerGoal;
-
-  appliances: Appliances;
-
-}
-
-/**
- * Solar8 Solution
+ * Solar8 Solution Names
  */
 export type SolarSolutionName =
-
   | "Solar8 Backup"
-
   | "Solar8 Smart"
-
   | "Solar8 Independence"
-
   | "Solar8 Custom";
 
 /**
- * Typical Configuration
+ * System Configuration
  */
 export interface SystemConfiguration {
 
-  inverter: string;
+    inverter: string;
 
-  battery: string;
+    battery: string;
 
-  panels: string;
+    panels: string;
 
 }
 
@@ -94,11 +74,32 @@ export interface SystemConfiguration {
  */
 export interface SavingsEstimate {
 
-  monthly: number;
+    monthly: number;
 
-  annual: number;
+    annual: number;
 
-  percentage: number;
+    percentage: number;
+
+}
+
+/**
+ * Customer Profile
+ */
+export interface CustomerProfile {
+
+    customerName: string;
+
+    propertyType: PropertyType;
+
+    occupants: number;
+
+    monthlyBill: number;
+
+    goal: CustomerGoal;
+
+    backupHours: number;
+
+    applianceCount: number;
 
 }
 
@@ -125,44 +126,12 @@ export interface RecommendationResult {
 
 }
 
-export interface CustomerProfile {
-
-    customerName: string;
-
-    propertyType: PropertyType;
-
-    occupants: number;
-
-    monthlyBill: number;
-
-    goal: CustomerGoal;
-
-    backupHours: string;
-
-    applianceCount: number;
-
-}
-
 /**
  * Complete Energy Plan
  */
 export interface EnergyPlan {
 
-    customer: {
-
-        propertyType: PropertyType;
-
-        occupants: number;
-
-        monthlyBill: number;
-
-        goal: CustomerGoal;
-
-        backupHours: string;
-
-        applianceCount: number;
-
-    };
+    customer: CustomerProfile;
 
     recommendation: RecommendationResult;
 

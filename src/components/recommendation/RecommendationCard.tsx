@@ -1,6 +1,6 @@
 import PropertySummaryCard from "./PropertySummaryCard";
 import SystemCard from "./SystemCard";
-import type { RecommendationResult } from "../../lib/recommendationTypes";
+import type { RecommendationResult } from "../../lib/recommendation/recommendationTypes";
 import ProposalHeader from "./ProposalHeader";
 import ExecutiveSummary from "./ExecutiveSummary";
 import EnergyPlanSummary from "./EnergyPlanSummary";

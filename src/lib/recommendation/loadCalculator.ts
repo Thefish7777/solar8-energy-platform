@@ -1,76 +1,52 @@
-// ============================================================================
-// Solar8 Load Calculator
-// ============================================================================
-
-import type { AssessmentAnswers } from "../recommendationTypes";
+import appliances from "./appliances";
+import type { AssessmentAnswers } from "./recommendationTypes";
 
 export interface LoadCalculation {
-  dailyConsumption: number;
-  dayConsumption: number;
-  nightConsumption: number;
-  peakLoad: number;
-  criticalLoad: number;
+    runningLoad: number;
+    peakLoad: number;
+    criticalLoad: number;
 }
 
-/**
- * Calculates estimated energy usage and required inverter load
- * based on customer assessment answers.
- */
 export function calculateLoad(
-  assessment: AssessmentAnswers
+    assessment: AssessmentAnswers
 ): LoadCalculation {
 
-  // Estimate daily usage from monthly electricity bill.
-  // This is temporary and will later be replaced with a more accurate
-  // consumption model.
-  const dailyConsumption = assessment.monthlyBill / 30;
+    let runningLoad = 0;
+    let peakLoad = 0;
+    let criticalLoad = 0;
 
-  // Assume 70% daytime usage, 30% nighttime usage.
-  const dayConsumption = dailyConsumption * 0.70;
-  const nightConsumption = dailyConsumption * 0.30;
+    for (const selected of assessment.appliances) {
 
-  let peakLoad = 0;
-  let criticalLoad = 0;
+        const appliance = appliances.find(
+            a => a.id === selected.applianceId
+        );
 
-  // -----------------------------------------------------------------------
-  // Estimated appliance loads (kW)
-  // -----------------------------------------------------------------------
+        if (!appliance) continue;
 
-  if (assessment.appliances.airConditioning) {
-    peakLoad += 2.5;
-  }
+        const watts =
+            appliance.runningWatts * selected.quantity;
 
-  if (assessment.appliances.poolPump) {
-    peakLoad += 1.1;
-  }
+        runningLoad += watts;
 
-  if (assessment.appliances.borehole) {
-    peakLoad += 1.5;
-    criticalLoad += 1.5;
-  }
+        peakLoad +=
+            appliance.surgeWatts * selected.quantity;
 
-  if (assessment.appliances.electricGeyser) {
-    peakLoad += 3.0;
-  }
+        if (appliance.critical) {
 
-  if (assessment.appliances.homeOffice) {
-    peakLoad += 0.5;
-    criticalLoad += 0.5;
-  }
+            criticalLoad += watts;
 
-  if (assessment.appliances.electricVehicle) {
-    peakLoad += 7.0;
-  }
+        }
 
-  // -----------------------------------------------------------------------
-  // Return calculations
-  // -----------------------------------------------------------------------
+    }
 
-  return {
-    dailyConsumption,
-    dayConsumption,
-    nightConsumption,
-    peakLoad,
-    criticalLoad,
-  };
+    return {
+
+        runningLoad: runningLoad / 1000,
+
+        peakLoad: peakLoad / 1000,
+
+        criticalLoad: criticalLoad / 1000
+
+    };
+
 }

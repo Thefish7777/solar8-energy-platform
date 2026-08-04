@@ -8,7 +8,7 @@ import {
   panels,
 } from "../data/equipment";
 
-import type { SolarSolutionName } from "./recommendationTypes";
+import type { SolarSolutionName } from "./recommendation/recommendationTypes";
 
 export function selectEquipment(
   solution: SolarSolutionName

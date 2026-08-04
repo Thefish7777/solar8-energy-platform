@@ -1,4 +1,4 @@
-import type { RecommendationResult } from "../../lib/recommendationTypes";
+import type { RecommendationResult } from "../../lib/recommendation/recommendationTypes";
 
 interface Props {
     recommendation: RecommendationResult;
