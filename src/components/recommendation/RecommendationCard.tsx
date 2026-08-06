@@ -74,18 +74,16 @@ export default function RecommendationCard({
         </div>
 
 <SystemCard
-    inverter={recommendation.configuration.inverter}
-    battery={recommendation.configuration.battery}
-    panels={recommendation.configuration.panels}
+    inverter={recommendation.configuration.inverter.name}
+    battery={`${recommendation.configuration.batteryQuantity} × ${recommendation.configuration.battery.model}`}
+    panels={`${recommendation.configuration.panelQuantity} × ${recommendation.configuration.panel.model}`}
 />
 
 <EquipmentSchedule
 
-    inverter={recommendation.configuration.inverter}
-
-    battery={recommendation.configuration.battery}
-
-    panels={recommendation.configuration.panels}
+    inverter={recommendation.configuration.inverter.name}
+    battery={`${recommendation.configuration.batteryQuantity} × ${recommendation.configuration.battery.model}`}
+    panels={`${recommendation.configuration.panelQuantity} × ${recommendation.configuration.panel.model}`}
 
 />
 

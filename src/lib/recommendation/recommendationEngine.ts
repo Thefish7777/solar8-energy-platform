@@ -7,142 +7,301 @@ import type {
     RecommendationResult,
     SolarSolutionName,
     SavingsEstimate,
-    CustomerProfile
+    CustomerProfile,
+    SelectedProducts
 } from "./recommendationTypes";
 
 import { calculateLoad } from "./loadCalculator";
 import { calculateBattery } from "./batteryCalculator";
 import { selectInverter } from "./inverterSelector";
 
-import solutions, { type SolarSolution } from "../../data/solutions";
+import {
+    selectInverterProduct,
+    selectBatteryProduct,
+    calculateBatteryQuantity,
+    selectPanelProduct,
+    calculatePanelQuantity
+} from "./productSelectors";
+
+import solutions, {
+    type SolarSolution
+} from "../../data/solutions";
 
 // ============================================================================
 
 export function generateRecommendation(
+
     assessment: AssessmentAnswers
+
 ): RecommendationResult {
 
-    // ----------------------------------------------------------
-    // Calculate electrical requirements
-    // ----------------------------------------------------------
+    // ==========================================================
+    // Calculate Load
+    // ==========================================================
 
-    const load = calculateLoad(assessment);
+    const load = calculateLoad(
+
+        assessment
+
+    );
+
+    // ==========================================================
+    // Backup Hours
+    // ==========================================================
 
     const backupHours =
+
         assessment.goal === "backup"
+
             ? 4
+
             : assessment.goal === "save"
-            ? 6
-            : 8;
 
-    const battery = calculateBattery(
-        load.criticalLoad,
-        backupHours
-    );
+                ? 6
 
-    const inverter = selectInverter(
-        load.peakLoad
-    );
+                : 8;
 
-    // ----------------------------------------------------------
-    // Determine solution
-    // ----------------------------------------------------------
+    // ==========================================================
+    // Battery Requirement
+    // ==========================================================
+
+    const batteryRequirement =
+
+        calculateBattery(
+
+            load.criticalLoad,
+
+            backupHours
+
+        );
+
+    // ==========================================================
+    // Inverter Requirement
+    // ==========================================================
+
+    const inverterRequirement =
+
+        selectInverter(
+
+            load.peakLoad
+
+        );
+
+    // ==========================================================
+    // Select Actual Products
+    // ==========================================================
+
+    const inverter =
+
+        selectInverterProduct(
+
+            inverterRequirement.size
+
+        );
+
+    const battery =
+
+        selectBatteryProduct();
+
+    const batteryQuantity =
+
+        calculateBatteryQuantity(
+
+            batteryRequirement.requiredCapacity,
+
+            battery
+
+        );
+
+    const panel =
+
+        selectPanelProduct();
+
+    const panelQuantity =
+
+        calculatePanelQuantity(
+
+            inverter.size,
+
+            panel
+
+        );
+
+    // ==========================================================
+    // Selected Products Object
+    // ==========================================================
+
+    const selectedProducts: SelectedProducts = {
+
+        inverter,
+
+        battery,
+
+        panel,
+
+        batteryQuantity,
+
+        panelQuantity
+
+    };
+
+    // ==========================================================
+    // Determine Solar8 Package
+    // ==========================================================
 
     let solutionName: SolarSolutionName;
 
     if (
-        assessment.goal === "backup" &&
+
+        assessment.goal === "backup"
+
+        &&
+
         assessment.monthlyBill < 2500
+
     ) {
+
         solutionName = "Solar8 Backup";
-    }
-    else if (
-        assessment.goal === "save" &&
-        assessment.monthlyBill < 5000
-    ) {
-        solutionName = "Solar8 Smart";
-    }
-    else if (
-        assessment.goal === "independence"
-    ) {
-        solutionName = "Solar8 Independence";
-    }
-    else {
-        solutionName = "Solar8 Custom";
+
     }
 
-    // ----------------------------------------------------------
-    // Find matching solution
-    // ----------------------------------------------------------
+    else if (
+
+        assessment.goal === "save"
+
+        &&
+
+        assessment.monthlyBill < 5000
+
+    ) {
+
+        solutionName = "Solar8 Smart";
+
+    }
+
+    else if (
+
+        assessment.goal === "independence"
+
+    ) {
+
+        solutionName = "Solar8 Independence";
+
+    }
+
+    else {
+
+        solutionName = "Solar8 Custom";
+
+    }
+
+    // ==========================================================
+    // Matching Package
+    // ==========================================================
 
     const system: SolarSolution =
-        solutions.find(
-            (solution: SolarSolution) =>
-                solution.name === solutionName
-        ) ?? solutions[0];
 
-    // ----------------------------------------------------------
-    // Equipment estimate
-    // ----------------------------------------------------------
+        solutions.find(
+
+            solution =>
+
+                solution.name === solutionName
+
+        )
+
+        ??
+
+        solutions[0];
+
+            // ==========================================================
+    // Equipment Value
+    // ==========================================================
 
     const equipmentValue =
-        inverter.size * 9000 +
-        battery.batteryCount * 25000;
 
-    // ----------------------------------------------------------
-    // Estimated savings
-    // ----------------------------------------------------------
+        inverter.price +
+
+        (battery.price * batteryQuantity) +
+
+        (panel.price * panelQuantity);
+
+    // ==========================================================
+    // Estimated Savings
+    // ==========================================================
 
     const savings: SavingsEstimate = {
 
-        monthly:
-            Math.round(
-                assessment.monthlyBill * 0.65
-            ),
+        monthly: Math.round(
 
-        annual:
-            Math.round(
-                assessment.monthlyBill *
-                0.65 *
-                12
-            ),
+            assessment.monthlyBill * 0.65
+
+        ),
+
+        annual: Math.round(
+
+            assessment.monthlyBill *
+
+            0.65 *
+
+            12
+
+        ),
 
         percentage: 65
 
     };
 
-    // ----------------------------------------------------------
-    // Customer profile
-    // ----------------------------------------------------------
+    // ==========================================================
+    // Confidence Score
+    // ==========================================================
+
+    const confidence =
+
+        assessment.appliances.length >= 8
+
+            ? 98
+
+            : assessment.appliances.length >= 5
+
+                ? 94
+
+                : 88;
+
+    // ==========================================================
+    // Customer Profile
+    // ==========================================================
 
     const customer: CustomerProfile = {
 
         customerName: "",
 
-        propertyType:
-            assessment.propertyType,
+        propertyType: assessment.propertyType,
 
-        occupants:
-            assessment.occupants,
+        occupants: assessment.occupants,
 
-        monthlyBill:
-            assessment.monthlyBill,
+        monthlyBill: assessment.monthlyBill,
 
-        goal:
-            assessment.goal,
+        goal: assessment.goal,
 
-        backupHours: 8,
+        backupHours,
 
         applianceCount:
-            Object.values(
-                assessment.appliances
-            ).filter(Boolean).length
+
+            assessment.appliances.reduce(
+
+                (sum, appliance) =>
+
+                    sum + appliance.quantity,
+
+                0
+
+            )
 
     };
 
-    // ----------------------------------------------------------
-    // Return result
-    // ----------------------------------------------------------
+    // ==========================================================
+    // Return Recommendation
+    // ==========================================================
 
     return {
 
@@ -154,26 +313,31 @@ export function generateRecommendation(
 
         configuration: {
 
-            inverter:
-                inverter.model,
+    inverter,
 
-            battery:
-                `${battery.batteryCount} × 5kWh Lithium Battery`,
+    battery,
 
-            panels:
-                system.configuration.panels
+    batteryQuantity,
 
-        },
+    panel,
+
+    panelQuantity
+
+},
+
+        selectedProducts,
 
         equipmentValue,
 
         savings,
 
-        confidence: 92,
+        confidence,
 
         reasons: [
 
-            `Designed for ${assessment.propertyType}`,
+            `Designed for a ${assessment.propertyType}`,
+
+            `Suitable for ${assessment.occupants} occupants`,
 
             `Supports approximately ${backupHours} hours of backup`,
 

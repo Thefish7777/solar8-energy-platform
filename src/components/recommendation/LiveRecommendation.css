@@ -1,0 +1,213 @@
+.recommendation-card{
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:2rem;
+
+    border-radius:18px;
+
+    background:#ffffff;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.12);
+
+}
+
+.recommendation-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:2rem;
+
+}
+
+<div className="logo">
+
+    <img
+
+        src="/images/logo.png"
+
+        alt="Solar8"
+
+        height="55"
+
+    />
+
+</div>
+
+.recommendation-header h2{
+
+    margin:0;
+
+    color:#003366;
+
+    font-size:2rem;
+
+}
+
+.recommendation-header h3{
+
+    margin-top:.5rem;
+
+    color:#f59c00;
+
+    font-weight:600;
+
+}
+
+.confidence{
+
+    background:#eaf8ec;
+
+    color:#16803c;
+
+    padding:.8rem 1.2rem;
+
+    border-radius:12px;
+
+    font-weight:bold;
+
+}
+
+.recommendation-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:1rem;
+
+    margin:2rem 0;
+
+}
+
+.recommendation-item{
+
+    background:#f7f9fb;
+
+    border-radius:12px;
+
+    padding:1rem;
+
+    text-align:center;
+
+}
+
+.recommendation-item span{
+
+    display:block;
+
+    color:#666;
+
+    font-size:.9rem;
+
+}
+
+.recommendation-item strong{
+
+    display:block;
+
+    margin-top:.5rem;
+
+    font-size:1.4rem;
+
+    color:#003366;
+
+}
+
+.equipment{
+
+    margin-top:2rem;
+
+}
+
+.equipment ul{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.equipment li{
+
+    background:#f7f9fb;
+
+    padding:1rem;
+
+    margin-bottom:.7rem;
+
+    border-radius:10px;
+
+}
+
+.savings{
+
+    margin-top:2rem;
+
+}
+
+.reasons{
+
+    margin-top:2rem;
+
+}
+
+.reasons ul{
+
+    padding-left:1.2rem;
+
+}
+
+.reasons li{
+
+    margin-bottom:.8rem;
+
+}
+
+.assessment-button{
+
+    margin-top:2rem;
+
+    width:100%;
+
+    background:#f59c00;
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:1rem;
+
+    font-size:1.1rem;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.assessment-button:hover{
+
+    background:#d98200;
+
+    transform:translateY(-2px);
+
+}
+
+hr{
+
+    border:none;
+
+    border-top:1px solid #e5e5e5;
+
+    margin:2rem 0;
+
+}

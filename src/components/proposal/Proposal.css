@@ -1,0 +1,487 @@
+.proposal{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:40px;
+
+    background:#ffffff;
+
+    border-radius:12px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+.proposal-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    border-bottom:4px solid #f59e0b;
+
+    margin-bottom:40px;
+
+    padding-bottom:24px;
+
+}
+
+.proposal-logo{
+
+    margin:0;
+
+    font-size:44px;
+
+    color:#f59e0b;
+
+}
+
+.proposal-subtitle{
+
+    margin-top:8px;
+
+    color:#666;
+
+    font-size:18px;
+
+}
+
+.proposal-reference table{
+
+    border-collapse:collapse;
+
+}
+
+.proposal-reference td{
+
+    padding:6px 12px;
+
+}
+
+.proposal-reference td:first-child{
+
+    font-weight:bold;
+
+    color:#666;
+
+}
+
+.proposal-section{
+
+    margin-bottom:40px;
+
+}
+
+.proposal-section h2{
+
+    margin-bottom:18px;
+
+    color:#1f2937;
+
+}
+
+.proposal-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:18px;
+
+}
+
+.proposal-grid div{
+
+    background:#fafafa;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:12px;
+
+    padding:18px;
+
+    transition:.2s;
+
+}
+
+.proposal-grid div:hover{
+
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+
+}
+
+.proposal-grid label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#777;
+
+    font-size:13px;
+
+}
+
+.proposal-grid strong{
+
+    font-size:22px;
+
+    color:#111827;
+
+}
+
+/* ===========================================
+   Equipment Cards
+=========================================== */
+
+.equipment-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:24px;
+
+}
+
+.equipment-card{
+
+    background:white;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:14px;
+
+    padding:24px;
+
+    text-align:center;
+
+    transition:.25s;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.05);
+
+}
+
+.equipment-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 24px rgba(0,0,0,.12);
+
+}
+
+.equipment-icon{
+
+    font-size:48px;
+
+    margin-bottom:14px;
+
+}
+
+.equipment-card h3{
+
+    margin-bottom:14px;
+
+    color:#374151;
+
+    font-size:18px;
+
+}
+
+.equipment-card strong{
+
+    display:block;
+
+    color:#111827;
+
+    font-size:20px;
+
+    line-height:1.4;
+
+}
+
+/* ===========================================
+   Savings Cards
+=========================================== */
+
+.savings-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:24px;
+
+}
+
+.saving-card{
+
+    background:linear-gradient(180deg,#fff,#fafafa);
+
+    border:1px solid #e5e7eb;
+
+    border-radius:14px;
+
+    padding:28px;
+
+    text-align:center;
+
+    box-shadow:0 5px 14px rgba(0,0,0,.06);
+
+    transition:.25s;
+
+}
+
+.saving-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 14px 26px rgba(0,0,0,.12);
+
+}
+
+.saving-card span{
+
+    display:block;
+
+    font-size:42px;
+
+    margin-bottom:12px;
+
+}
+
+.saving-card label{
+
+    display:block;
+
+    color:#6b7280;
+
+    margin-bottom:12px;
+
+    font-size:15px;
+
+}
+
+.saving-card strong{
+
+    display:block;
+
+    font-size:30px;
+
+    color:#111827;
+
+}
+
+/* =======================================================
+   Proposal Cover
+======================================================= */
+
+.proposal-cover{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+
+    color:white;
+
+    padding:40px;
+
+    border-radius:14px;
+
+    margin-bottom:45px;
+
+}
+
+.cover-left h1{
+
+    margin:0;
+
+    font-size:52px;
+
+    color:#f59e0b;
+
+}
+
+.cover-left h2{
+
+    margin:12px 0;
+
+    font-size:28px;
+
+    font-weight:600;
+
+}
+
+.cover-left p{
+
+    margin-top:10px;
+
+    opacity:.85;
+
+    font-size:18px;
+
+}
+
+.cover-right{
+
+    background:white;
+
+    color:#111827;
+
+    padding:18px;
+
+    border-radius:10px;
+
+    min-width:280px;
+
+}
+
+.cover-right table{
+
+    width:100%;
+
+}
+
+.cover-right td{
+
+    padding:8px;
+
+}
+
+.cover-right td:first-child{
+
+    font-weight:bold;
+
+    color:#6b7280;
+
+}
+
+.recommendation-banner{
+
+    background:#f59e0b;
+
+    color:white;
+
+    padding:26px;
+
+    border-radius:12px;
+
+    margin-bottom:35px;
+
+}
+
+.recommendation-banner h2{
+
+    margin-bottom:12px;
+
+}
+
+.recommendation-banner p{
+
+    font-size:18px;
+
+    line-height:1.7;
+
+}
+
+.equipment-card img{
+
+    width:180px;
+
+    height:180px;
+
+    object-fit:contain;
+
+    margin-bottom:18px;
+
+}
+
+.equipment-card h4{
+
+    margin-top:18px;
+
+    color:#f59e0b;
+
+    font-size:24px;
+
+}
+
+.equipment-details{
+
+    list-style:none;
+
+    margin-top:18px;
+
+    padding:0;
+
+}
+
+.equipment-details li{
+
+    padding:6px 0;
+
+    color:#555;
+
+    border-top:1px solid #ececec;
+
+    font-size:15px;
+
+}
+
+.overview-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:18px;
+
+}
+
+.overview-card{
+
+    background:#f8fafc;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    padding:24px;
+
+}
+
+.overview-icon{
+
+    font-size:40px;
+
+    margin-bottom:10px;
+
+}
+
+.overview-card label{
+
+    display:block;
+
+    color:#6b7280;
+
+    margin-bottom:10px;
+
+}
+
+.overview-card strong{
+
+    font-size:24px;
+
+}

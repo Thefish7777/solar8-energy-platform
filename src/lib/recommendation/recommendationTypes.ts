@@ -1,29 +1,33 @@
 // ============================================================================
-// Solar8 Recommendation Engine Types
+// Solar8 Recommendation Types
 // ============================================================================
 
-import type { SolarSolution } from "../../data/solutions";
+import type { Inverter } from "../../data/products/inverters";
+import type { Battery } from "../../data/products/batteries";
+import type { SolarPanel } from "../../data/products/panels";
 
-/**
- * Customer Goals
- */
-export type CustomerGoal =
-  | "backup"
-  | "save"
-  | "independence"
-  | "unsure";
+// ============================================================================
+// Property Types
+// ============================================================================
 
-/**
- * Property Types
- */
 export type PropertyType =
-  | "home"
-  | "business"
-  | "farm";
+    | "home"
+    | "business"
+    | "farm";
 
-/**
- * Assessment Answers
- */
+// ============================================================================
+// Customer Goals
+// ============================================================================
+
+export type CustomerGoal =
+    | "backup"
+    | "save"
+    | "independence";
+
+// ============================================================================
+// Appliance Selection
+// ============================================================================
+
 export interface ApplianceSelection {
 
     applianceId: string;
@@ -31,6 +35,11 @@ export interface ApplianceSelection {
     quantity: number;
 
 }
+
+// ============================================================================
+// Assessment Answers
+// ============================================================================
+
 export interface AssessmentAnswers {
 
     propertyType: PropertyType;
@@ -47,44 +56,20 @@ export interface AssessmentAnswers {
 
 }
 
-/**
- * Solar8 Solution Names
- */
+// ============================================================================
+// Solar Solution Names
+// ============================================================================
+
 export type SolarSolutionName =
-  | "Solar8 Backup"
-  | "Solar8 Smart"
-  | "Solar8 Independence"
-  | "Solar8 Custom";
+    | "Solar8 Backup"
+    | "Solar8 Smart"
+    | "Solar8 Independence"
+    | "Solar8 Custom";
 
-/**
- * System Configuration
- */
-export interface SystemConfiguration {
+// ============================================================================
+// Customer Profile
+// ============================================================================
 
-    inverter: string;
-
-    battery: string;
-
-    panels: string;
-
-}
-
-/**
- * Savings Estimate
- */
-export interface SavingsEstimate {
-
-    monthly: number;
-
-    annual: number;
-
-    percentage: number;
-
-}
-
-/**
- * Customer Profile
- */
 export interface CustomerProfile {
 
     customerName: string;
@@ -97,24 +82,71 @@ export interface CustomerProfile {
 
     goal: CustomerGoal;
 
-    backupHours: number;
+    backupHours?: number;
 
     applianceCount: number;
 
 }
 
-/**
- * Recommendation Result
- */
+// ============================================================================
+// Savings
+// ============================================================================
+
+export interface SavingsEstimate {
+
+    monthly: number;
+
+    annual: number;
+
+    percentage: number;
+
+}
+
+// ============================================================================
+// Selected Products
+// ============================================================================
+
+export interface SelectedProducts {
+
+    inverter: Inverter;
+
+    battery: Battery;
+
+    panel: SolarPanel;
+
+    batteryQuantity: number;
+
+    panelQuantity: number;
+
+}
+
+// ============================================================================
+// Recommendation Result
+// ============================================================================
+
 export interface RecommendationResult {
 
     customer: CustomerProfile;
 
-    system: SolarSolution;
+    system: any;
 
     solution: SolarSolutionName;
 
-    configuration: SystemConfiguration;
+    configuration: {
+
+    inverter: Inverter;
+
+    battery: Battery;
+
+    batteryQuantity: number;
+
+    panel: SolarPanel;
+
+    panelQuantity: number;
+
+}
+
+    selectedProducts: SelectedProducts;
 
     equipmentValue: number;
 
@@ -123,16 +155,5 @@ export interface RecommendationResult {
     confidence: number;
 
     reasons: string[];
-
-}
-
-/**
- * Complete Energy Plan
- */
-export interface EnergyPlan {
-
-    customer: CustomerProfile;
-
-    recommendation: RecommendationResult;
 
 }

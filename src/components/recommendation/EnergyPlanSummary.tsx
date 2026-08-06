@@ -42,7 +42,7 @@ export default function EnergyPlanSummary({
 
                     <p className="mt-2 text-slate-600">
 
-                        {recommendation.configuration.inverter}
+                        {recommendation.configuration.inverter.name}
 
                     </p>
 
@@ -60,7 +60,7 @@ export default function EnergyPlanSummary({
 
                     <p className="mt-2 text-slate-600">
 
-                        {recommendation.configuration.battery}
+                        `${recommendation.configuration.batteryQuantity} × ${recommendation.configuration.battery.model}`
 
                     </p>
 
@@ -78,7 +78,7 @@ export default function EnergyPlanSummary({
 
                     <p className="mt-2 text-slate-600">
 
-                        {recommendation.configuration.panels}
+                        `${recommendation.configuration.panelQuantity} × ${recommendation.configuration.panel.model}`
 
                     </p>
 
