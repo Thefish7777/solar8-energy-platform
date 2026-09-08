@@ -8,12 +8,8 @@ interface Props {
     title?: string;
 }
 
-const {
-    title = "Solar8 | Solar Energy Solutions"
-} = Astro.props;
+const { title } = Astro.props;
 ---
-
-<!DOCTYPE html>
 
 <html lang="en">
 
@@ -28,22 +24,72 @@ const {
 
     <title>{title}</title>
 
-    <link rel="icon" href="/favicon.ico" />
+    <link
+        rel="icon"
+        href="/favicon.ico"
+    />
 
 </head>
 
-<body class="bg-white text-slate-900 antialiased">
+
+<body>
 
     <Navigation />
 
-    <main class="pt-24">
+
+    <main class="site-main">
 
         <slot />
 
     </main>
+
 
     <Footer />
 
 </body>
 
 </html>
+
+
+<style>
+
+.site-main {
+
+    padding-top:
+        0;
+
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1023px) {
+
+    .site-main {
+
+        padding-top:
+            0;
+
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 640px) {
+
+    .site-main {
+
+        padding-top:
+            0;
+
+    }
+
+}
+
+</style>

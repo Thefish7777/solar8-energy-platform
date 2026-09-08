@@ -1,0 +1,55 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+import { batteries } from "../../data/equipment";
+
+const featuredBatteries = batteries.slice(0, 3);
+---
+
+<section class="systems-section battery-section">
+  <div class="solar-container">
+    <SectionHeading
+      tag="BATTERY STORAGE"
+      title="Store solar energy for when you need it."
+      intro="Battery storage helps shift solar energy into the evening and can provide backup power during grid interruptions."
+    />
+
+    <div class="battery-grid">
+      {featuredBatteries.map((battery) => (
+        <article class="battery-card">
+          <div class="battery-capacity">{battery.capacity} kWh</div>
+          <span class="battery-brand">{battery.brand}</span>
+          <h3>{battery.model}</h3>
+          <div class="battery-specs">
+            <div><strong>{battery.chemistry}</strong><span>Chemistry</span></div>
+            <div><strong>{battery.cycles.toLocaleString()}</strong><span>Cycles</span></div>
+            <div><strong>{battery.warranty}</strong><span>Warranty</span></div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="battery-note">
+      <strong>Battery capacity is not the same as inverter power.</strong>
+      <span>The right combination depends on the loads you want to run, how long you need backup and how much solar energy you can generate.</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .systems-section { padding: 110px 0; background: #fff; }
+  .solar-container { width: min(1440px, calc(100% - 48px)); margin-inline: auto; }
+  .battery-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin-top:60px; }
+  .battery-card { position:relative; padding:32px; border:1px solid #e5e7eb; border-radius:26px; background:#fafafa; }
+  .battery-card:hover { border-color:#ffd0b0; box-shadow:0 18px 40px rgba(0,0,0,.07); }
+  .battery-capacity { color:#ff6800; font-family:Poppins,sans-serif; font-size:38px; font-weight:800; letter-spacing:-.03em; }
+  .battery-brand { display:block; margin-top:18px; color:#6b7280; font-size:13px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+  .battery-card h3 { margin-top:6px; font-family:Poppins,sans-serif; font-size:25px; }
+  .battery-specs { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:28px; padding-top:22px; border-top:1px solid #e5e7eb; }
+  .battery-specs div { display:grid; gap:3px; }
+  .battery-specs strong { color:#111827; font-size:14px; }
+  .battery-specs span { color:#9ca3af; font-size:12px; }
+  .battery-note { display:flex; gap:12px; align-items:flex-start; margin-top:28px; padding:22px 24px; border-radius:18px; background:#fff3ea; color:#6b7280; line-height:1.65; }
+  .battery-note strong { color:#111827; white-space:nowrap; }
+  @media(max-width:900px){ .systems-section{padding:80px 0}.battery-grid{grid-template-columns:1fr;margin-top:44px}.battery-note{flex-direction:column}.battery-note strong{white-space:normal} }
+  @media(max-width:640px){.solar-container{width:calc(100% - 32px)}.battery-specs{grid-template-columns:1fr 1fr}.battery-specs div:last-child{grid-column:1/-1}}
+</style>

@@ -2,153 +2,164 @@
 import "../styles/global.css";
 
 export interface Props {
-  title?: string;
-  description?: string;
-  image?: string;
-  noIndex?: boolean;
+    title?: string;
+    description?: string;
+    image?: string;
+    noIndex?: boolean;
 }
 
 const {
-  title = "Solar8 | Helping South African Families Save on Electricity",
-  description =
-    "Save money every month while gaining energy independence. Solar8 helps South African families reduce their electricity costs with quality solar and battery solutions.",
-  image = "/images/solar8-social.jpg",
-  noIndex = false,
+    title = "Solar8 | Helping South African Families Save on Electricity",
+    description =
+        "Save money every month while gaining energy independence. Solar8 helps South African families reduce their electricity costs with quality solar and battery solutions.",
+    image = "/images/solar8-social.jpg",
+    noIndex = false,
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? "https://solar8.co.za");
+const canonicalURL = new URL(
+    Astro.url.pathname,
+    Astro.site ?? "https://solar8.co.za"
+);
 ---
 
 <!doctype html>
+
 <html lang="en-ZA" class="scroll-smooth">
 
 <head>
 
-  <!-- Basic -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
 
-  <title>{title}</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    />
 
-  <meta
-    name="description"
-    content={description}
-  />
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+    />
 
-  <meta
-    name="robots"
-    content={noIndex ? "noindex,nofollow" : "index,follow"}
-  />
+    <title>{title}</title>
 
-  <link
-    rel="canonical"
-    href={canonicalURL.toString()}
-  />
+    <meta
+        name="description"
+        content={description}
+    />
 
-  <!-- Theme -->
+    <meta
+        name="robots"
+        content={noIndex ? "noindex,nofollow" : "index,follow"}
+    />
 
-  <meta
-    name="theme-color"
-    content="#f97316"
-  />
+    <link
+        rel="canonical"
+        href={canonicalURL.toString()}
+    />
 
-  <!-- Open Graph -->
+    <!-- Theme -->
 
-  <meta property="og:type" content="website" />
+    <meta
+        name="theme-color"
+        content="#FF6800"
+    />
 
-  <meta
-    property="og:title"
-    content={title}
-  />
+    <!-- Open Graph -->
 
-  <meta
-    property="og:description"
-    content={description}
-  />
+    <meta
+        property="og:type"
+        content="website"
+    />
 
-  <meta
-    property="og:image"
-    content={image}
-  />
+    <meta
+        property="og:title"
+        content={title}
+    />
 
-  <meta
-    property="og:url"
-    content={canonicalURL.toString()}
-  />
+    <meta
+        property="og:description"
+        content={description}
+    />
 
-  <meta
-    property="og:site_name"
-    content="Solar8"
-  />
+    <meta
+        property="og:image"
+        content={image}
+    />
 
-  <meta
-    property="og:locale"
-    content="en_ZA"
-  />
+    <meta
+        property="og:url"
+        content={canonicalURL.toString()}
+    />
 
-  <!-- Twitter / X -->
+    <meta
+        property="og:site_name"
+        content="Solar8"
+    />
 
-  <meta
-    name="twitter:card"
-    content="summary_large_image"
-  />
+    <meta
+        property="og:locale"
+        content="en_ZA"
+    />
 
-  <meta
-    name="twitter:title"
-    content={title}
-  />
+    <!-- Twitter / X -->
 
-  <meta
-    name="twitter:description"
-    content={description}
-  />
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    />
 
-  <meta
-    name="twitter:image"
-    content={image}
-  />
+    <meta
+        name="twitter:title"
+        content={title}
+    />
 
-  <!-- Icons -->
+    <meta
+        name="twitter:description"
+        content={description}
+    />
 
-  <link
-    rel="icon"
-    href="/favicon.ico"
-  />
+    <meta
+        name="twitter:image"
+        content={image}
+    />
 
-  <link
-    rel="apple-touch-icon"
-    href="/apple-touch-icon.png"
-  />
+    <!-- Icons -->
 
-  <!-- Fonts -->
+    <link
+        rel="icon"
+        href="/favicon.ico"
+    />
 
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  />
+    <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png"
+    />
 
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  />
+    <!-- Fonts -->
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    />
 
-  <!-- JSON-LD Placeholder -->
-  <!-- Organisation Schema will be added later -->
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    />
 
 </head>
 
 <body
-  class="bg-slate-50 text-slate-900 antialiased selection:bg-orange-500 selection:text-white"
+    class="bg-slate-50 text-slate-900 antialiased selection:bg-orange-500 selection:text-white"
 >
 
-  <slot />
+    <slot />
 
 </body>
 

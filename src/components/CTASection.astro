@@ -1,64 +1,173 @@
----
-import SectionHeading from "./ui/SectionHeading.astro";
-import PrimaryButton from "./ui/PrimaryButton.astro";
-import SecondaryButton from "./ui/SecondaryButton.astro";
-
-const features = [
-    "Residential Solar",
-    "Commercial Solar",
-    "Battery Backup",
-    "Hybrid Inverter Systems"
-];
----
-
-<section class="py-24">
-
+<section class="residential-final-cta">
     <div class="container">
+        <div class="residential-final-cta-content">
+            <span class="eyebrow">
+                READY TO START YOUR SOLAR JOURNEY?
+            </span>
 
-        <div class="overflow-hidden rounded-[36px] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 px-10 py-20 text-center text-white shadow-2xl lg:px-20">
+            <h2>
+                Let's Design the Right<br />
+                Solar Solution<br />
+                For You
+            </h2>
 
-            <SectionHeading
-                tag="READY TO GET STARTED?"
-                title="Reduce your electricity bill. Eliminate load shedding. Invest in energy independence."
-                intro="Speak to one of our solar specialists for a professional assessment and customised quotation. Every Solar8 system is engineered around your property, your budget and your long-term energy goals."
-            />
+            <p>
+                Whether you're looking for backup power during load shedding,
+                lower electricity bills or complete energy independence,
+                our team is ready to design a system that fits your property,
+                your budget and your future.
+            </p>
 
-            <div class="mt-10 flex flex-wrap justify-center gap-4">
+            <div class="residential-final-cta-buttons">
+                <a href="/assessment/" class="residential-final-cta-primary">
+                    Get My FREE Assessment
+                </a>
 
-                {
-                    features.map((feature) => (
-
-                        <div
-                            class="rounded-full border border-white/20 bg-white/10 px-5 py-3 font-semibold text-white backdrop-blur"
-                        >
-
-                            ✓ {feature}
-
-                        </div>
-
-                    ))
-                }
-
+                <a href="/contact/" class="residential-final-cta-secondary">
+                    Contact Solar8
+                </a>
             </div>
-
-            <div class="mt-14 flex flex-col items-center justify-center gap-5 sm:flex-row">
-
-                <PrimaryButton href="/assessment">
-
-                    Book Your Free Assessment
-
-                </PrimaryButton>
-
-                <SecondaryButton href="/contact">
-
-                    Speak to a Solar Specialist
-
-                </SecondaryButton>
-
-            </div>
-
         </div>
-
     </div>
-
 </section>
+
+<style>
+.residential-final-cta {
+    position: relative;
+    z-index: 0;
+    isolation: isolate;
+    width: 100%;
+    overflow: hidden;
+    padding: 120px 0;
+    background: #111827;
+}
+
+.residential-final-cta .container {
+    position: relative;
+    z-index: 1;
+    width: min(1440px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
+.residential-final-cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.residential-final-cta .eyebrow {
+    color: #ff6800;
+}
+
+.residential-final-cta h2 {
+    margin: 18px 0 0;
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+}
+
+.residential-final-cta-content > p {
+    max-width: 760px;
+    margin: 28px auto 0;
+    color: #d1d5db;
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.residential-final-cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 46px;
+}
+
+.residential-final-cta-primary,
+.residential-final-cta-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    padding: 0 30px;
+    border-radius: var(--button-radius);
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.residential-final-cta-primary {
+    border: 1px solid #ff6800;
+    background: #ff6800;
+    color: #ffffff;
+    box-shadow: 0 12px 28px rgba(255, 104, 0, 0.2);
+}
+
+.residential-final-cta-primary:hover {
+    transform: translateY(-2px);
+    background: #e65e00;
+    border-color: #e65e00;
+    box-shadow: 0 16px 34px rgba(255, 104, 0, 0.28);
+}
+
+.residential-final-cta-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: transparent;
+    color: #ffffff;
+}
+
+.residential-final-cta-secondary:hover {
+    transform: translateY(-2px);
+    border-color: #ff6800;
+    color: #ff8a3d;
+}
+
+@media (max-width: 900px) {
+    .residential-final-cta {
+        padding: 88px 0;
+    }
+
+    .residential-final-cta .container {
+        width: min(100%, calc(100% - 48px));
+    }
+}
+
+@media (max-width: 640px) {
+    .residential-final-cta {
+        padding: 72px 0;
+    }
+
+    .residential-final-cta .container {
+        width: calc(100% - 32px);
+    }
+
+    .residential-final-cta h2 {
+        font-size: 2.25rem;
+    }
+
+    .residential-final-cta-content > p {
+        font-size: 16px;
+    }
+
+    .residential-final-cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .residential-final-cta-primary,
+    .residential-final-cta-secondary {
+        width: 100%;
+    }
+}
+</style>

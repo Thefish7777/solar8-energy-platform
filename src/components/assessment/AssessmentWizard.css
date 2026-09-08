@@ -1,143 +1,704 @@
-.appliance-selector {
-    max-width: 900px;
-    margin: auto;
+/* ==========================================================
+   Solar8 Assessment Wizard
+   ========================================================== */
+
+.assessment{
+    min-height:100vh;
+    padding:48px 20px 80px;
+    background:#f3f4f6;
 }
 
-.appliance-category {
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    background: #fff;
+.assessment-card{
+    max-width:920px;
+    margin:auto;
+    background:white;
+    border-radius:18px;
+    padding:42px;
+    box-shadow:0 18px 45px rgba(15,39,71,.08);
 }
 
-.appliance-category h3 {
-    margin-bottom: 1rem;
+.assessment-card h2{
+    color:#0F2747;
+    font-size:34px;
+    margin-bottom:8px;
 }
 
-.appliance-row {
+.assessment-card h3{
+    color:#111827;
+    font-size:28px;
+    margin:28px 0 24px;
+    line-height:1.3;
+}
+
+.assessment-step{
+    color:#6B7280;
+    font-size:15px;
+    margin-bottom:22px;
+}
+
+/* ==========================================================
+   Progress Bar
+   ========================================================== */
+
+.progress-bar{
+    height:10px;
+    background:#E5E7EB;
+    border-radius:999px;
+    overflow:hidden;
+    margin-bottom:34px;
+}
+
+.progress-fill{
+    height:100%;
+    background:linear-gradient(90deg,#F59E0B,#EA580C);
+    transition:width .3s ease;
+}
+
+/* ==========================================================
+   Option Cards
+   ========================================================== */
+
+.option-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.option-card{
+    border:2px solid #E5E7EB;
+    border-radius:14px;
+    padding:24px;
+    background:white;
+    cursor:pointer;
+    transition:.25s;
+    text-align:left;
+}
+
+.option-card:hover{
+    border-color:#F59E0B;
+    transform:translateY(-3px);
+    box-shadow:0 10px 24px rgba(245,158,11,.12);
+}
+
+.option-card.active{
+    border-color:#F59E0B;
+    background:#FFF8EB;
+}
+
+.option-icon{
+    font-size:38px;
+    margin-bottom:14px;
+}
+
+.option-card h4{
+    color:#111827;
+    margin-bottom:8px;
+    font-size:20px;
+}
+
+.option-card p{
+    color:#6B7280;
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* ==========================================================
+   Slider
+   ========================================================== */
+
+.bill-value{
+    font-size:44px;
+    color:#F59E0B;
+    font-weight:700;
+    margin:18px 0;
+}
+
+.slider{
+    width:100%;
+    accent-color:#F59E0B;
+}
+
+/* ==========================================================
+   Number Input
+   ========================================================== */
+
+.number-input{
+    width:140px;
+    font-size:24px;
+    padding:14px;
+    border:2px solid #E5E7EB;
+    border-radius:10px;
+    text-align:center;
+}
+
+/* ==========================================================
+   Navigation
+   ========================================================== */
+
+
+
+/* ==========================================================
+   Appliance Selector
+   ========================================================== */
+
+.appliance-selector{
+    max-width:900px;
+    margin:auto;
+}
+
+.appliance-category{
+    margin-bottom:2rem;
+    padding:1.5rem;
+    border:1px solid #E5E7EB;
+    border-radius:12px;
+    background:white;
+}
+
+.appliance-category h3{
+    margin-bottom:1rem;
+}
+
+.appliance-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:.75rem 0;
+    border-bottom:1px solid #EEE;
+}
+
+.appliance-row:last-child{
+    border-bottom:none;
+}
+
+.quantity-controls{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+}
+
+.quantity-controls button{
+    width:34px;
+    height:34px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    background:#0F2747;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.quantity-controls span{
+    min-width:24px;
+    text-align:center;
+    font-weight:bold;
+}
+
+/* ==========================================================
+   Summary
+   ========================================================== */
+
+.summary{
+    margin-top:2rem;
+    padding:1.5rem;
+    border-radius:12px;
+    background:#EEF7FF;
+}
+
+.summary h3{
+    margin-bottom:1rem;
+}
+
+.summary p{
+    display:flex;
+    justify-content:space-between;
+    margin:.45rem 0;
+}
+
+.summary strong{
+    color:#0F2747;
+}
+
+/* ==========================================================
+   Mobile
+   ========================================================== */
+
+@media (max-width:768px){
+
+    .assessment-card{
+        padding:28px;
+    }
+
+    .assessment-card h2{
+        font-size:28px;
+    }
+
+    .assessment-card h3{
+        font-size:22px;
+    }
+
+    .wizard-nav{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+}
+
+/* =========================================================
+   PROPERTY TYPE OPTIONS
+   ========================================================= */
+
+.assessment-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.assessment-option {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    min-height: 180px;
+    padding: 24px;
+
+    background: #ffffff;
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+
+    cursor: pointer;
+    text-align: left;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.assessment-option:hover {
+    border-color: #f97316;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+}
+
+.assessment-option.active {
+    border-color: #f97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+.assessment-option-icon {
+    font-size: 42px;
+    line-height: 1;
+    margin-bottom: 18px;
+}
+
+.assessment-option-title {
+    display: block;
+    margin-bottom: 8px;
+
+    font-size: 21px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.assessment-option-description {
+    display: block;
+
+    font-size: 15px;
+    line-height: 1.5;
+    color: #64748b;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .assessment-options {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .assessment-option {
+        min-height: auto;
+    }
+
+}
+
+/* =========================================================
+   MONTHLY BILL
+   ========================================================= */
+
+.assessment-question {
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.bill-control {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.bill-value {
+    font-size: 48px;
+    font-weight: 700;
+    color: #f59e0b;
+    margin: 20px 0 30px;
+}
+
+.slider {
+    width: 100%;
+    height: 8px;
+    accent-color: #f59e0b;
+    cursor: pointer;
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+
+    color: #64748b;
+    font-size: 14px;
+}
+
+.assessment-help {
+    text-align: center;
+    margin-top: 24px;
+
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* =========================================================
+   WIZARD NAVIGATION
+   ========================================================= */
+
+.assessment-buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .75rem 0;
-    border-bottom: 1px solid #eee;
+
+    margin-top: 42px;
+    padding-top: 24px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+.assessment-btn {
+    min-width: 120px;
+    padding: 14px 28px;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.assessment-btn-primary {
+    background: #f59e0b;
+    color: #ffffff;
+}
+
+.assessment-btn-primary:hover {
+    background: #ea580c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(234, 88, 12, 0.2);
+}
+
+.assessment-btn-secondary {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.assessment-btn-secondary:hover {
+    background: #d1d5db;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   OCCUPANTS
+   ========================================================= */
+
+.occupants-control {
+    max-width: 420px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.occupants-control label {
+    display: block;
+    margin-bottom: 14px;
+
+    color: #374151;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.number-input {
+    width: 160px;
+    padding: 16px;
+
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+
+    color: #0f2747;
+    background: #ffffff;
+
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.number-input:focus {
+    border-color: #f59e0b;
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.15);
+}
+
+/* =========================================================
+   ASSESSMENT QUESTION
+   ========================================================= */
+
+.assessment-question {
+    color: #64748b;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* =========================================================
+   APPLIANCE SELECTOR
+   ========================================================= */
+
+.appliance-selector {
+    width: 100%;
+}
+
+.appliance-selector > h3 {
+    margin-bottom: 10px;
+}
+
+.appliance-question {
+    color: #64748b;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   APPLIANCE CATEGORY
+   ========================================================= */
+
+.appliance-category {
+    margin-top: 24px;
+    padding: 22px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    background: #ffffff;
+}
+
+.appliance-category h4 {
+    margin: 0 0 14px;
+    color: #0f2747;
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   APPLIANCE ROW
+   ========================================================= */
+
+.appliance-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    padding: 14px 4px;
+
+    border-bottom: 1px solid #eef0f2;
+
+    transition:
+        background 0.2s ease,
+        padding 0.2s ease;
 }
 
 .appliance-row:last-child {
     border-bottom: none;
 }
 
+.appliance-row.selected {
+    background: #fff8eb;
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+/* =========================================================
+   APPLIANCE INFORMATION
+   ========================================================= */
+
+.appliance-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.appliance-info strong {
+    color: #111827;
+    font-size: 16px;
+}
+
+.appliance-info span {
+    color: #64748b;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   QUANTITY CONTROLS
+   ========================================================= */
+
 .quantity-controls {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 12px;
+    flex-shrink: 0;
 }
 
 .quantity-controls button {
-    width: 34px;
-    height: 34px;
-    border-radius: 6px;
+    width: 38px;
+    height: 38px;
+
     border: none;
+    border-radius: 8px;
+
+    background: #0f2747;
+    color: #ffffff;
+
+    font-size: 20px;
+    font-weight: 700;
+
     cursor: pointer;
-    background: #0b6efd;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease;
+}
+
+.quantity-controls button:hover:not(:disabled) {
+    background: #f97316;
+    transform: scale(1.05);
+}
+
+.quantity-controls button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
 }
 
 .quantity-controls span {
-    min-width: 24px;
+    min-width: 28px;
+
     text-align: center;
-    font-weight: bold;
-}
-.summary{
 
-    margin-top:2rem;
+    color: #0f2747;
 
-    padding:1.5rem;
-
-    border-radius:12px;
-
-    background:#eef7ff;
-
+    font-size: 18px;
+    font-weight: 700;
 }
 
-.summary h3{
 
-    margin-bottom:1rem;
+/* =========================================================
+   LOAD SUMMARY
+   ========================================================= */
 
+.summary {
+    margin-top: 28px;
+    padding: 24px;
+
+    border-radius: 14px;
+
+    background: #eef7ff;
+    border: 1px solid #dbeafe;
 }
 
-.summary p{
+.summary h4 {
+    margin: 0 0 18px;
 
-    display:flex;
-
-    justify-content:space-between;
-
-    font-size:1rem;
-
-    margin:.4rem 0;
-
+    color: #0f2747;
+    font-size: 20px;
 }
 
-.summary strong{
+.summary-grid {
+    display: grid;
 
-    color:#0b6efd;
+    grid-template-columns:
+        repeat(4, 1fr);
 
+    gap: 14px;
 }
 
-.recommendation-card{
+.summary-grid > div {
+    padding: 14px;
 
-    margin-top:2rem;
+    border-radius: 10px;
 
-    background:white;
-
-    border-radius:16px;
-
-    padding:2rem;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-
+    background: #ffffff;
 }
 
-.recommendation-grid{
+.summary-grid span {
+    display: block;
 
-    display:grid;
+    color: #64748b;
 
-    grid-template-columns:repeat(2,1fr);
-
-    gap:1rem;
-
+    font-size: 13px;
 }
 
-.recommendation-grid div{
+.summary-grid strong {
+    display: block;
 
-    padding:1rem;
+    margin-top: 6px;
 
-    border:1px solid #eee;
+    color: #0f2747;
 
-    border-radius:10px;
-
+    font-size: 20px;
 }
 
-.recommendation-grid span{
 
-    display:block;
+/* =========================================================
+   MOBILE — SMALL SCREENS
+   ========================================================= */
 
-    color:#666;
+@media (max-width: 480px) {
 
-    font-size:.9rem;
+    .appliance-row {
+        align-items: flex-start;
+    }
 
-}
-
-.recommendation-grid strong{
-
-    display:block;
-
-    margin-top:.4rem;
-
-    font-size:1.25rem;
-
-    color:#0b6efd;
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
 
 }

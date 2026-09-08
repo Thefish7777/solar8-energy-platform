@@ -1,0 +1,31 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const faqs = [
+  ["Do I need solar panels if I mainly want backup power?", "Not necessarily. A battery backup solution can be appropriate when your main priority is keeping essential loads running. Solar panels can then be added or expanded when reducing grid consumption becomes a priority."],
+  ["How much battery storage do I need?", "It depends on the appliances you want to run, their power requirements and how long you want them supported. Battery capacity should be sized together with the inverter and your expected usage."],
+  ["Can I add more batteries later?", "Some battery platforms are designed for modular expansion. Future expansion should be considered during the initial design so that the inverter, wiring and installation can accommodate it."],
+  ["What is the difference between a hybrid inverter and a normal inverter?", "A hybrid inverter coordinates solar generation, batteries and grid power. This makes it suitable for systems where solar generation and battery storage work together."],
+  ["Can Solar8 design a system for a three-phase property?", "Yes. Three-phase properties require the appropriate inverter and electrical design. The final configuration depends on the property's supply and the loads that need to be supported."],
+  ["Will Solar8 tell me which system is right for my property?", "Yes. The free assessment is designed to collect the information needed to understand your usage, property and goals before recommending a suitable direction."]
+];
+---
+
+<section class="systems-faq">
+  <div class="solar-container">
+    <SectionHeading tag="SOLAR SYSTEM FAQ" title="Still have questions?" intro="A few straightforward answers to help you understand the building blocks of a solar system." />
+    <div class="faq-list">
+      {faqs.map(([question, answer]) => (
+        <details>
+          <summary><span>{question}</span><b>+</b></summary>
+          <p>{answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .systems-faq{padding:110px 0;background:#f4f5f7}.solar-container{width:min(1440px,calc(100% - 48px));margin-inline:auto}.faq-list{max-width:980px;margin:60px auto 0;display:grid;gap:12px}.faq-list details{background:#fff;border:1px solid #e5e7eb;border-radius:18px}.faq-list summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 24px;cursor:pointer;list-style:none;color:#111827;font-family:Poppins,sans-serif;font-weight:700}.faq-list summary::-webkit-details-marker{display:none}.faq-list summary b{display:grid;place-items:center;width:30px;height:30px;flex:0 0 30px;border-radius:50%;background:#fff3ea;color:#ff6800;font-size:20px;font-weight:500}.faq-list details[open] summary b{transform:rotate(45deg)}.faq-list p{margin:-2px 24px 24px;color:#6b7280;line-height:1.75}
+  @media(max-width:900px){.systems-faq{padding:80px 0}.faq-list{margin-top:44px}}@media(max-width:640px){.solar-container{width:calc(100% - 32px)}.faq-list summary{padding:20px;font-size:16px}.faq-list p{margin:-2px 20px 20px;font-size:15px}}
+</style>

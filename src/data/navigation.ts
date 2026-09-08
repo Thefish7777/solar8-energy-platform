@@ -1,7 +1,6 @@
 // ============================================================================
 // Solar8 Navigation Configuration
-// Central navigation used throughout the website.
-// Edit this file to update menus across the site.
+// Central navigation used throughout the site.
 // ============================================================================
 
 export interface NavigationItem {
@@ -38,19 +37,13 @@ export const navigation: NavigationItem[] = [
   },
 
   {
-    label: "Assessment",
-    href: "/assessment",
-  },
-
-  {
     label: "Knowledge Centre",
-    href: "/knowledge",
+    href: "/knowledge-centre",
   },
 
   {
     label: "Contact",
     href: "/contact",
-    cta: true,
   },
 ];
 

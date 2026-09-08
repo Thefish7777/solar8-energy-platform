@@ -111,7 +111,7 @@ export function calculatePanelQuantity(
 
 ): number {
 
-    const targetWatts = inverterSize * 1200;
+    const targetWatts = inverterSize * 1000;
 
     return Math.max(
 

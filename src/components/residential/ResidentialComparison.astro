@@ -1,96 +1,623 @@
----
-import SectionHeading from "../ui/SectionHeading.astro";
-import {
-    CheckCircle2,
-    ShieldCheck,
-    Wrench,
-    BadgeCheck,
-    Headset,
-    Cpu
-} from "lucide-react";
-
-const advantages = [
-    {
-        icon: Cpu,
-        title: "Custom Engineered Systems",
-        description:
-            "Every solar solution is designed specifically for your property's energy usage and future requirements."
-    },
-    {
-        icon: ShieldCheck,
-        title: "Premium Tier-1 Equipment",
-        description:
-            "We install globally recognised equipment selected for reliability, efficiency and long-term performance."
-    },
-    {
-        icon: Wrench,
-        title: "Qualified Installation Teams",
-        description:
-            "Professional installation by experienced specialists following South African electrical standards."
-    },
-    {
-        icon: BadgeCheck,
-        title: "Professional Energy Assessment",
-        description:
-            "Every recommendation is based on your home's actual electricity consumption and energy goals."
-    },
-    {
-        icon: Headset,
-        title: "Ongoing Support",
-        description:
-            "Technical assistance, monitoring support and after-sales service long after installation."
-    },
-    {
-        icon: CheckCircle2,
-        title: "Manufacturer Warranties",
-        description:
-            "Complete warranty support from trusted international manufacturers together with Solar8 workmanship assurance."
-    }
-];
----
-
-<section class="bg-white py-24">
-
+<section class="residential-comparison">
     <div class="container">
 
-        <SectionHeading
-            tag="WHY SOLAR8"
-            title="Why homeowners choose Solar8."
-            intro="A solar system is a long-term investment. That's why every Solar8 installation is professionally engineered, carefully installed and fully supported long after commissioning."
-        />
+        <!-- ==========================================
+             SECTION HEADING
+        =========================================== -->
 
-        <div class="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div class="section-heading centered residential-comparison-heading">
 
-            {
-                advantages.map(({ icon: Icon, title, description }) => (
+            <span class="eyebrow">
+                WHY SOLAR8?
+            </span>
 
-                    <div class="group rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-orange-200 hover:shadow-xl">
+            <h2>
+                Solar isn't just about buying equipment.
+            </h2>
 
-                        <div class="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-100 text-orange-500 transition duration-300 group-hover:bg-orange-500 group-hover:text-white">
+            <p>
+                The right solar system starts with understanding how your
+                home uses electricity. Solar8 focuses on the complete
+                solution, not simply selling you an inverter and batteries.
+            </p>
 
-                            <Icon size={34} strokeWidth={2.2} />
+        </div>
 
-                        </div>
 
-                        <h3 class="mb-5 text-2xl font-bold text-slate-900">
+        <!-- ==========================================
+             COMPARISON
+        =========================================== -->
 
-                            {title}
+        <div class="residential-comparison-card">
 
-                        </h3>
+            <!-- HEADER -->
+            <div class="residential-comparison-header">
 
-                        <p class="leading-8 text-slate-600">
+                <div class="residential-comparison-header-title">
+                    <span></span>
+                    <strong>
+                        Solar8
+                    </strong>
+                </div>
 
-                            {description}
+                <div class="residential-comparison-header-title alternative">
+                    <span></span>
+                    <strong>
+                        Typical Equipment Supplier
+                    </strong>
+                </div>
 
+            </div>
+
+
+            <!-- ROW 1 -->
+            <div class="residential-comparison-row">
+
+                <div class="residential-comparison-feature">
+                    <span class="residential-comparison-icon positive">
+                        &#10003;
+                    </span>
+
+                    <div>
+                        <strong>
+                            Designed around your home
+                        </strong>
+
+                        <p>
+                            We assess your electricity usage, appliances,
+                            backup requirements and future needs before
+                            recommending a system.
                         </p>
-
                     </div>
+                </div>
 
-                ))
-            }
+                <div class="residential-comparison-feature negative">
+                    <span class="residential-comparison-icon">
+                        &times;
+                    </span>
+
+                    <div>
+                        <strong>
+                            Standard equipment package
+                        </strong>
+
+                        <p>
+                            Often starts with a fixed inverter and battery
+                            package without detailed household analysis.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ROW 2 -->
+            <div class="residential-comparison-row">
+
+                <div class="residential-comparison-feature">
+                    <span class="residential-comparison-icon positive">
+                        &#10003;
+                    </span>
+
+                    <div>
+                        <strong>
+                            Focused on long-term savings
+                        </strong>
+
+                        <p>
+                            We consider solar generation, battery capacity,
+                            electricity usage and tariff increases together.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="residential-comparison-feature negative">
+                    <span class="residential-comparison-icon">
+                        &times;
+                    </span>
+
+                    <div>
+                        <strong>
+                            Focused mainly on equipment
+                        </strong>
+
+                        <p>
+                            The emphasis can be on the hardware rather than
+                            the long-term performance of the complete system.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ROW 3 -->
+            <div class="residential-comparison-row">
+
+                <div class="residential-comparison-feature">
+                    <span class="residential-comparison-icon positive">
+                        &#10003;
+                    </span>
+
+                    <div>
+                        <strong>
+                            Professional system design
+                        </strong>
+
+                        <p>
+                            Your inverter, batteries and solar generation are
+                            selected to work together as one integrated system.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="residential-comparison-feature negative">
+                    <span class="residential-comparison-icon">
+                        &times;
+                    </span>
+
+                    <div>
+                        <strong>
+                            Equipment-led recommendation
+                        </strong>
+
+                        <p>
+                            The system can be built around available products
+                            rather than the actual requirements of the home.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ROW 4 -->
+            <div class="residential-comparison-row">
+
+                <div class="residential-comparison-feature">
+                    <span class="residential-comparison-icon positive">
+                        &#10003;
+                    </span>
+
+                    <div>
+                        <strong>
+                            Advice before you buy
+                        </strong>
+
+                        <p>
+                            We explain the options so you can make an informed
+                            decision before committing to a system.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="residential-comparison-feature negative">
+                    <span class="residential-comparison-icon">
+                        &times;
+                    </span>
+
+                    <div>
+                        <strong>
+                            Sales-first approach
+                        </strong>
+
+                        <p>
+                            The conversation may begin with a product rather
+                            than first understanding what your home actually needs.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             BOTTOM MESSAGE
+        =========================================== -->
+
+        <div class="residential-comparison-message">
+
+            <div class="residential-comparison-message-icon">
+                <span>
+                    ✓
+                </span>
+            </div>
+
+            <div>
+                <strong>
+                    Your home is unique.
+                </strong>
+
+                <p>
+                    That's why Solar8 doesn't believe in a one-size-fits-all
+                    solar solution.
+                </p>
+            </div>
 
         </div>
 
     </div>
-
 </section>
+
+
+<style>
+/* ==========================================
+   SECTION
+========================================== */
+
+.residential-comparison {
+    width: 100%;
+    padding: 120px 0;
+
+    background: #f8f9fa;
+}
+
+
+/* ==========================================
+   HEADING
+========================================== */
+
+.residential-comparison-heading {
+    max-width: 850px;
+    margin-bottom: 60px;
+}
+
+.residential-comparison-heading h2 {
+    color: var(--color-heading);
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(2.35rem, 4vw, 3.25rem);
+    font-weight: 800;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.035em;
+}
+
+.residential-comparison-heading p {
+    max-width: 720px;
+}
+
+
+/* ==========================================
+   MAIN CARD
+========================================== */
+
+.residential-comparison-card {
+    width: 100%;
+
+    overflow: hidden;
+
+    background: var(--color-white);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+
+    box-shadow: var(--shadow-light);
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.residential-comparison-header {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    border-bottom: 1px solid var(--color-border);
+
+    background: #f9fafb;
+}
+
+.residential-comparison-header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    min-height: 76px;
+
+    padding: 18px 34px;
+
+    color: var(--color-heading);
+
+    font-family: var(--font-heading);
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.residential-comparison-header-title + .residential-comparison-header-title {
+    border-left: 1px solid var(--color-border);
+}
+
+.residential-comparison-header-title span {
+    width: 10px;
+    height: 10px;
+
+    flex: 0 0 10px;
+
+    border-radius: 50%;
+
+    background: var(--color-primary);
+}
+
+.residential-comparison-header-title.alternative span {
+    background: #9ca3af;
+}
+
+
+/* ==========================================
+   ROW
+========================================== */
+
+.residential-comparison-row {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.residential-comparison-row:last-child {
+    border-bottom: 0;
+}
+
+
+/* ==========================================
+   FEATURE
+========================================== */
+
+.residential-comparison-feature {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 32px 34px;
+}
+
+.residential-comparison-feature + .residential-comparison-feature {
+    border-left: 1px solid var(--color-border-light);
+}
+
+
+/* ==========================================
+   ICON
+========================================== */
+
+.residential-comparison-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 30px;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: #f3f4f6;
+
+    color: #9ca3af;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+.residential-comparison-icon.positive {
+    background: rgba(255, 104, 0, 0.10);
+
+    color: var(--color-primary);
+}
+
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.residential-comparison-feature strong {
+    display: block;
+
+    color: var(--color-heading);
+
+    font-family: var(--font-heading);
+
+    font-size: 17px;
+    font-weight: 800;
+
+    line-height: 1.35;
+}
+
+.residential-comparison-feature p {
+    margin: 9px 0 0;
+
+    color: var(--color-muted);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   BOTTOM MESSAGE
+========================================== */
+
+.residential-comparison-message {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    max-width: 850px;
+
+    margin: 36px auto 0;
+
+    padding: 24px 28px;
+
+    background: var(--color-white);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius-medium);
+
+    box-shadow: var(--shadow-light);
+}
+
+.residential-comparison-message-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 46px;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 104, 0, 0.10);
+
+    color: var(--color-primary);
+
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.residential-comparison-message strong {
+    display: block;
+
+    color: var(--color-heading);
+
+    font-family: var(--font-heading);
+
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.residential-comparison-message p {
+    margin: 4px 0 0;
+
+    color: var(--color-muted);
+
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+
+    .residential-comparison {
+        padding: 88px 0;
+    }
+
+    .residential-comparison-heading {
+        margin-bottom: 44px;
+    }
+
+    .residential-comparison-header-title {
+        padding: 16px 24px;
+    }
+
+    .residential-comparison-feature {
+        padding: 28px 24px;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 640px) {
+
+    .residential-comparison {
+        padding: 72px 0;
+    }
+
+    .residential-comparison-heading {
+        margin-bottom: 36px;
+    }
+
+    .residential-comparison-heading h2 {
+        font-size: 2.2rem;
+    }
+
+    .residential-comparison-heading p {
+        font-size: 16px;
+    }
+
+
+    /* Stack comparison columns */
+
+    .residential-comparison-header {
+        grid-template-columns: 1fr;
+    }
+
+    .residential-comparison-header-title {
+        min-height: 60px;
+
+        padding: 16px 20px;
+
+        font-size: 16px;
+    }
+
+    .residential-comparison-header-title
+        + .residential-comparison-header-title {
+        border-left: 0;
+        border-top: 1px solid var(--color-border);
+    }
+
+
+    /* Stack rows */
+
+    .residential-comparison-row {
+        grid-template-columns: 1fr;
+    }
+
+    .residential-comparison-feature {
+        padding: 24px 20px;
+    }
+
+    .residential-comparison-feature
+        + .residential-comparison-feature {
+        border-left: 0;
+        border-top: 1px solid var(--color-border-light);
+    }
+
+
+    .residential-comparison-feature strong {
+        font-size: 16px;
+    }
+
+    .residential-comparison-feature p {
+        font-size: 14px;
+    }
+
+
+    /* Message */
+
+    .residential-comparison-message {
+        align-items: flex-start;
+
+        margin-top: 24px;
+
+        padding: 20px;
+
+        border-radius: 18px;
+    }
+
+}
+</style>

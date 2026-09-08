@@ -1,55 +1,736 @@
-<script lang="ts">
-document.addEventListener("DOMContentLoaded", () => {
+<section id="calculator" class="residential-calculator">
+    <div class="container">
 
-    const slider = document.getElementById("bill");
+```
+    <div class="residential-calculator-grid">
 
-if (!slider) return;
-    const bill = document.getElementById("billValue");
-    const saving = document.getElementById("saving");
-    const annual = document.getElementById("annual");
-    const system = document.getElementById("system");
+        <!-- ==========================================
+             LEFT — INTRODUCTION
+        =========================================== -->
 
-    if (
-        !slider ||
-        !bill ||
-        !saving ||
-        !annual ||
-        !system
-    ) {
-        return;
+        <div class="residential-calculator-content">
+
+            <span class="eyebrow">
+                ESTIMATE YOUR SAVINGS
+            </span>
+
+            <h2>
+                See how much you could save with solar.
+            </h2>
+
+            <p>
+                Your electricity bill is one of the best starting points
+                for understanding your solar requirements. Use this
+                simple calculator to estimate your potential annual
+                electricity savings.
+            </p>
+
+            <p>
+                This is an indication only. Your actual savings depend on
+                your electricity usage, tariff structure, solar resource,
+                system size and battery configuration.
+            </p>
+
+
+            <div class="residential-calculator-points">
+
+                <div>
+                    <span class="residential-calculator-point-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Understand your potential savings
+                    </span>
+                </div>
+
+                <div>
+                    <span class="residential-calculator-point-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Get a better idea of system requirements
+                    </span>
+                </div>
+
+                <div>
+                    <span class="residential-calculator-point-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        Continue with a personalised Solar8 assessment
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             RIGHT — CALCULATOR
+        =========================================== -->
+
+        <div class="residential-calculator-card">
+
+            <div class="residential-calculator-card-heading">
+
+                <span>
+                    MONTHLY ELECTRICITY BILL
+                </span>
+
+                <h3>
+                    Estimate your savings
+                </h3>
+
+            </div>
+
+
+            <div class="residential-calculator-field">
+
+                <label for="monthlyBill">
+                    Average monthly electricity bill
+                </label>
+
+                <div class="residential-calculator-input">
+
+                    <span>
+                        R
+                    </span>
+
+                    <input
+                        id="monthlyBill"
+                        type="number"
+                        min="0"
+                        step="100"
+                        value="3000"
+                        inputmode="decimal"
+                        aria-describedby="billHelp"
+                    />
+
+                </div>
+
+                <p id="billHelp">
+                    Enter your approximate average monthly electricity bill.
+                </p>
+
+            </div>
+
+
+            <div class="residential-calculator-result">
+
+                <span>
+                    ESTIMATED ANNUAL BILL
+                </span>
+
+                <strong id="annualBill">
+                    R36,000
+                </strong>
+
+            </div>
+
+
+            <div class="residential-calculator-result residential-calculator-result-highlight">
+
+                <span>
+                    POTENTIAL ANNUAL SAVING
+                </span>
+
+                <strong id="annualSaving">
+                    R18,000
+                </strong>
+
+                <small>
+                    Based on an indicative 50% saving.
+                </small>
+
+            </div>
+
+
+            <div class="residential-calculator-result">
+
+                <span>
+                    POTENTIAL MONTHLY SAVING
+                </span>
+
+                <strong id="monthlySaving">
+                    R1,500
+                </strong>
+
+            </div>
+
+
+            <a
+                href="/assessment/"
+                class="residential-calculator-button"
+            >
+                Get My FREE Assessment
+            </a>
+
+
+            <p class="residential-calculator-disclaimer">
+                Estimates are illustrative only and are not a quotation
+                or guarantee of savings.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<script>
+    /*
+     * Explicitly type the monthly bill element as an HTMLInputElement.
+     * document.getElementById() normally returns HTMLElement, which does
+     * not expose the .value property.
+     */
+    const monthlyBillInput =
+        document.getElementById("monthlyBill") as HTMLInputElement | null;
+
+    const annualBillOutput =
+        document.getElementById("annualBill");
+
+    const annualSavingOutput =
+        document.getElementById("annualSaving");
+
+    const monthlySavingOutput =
+        document.getElementById("monthlySaving");
+
+
+    function formatCurrency(value: number) {
+        return new Intl.NumberFormat("en-ZA", {
+            style: "currency",
+            currency: "ZAR",
+            maximumFractionDigits: 0
+        }).format(value);
     }
+
 
     function updateCalculator() {
 
-        const value = Number(slider.value);
+        if (!monthlyBillInput) return;
 
-        bill.textContent = `R${value.toLocaleString()}`;
+        const monthlyBill =
+            Number(monthlyBillInput.value) || 0;
 
-        const monthlySaving = Math.round(value * 0.6);
+        const annualBill =
+            monthlyBill * 12;
 
-        saving.textContent = `R${monthlySaving.toLocaleString()}`;
+        const annualSaving =
+            annualBill * 0.50;
 
-        annual.textContent = `R${(monthlySaving * 12).toLocaleString()}`;
+        const monthlySaving =
+            annualSaving / 12;
 
-        if (value < 2500) {
 
-            system.textContent = "5 kW Hybrid";
-
-        } else if (value < 4500) {
-
-            system.textContent = "8 kW Hybrid";
-
-        } else {
-
-            system.textContent = "12 kW Hybrid";
-
+        if (annualBillOutput) {
+            annualBillOutput.textContent =
+                formatCurrency(annualBill);
         }
 
+        if (annualSavingOutput) {
+            annualSavingOutput.textContent =
+                formatCurrency(annualSaving);
+        }
+
+        if (monthlySavingOutput) {
+            monthlySavingOutput.textContent =
+                formatCurrency(monthlySaving);
+        }
     }
 
-    slider.addEventListener("input", updateCalculator);
+
+    monthlyBillInput?.addEventListener(
+        "input",
+        updateCalculator
+    );
 
     updateCalculator();
-
-});
 </script>
+
+<style>
+/* ==========================================
+   SECTION
+========================================== */
+
+.residential-calculator {
+    width: 100%;
+
+    padding: 120px 0;
+
+    background: var(--color-heading);
+}
+
+
+/* ==========================================
+   GRID
+========================================== */
+
+.residential-calculator-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(420px, 540px);
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.residential-calculator-content {
+    max-width: 680px;
+}
+
+.residential-calculator-content .eyebrow {
+    color: #ff8a3d;
+}
+
+.residential-calculator-content h2 {
+    margin-top: 16px;
+
+    color: var(--color-white);
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(2.35rem, 4vw, 3.35rem);
+
+    font-weight: 800;
+
+    line-height: 1.08;
+
+    letter-spacing: -0.035em;
+}
+
+.residential-calculator-content p {
+    max-width: 650px;
+
+    margin-top: 22px;
+
+    color: #d1d5db;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+.residential-calculator-content p + p {
+    margin-top: 14px;
+
+    color: #9ca3af;
+
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   POINTS
+========================================== */
+
+.residential-calculator-points {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    margin-top: 34px;
+}
+
+.residential-calculator-points > div {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #f9fafb;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.residential-calculator-point-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 26px;
+
+    width: 26px;
+    height: 26px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 104, 0, 0.15);
+
+    color: #ff8a3d;
+
+    font-size: 13px;
+    font-weight: 900;
+}
+
+
+/* ==========================================
+   CALCULATOR CARD
+========================================== */
+
+.residential-calculator-card {
+    padding: 38px;
+
+    background: var(--color-white);
+
+    border-radius: var(--radius-large);
+
+    box-shadow:
+        0 28px 70px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==========================================
+   CARD HEADING
+========================================== */
+
+.residential-calculator-card-heading span {
+    display: block;
+
+    color: var(--color-primary);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.13em;
+
+    text-transform: uppercase;
+}
+
+.residential-calculator-card-heading h3 {
+    margin-top: 9px;
+
+    color: var(--color-heading);
+
+    font-family: var(--font-heading);
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+
+/* ==========================================
+   INPUT
+========================================== */
+
+.residential-calculator-field {
+    margin-top: 30px;
+}
+
+.residential-calculator-field label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--color-heading);
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.residential-calculator-input {
+    display: flex;
+    align-items: center;
+
+    height: 58px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--button-radius);
+
+    background: #f9fafb;
+}
+
+.residential-calculator-input span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 100%;
+
+    border-right: 1px solid var(--color-border);
+
+    color: var(--color-muted);
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+.residential-calculator-input input {
+    width: 100%;
+    height: 100%;
+
+    padding: 0 18px;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: var(--color-heading);
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+.residential-calculator-input:focus-within {
+    border-color: var(--color-primary);
+
+    box-shadow:
+        0 0 0 3px rgba(255, 104, 0, 0.10);
+}
+
+.residential-calculator-field p {
+    margin: 8px 0 0;
+
+    color: var(--color-muted);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* ==========================================
+   RESULTS
+========================================== */
+
+.residential-calculator-result {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    margin-top: 22px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--color-border-light);
+}
+
+.residential-calculator-result span {
+    color: var(--color-muted);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.11em;
+
+    text-transform: uppercase;
+}
+
+.residential-calculator-result strong {
+    color: var(--color-heading);
+
+    font-family: var(--font-heading);
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+    line-height: 1.1;
+}
+
+.residential-calculator-result-highlight {
+    margin-top: 24px;
+
+    padding: 22px;
+
+    border: 1px solid rgba(255, 104, 0, 0.18);
+
+    border-radius: 18px;
+
+    background: rgba(255, 104, 0, 0.06);
+}
+
+.residential-calculator-result-highlight span {
+    color: var(--color-primary);
+}
+
+.residential-calculator-result-highlight strong {
+    color: var(--color-primary);
+
+    font-size: 34px;
+}
+
+.residential-calculator-result small {
+    color: var(--color-muted);
+
+    font-size: 12px;
+}
+
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.residential-calculator-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 56px;
+
+    margin-top: 28px;
+
+    padding: 0 24px;
+
+    border-radius: var(--button-radius);
+
+    background: var(--color-primary);
+
+    color: var(--color-white);
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 12px 28px rgba(255, 104, 0, 0.20);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.residential-calculator-button:hover {
+    transform: translateY(-2px);
+
+    background: var(--color-primary-dark);
+
+    box-shadow:
+        0 16px 34px rgba(255, 104, 0, 0.28);
+}
+
+
+/* ==========================================
+   DISCLAIMER
+========================================== */
+
+.residential-calculator-disclaimer {
+    margin: 18px 0 0;
+
+    color: #9ca3af;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .residential-calculator {
+        padding: 88px 0;
+    }
+
+    .residential-calculator-grid {
+        grid-template-columns: 1fr;
+
+        gap: 52px;
+    }
+
+    .residential-calculator-content {
+        max-width: 760px;
+        margin-inline: auto;
+
+        text-align: center;
+    }
+
+    .residential-calculator-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .residential-calculator-points {
+        align-items: center;
+    }
+
+    .residential-calculator-card {
+        width: 100%;
+        max-width: 620px;
+
+        margin-inline: auto;
+    }
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 640px) {
+
+    .residential-calculator {
+        padding: 72px 0;
+    }
+
+    .residential-calculator-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .residential-calculator-content p {
+        font-size: 16px;
+    }
+
+    .residential-calculator-points {
+        align-items: flex-start;
+
+        text-align: left;
+    }
+
+    .residential-calculator-card {
+        padding: 28px 22px;
+
+        border-radius: 20px;
+    }
+
+    .residential-calculator-result-highlight {
+        padding: 20px;
+    }
+
+    .residential-calculator-result-highlight strong {
+        font-size: 30px;
+    }
+
+}
+</style>

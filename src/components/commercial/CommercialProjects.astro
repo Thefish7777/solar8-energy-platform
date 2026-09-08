@@ -3,112 +3,33 @@ import SectionHeading from "../ui/SectionHeading.astro";
 import commercial from "../../assets/images/commercial-solar.jpg";
 
 const projects = [
-    {
-        category: "Manufacturing",
-        title: "120 kW Factory Installation",
-        location: "Gauteng",
-        saving: "Estimated annual saving: R1.4 million",
-        feature: "Battery backup included"
-    },
-    {
-        category: "Logistics",
-        title: "250 kW Distribution Centre",
-        location: "Johannesburg",
-        saving: "Estimated annual saving: R2.9 million",
-        feature: "Live energy monitoring"
-    },
-    {
-        category: "Office Park",
-        title: "80 kW Office Complex",
-        location: "Pretoria",
-        saving: "Reduced peak demand charges",
-        feature: "25-year design life"
-    }
+  { category: "MANUFACTURING", title: "120 kW Factory Installation", location: "Gauteng", saving: "Estimated annual saving: R1.4 million", feature: "Battery backup included" },
+  { category: "LOGISTICS", title: "250 kW Distribution Centre", location: "Johannesburg", saving: "Estimated annual saving: R2.9 million", feature: "Live energy monitoring" },
+  { category: "OFFICE PARK", title: "80 kW Office Complex", location: "Pretoria", saving: "Reduced peak demand charges", feature: "25-year design life" }
 ];
 ---
-
-<section class="bg-white py-24">
-
-    <div class="container">
-
-        <SectionHeading
-            tag="RECENT PROJECTS"
-            title="Commercial installations engineered for performance."
-            intro="Every project is custom designed to maximise energy production, reduce operating costs and deliver reliable long-term performance."
-        />
-
-        <div class="mt-20 grid gap-10 lg:grid-cols-3">
-
-            {
-                projects.map((project) => (
-
-                    <article
-                        class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-orange-200 hover:shadow-2xl"
-                    >
-
-                        <div class="overflow-hidden">
-
-                            <img
-                                src={commercial.src}
-                                alt={project.title}
-                                class="h-72 w-full object-cover transition duration-500 group-hover:scale-105"
-                            />
-
-                        </div>
-
-                        <div class="p-8">
-
-                            <span
-                                class="inline-flex rounded-full bg-orange-100 px-4 py-2 text-sm font-bold uppercase tracking-wide text-orange-600"
-                            >
-
-                                {project.category}
-
-                            </span>
-
-                            <h3 class="mt-6 text-2xl font-bold text-slate-900">
-
-                                {project.title}
-
-                            </h3>
-
-                            <ul class="mt-8 space-y-4 text-slate-600">
-
-                                <li class="flex gap-3">
-
-                                    <span class="text-green-600">✓</span>
-
-                                    {project.location}
-
-                                </li>
-
-                                <li class="flex gap-3">
-
-                                    <span class="text-green-600">✓</span>
-
-                                    {project.saving}
-
-                                </li>
-
-                                <li class="flex gap-3">
-
-                                    <span class="text-green-600">✓</span>
-
-                                    {project.feature}
-
-                                </li>
-
-                            </ul>
-
-                        </div>
-
-                    </article>
-
-                ))
-            }
-
-        </div>
-
+<section class="commercial-projects-section">
+  <div class="solar-container">
+    <SectionHeading tag="RECENT PROJECTS" title="Commercial installations engineered for performance." intro="Every project is custom designed to maximise energy production, reduce operating costs and deliver reliable long-term performance." />
+    <div class="commercial-project-grid">
+      {projects.map((project) => (
+        <article class="kc-card commercial-project-card">
+          <div class="commercial-project-image"><img src={commercial.src} alt={project.title} /></div>
+          <div class="commercial-project-body">
+            <span class="kc-label">{project.category}</span>
+            <h3>{project.title}</h3>
+            <ul>
+              <li><span>✓</span>{project.location}</li>
+              <li><span>✓</span>{project.saving}</li>
+              <li><span>✓</span>{project.feature}</li>
+            </ul>
+          </div>
+        </article>
+      ))}
     </div>
-
+  </div>
 </section>
+<style>
+.commercial-projects-section{padding:110px 0;background:#fff}.commercial-project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.commercial-project-card{overflow:hidden;padding:0}.commercial-project-image{height:230px;overflow:hidden}.commercial-project-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}.commercial-project-card:hover .commercial-project-image img{transform:scale(1.04)}.commercial-project-body{padding:30px 34px 34px}.commercial-project-body .kc-label{margin-top:0}.commercial-project-body h3{margin-top:10px}.commercial-project-body ul{display:grid;gap:12px;margin:24px 0 0;padding:0;list-style:none}.commercial-project-body li{display:flex;gap:10px;color:#6B7280;line-height:1.55}.commercial-project-body li span{color:#16A34A;font-weight:800}
+@media(max-width:900px){.commercial-projects-section{padding:80px 0}.commercial-project-grid{grid-template-columns:1fr;max-width:700px;margin-inline:auto}}@media(max-width:640px){.commercial-project-body{padding:26px 24px 28px}}
+</style>

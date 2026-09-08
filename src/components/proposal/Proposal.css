@@ -1,487 +1,962 @@
-.proposal{
+/* =========================================================
+   Solar8 Residential Energy Report
+   ========================================================= */
 
-    max-width:1100px;
+.proposal {
 
-    margin:auto;
+    width: 100%;
+    max-width: 1100px;
 
-    padding:40px;
+    margin: 40px auto;
+    padding: 40px;
 
-    background:#ffffff;
+    background: #ffffff;
 
-    border-radius:12px;
+    border-radius: 12px;
 
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    box-shadow:
+        0 10px 30px rgba(15, 39, 71, 0.08);
 
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
 
-}
+    color: #374151;
 
-.proposal-header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:flex-start;
-
-    border-bottom:4px solid #f59e0b;
-
-    margin-bottom:40px;
-
-    padding-bottom:24px;
+    line-height: 1.6;
 
 }
 
-.proposal-logo{
 
-    margin:0;
-
-    font-size:44px;
-
-    color:#f59e0b;
-
-}
-
-.proposal-subtitle{
-
-    margin-top:8px;
-
-    color:#666;
-
-    font-size:18px;
-
-}
-
-.proposal-reference table{
-
-    border-collapse:collapse;
-
-}
-
-.proposal-reference td{
-
-    padding:6px 12px;
-
-}
-
-.proposal-reference td:first-child{
-
-    font-weight:bold;
-
-    color:#666;
-
-}
-
-.proposal-section{
-
-    margin-bottom:40px;
-
-}
-
-.proposal-section h2{
-
-    margin-bottom:18px;
-
-    color:#1f2937;
-
-}
-
-.proposal-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-
-    gap:18px;
-
-}
-
-.proposal-grid div{
-
-    background:#fafafa;
-
-    border:1px solid #e5e7eb;
-
-    border-radius:12px;
-
-    padding:18px;
-
-    transition:.2s;
-
-}
-
-.proposal-grid div:hover{
-
-    box-shadow:0 6px 18px rgba(0,0,0,.08);
-
-}
-
-.proposal-grid label{
-
-    display:block;
-
-    margin-bottom:8px;
-
-    color:#777;
-
-    font-size:13px;
-
-}
-
-.proposal-grid strong{
-
-    font-size:22px;
-
-    color:#111827;
-
-}
-
-/* ===========================================
-   Equipment Cards
-=========================================== */
-
-.equipment-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
-    gap:24px;
-
-}
-
-.equipment-card{
-
-    background:white;
-
-    border:1px solid #e5e7eb;
-
-    border-radius:14px;
-
-    padding:24px;
-
-    text-align:center;
-
-    transition:.25s;
-
-    box-shadow:0 4px 10px rgba(0,0,0,.05);
-
-}
-
-.equipment-card:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:0 10px 24px rgba(0,0,0,.12);
-
-}
-
-.equipment-icon{
-
-    font-size:48px;
-
-    margin-bottom:14px;
-
-}
-
-.equipment-card h3{
-
-    margin-bottom:14px;
-
-    color:#374151;
-
-    font-size:18px;
-
-}
-
-.equipment-card strong{
-
-    display:block;
-
-    color:#111827;
-
-    font-size:20px;
-
-    line-height:1.4;
-
-}
-
-/* ===========================================
-   Savings Cards
-=========================================== */
-
-.savings-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-
-    gap:24px;
-
-}
-
-.saving-card{
-
-    background:linear-gradient(180deg,#fff,#fafafa);
-
-    border:1px solid #e5e7eb;
-
-    border-radius:14px;
-
-    padding:28px;
-
-    text-align:center;
-
-    box-shadow:0 5px 14px rgba(0,0,0,.06);
-
-    transition:.25s;
-
-}
-
-.saving-card:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:0 14px 26px rgba(0,0,0,.12);
-
-}
-
-.saving-card span{
-
-    display:block;
-
-    font-size:42px;
-
-    margin-bottom:12px;
-
-}
-
-.saving-card label{
-
-    display:block;
-
-    color:#6b7280;
-
-    margin-bottom:12px;
-
-    font-size:15px;
-
-}
-
-.saving-card strong{
-
-    display:block;
-
-    font-size:30px;
-
-    color:#111827;
-
-}
-
-/* =======================================================
+/* =========================================================
    Proposal Cover
-======================================================= */
+   ========================================================= */
 
-.proposal-cover{
+.proposal-cover {
 
-    display:flex;
+    position: relative;
 
-    justify-content:space-between;
+    display: grid;
 
-    align-items:center;
+    grid-template-columns:
+        minmax(0, 1.6fr)
+        minmax(300px, 0.8fr);
 
-    background:linear-gradient(135deg,#0f172a,#1e3a8a);
+    gap: 60px;
 
-    color:white;
+    min-height: 560px;
 
-    padding:40px;
+    padding: 64px;
 
-    border-radius:14px;
+    margin-bottom: 60px;
 
-    margin-bottom:45px;
+    overflow: hidden;
 
-}
+    border-radius: 18px;
 
-.cover-left h1{
+    background:
+        linear-gradient(
+            135deg,
+            #0f2747 0%,
+            #12365f 55%,
+            #1d4f7a 100%
+        );
 
-    margin:0;
-
-    font-size:52px;
-
-    color:#f59e0b;
-
-}
-
-.cover-left h2{
-
-    margin:12px 0;
-
-    font-size:28px;
-
-    font-weight:600;
+    color: #ffffff;
 
 }
 
-.cover-left p{
 
-    margin-top:10px;
+/*
+   Subtle decorative Solar8 accent.
+*/
 
-    opacity:.85;
+.proposal-cover::before {
 
-    font-size:18px;
+    content: "";
 
-}
+    position: absolute;
 
-.cover-right{
+    width: 420px;
+    height: 420px;
 
-    background:white;
+    right: -180px;
+    top: -180px;
 
-    color:#111827;
+    border-radius: 50%;
 
-    padding:18px;
-
-    border-radius:10px;
-
-    min-width:280px;
-
-}
-
-.cover-right table{
-
-    width:100%;
+    border: 70px solid rgba(245, 158, 11, 0.08);
 
 }
 
-.cover-right td{
 
-    padding:8px;
+.proposal-cover::after {
 
-}
+    content: "";
 
-.cover-right td:first-child{
+    position: absolute;
 
-    font-weight:bold;
+    width: 280px;
+    height: 280px;
 
-    color:#6b7280;
+    left: -150px;
+    bottom: -170px;
 
-}
+    border-radius: 50%;
 
-.recommendation-banner{
-
-    background:#f59e0b;
-
-    color:white;
-
-    padding:26px;
-
-    border-radius:12px;
-
-    margin-bottom:35px;
+    border: 45px solid rgba(255, 255, 255, 0.04);
 
 }
 
-.recommendation-banner h2{
 
-    margin-bottom:12px;
+/* =========================================================
+   Cover Brand Area
+   ========================================================= */
 
-}
+.proposal-cover-brand {
 
-.recommendation-banner p{
+    position: relative;
 
-    font-size:18px;
+    z-index: 2;
 
-    line-height:1.7;
+    display: flex;
 
-}
+    flex-direction: column;
 
-.equipment-card img{
+    justify-content: center;
 
-    width:180px;
-
-    height:180px;
-
-    object-fit:contain;
-
-    margin-bottom:18px;
+    align-items: flex-start;
 
 }
 
-.equipment-card h4{
 
-    margin-top:18px;
+.proposal-logo-image {
 
-    color:#f59e0b;
+    display: block;
 
-    font-size:24px;
+    width: 210px;
 
-}
+    max-width: 100%;
 
-.equipment-details{
+    height: auto;
 
-    list-style:none;
-
-    margin-top:18px;
-
-    padding:0;
+    margin-bottom: 34px;
 
 }
 
-.equipment-details li{
 
-    padding:6px 0;
+.proposal-cover-divider {
 
-    color:#555;
+    width: 70px;
 
-    border-top:1px solid #ececec;
+    height: 4px;
 
-    font-size:15px;
+    margin-bottom: 28px;
 
-}
+    border-radius: 10px;
 
-.overview-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-
-    gap:18px;
+    background: #f59e0b;
 
 }
 
-.overview-card{
 
-    background:#f8fafc;
+.proposal-document-label {
 
-    border:1px solid #e5e7eb;
+    margin: 0 0 12px;
 
-    border-radius:12px;
+    color: #f59e0b;
 
-    text-align:center;
+    font-size: 13px;
 
-    padding:24px;
+    font-weight: 700;
 
-}
-
-.overview-icon{
-
-    font-size:40px;
-
-    margin-bottom:10px;
+    letter-spacing: 2px;
 
 }
 
-.overview-card label{
 
-    display:block;
+.proposal-cover h1 {
 
-    color:#6b7280;
+    max-width: 650px;
 
-    margin-bottom:10px;
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(36px, 5vw, 58px);
+
+    font-weight: 700;
+
+    line-height: 1.08;
+
+    letter-spacing: -1.5px;
 
 }
 
-.overview-card strong{
 
-    font-size:24px;
+.proposal-cover-description {
+
+    max-width: 580px;
+
+    margin: 24px 0 0;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   Cover Details
+   ========================================================= */
+
+.proposal-cover-details {
+
+    position: relative;
+
+    z-index: 2;
+
+    align-self: center;
+
+    padding: 30px;
+
+    border:
+
+        1px solid
+        rgba(255, 255, 255, 0.16);
+
+    border-radius: 16px;
+
+    background:
+
+        rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(10px);
+
+}
+
+
+.proposal-cover-details-heading {
+
+    margin-bottom: 24px;
+
+    padding-bottom: 16px;
+
+    border-bottom:
+
+        1px solid
+        rgba(255, 255, 255, 0.16);
+
+    color: #f59e0b;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+}
+
+
+.proposal-cover-detail {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.proposal-cover-detail span {
+
+    color:
+
+        rgba(255, 255, 255, 0.62);
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+
+}
+
+
+.proposal-cover-detail strong {
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+}
+
+
+.proposal-cover-confidential {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    margin-top: 28px;
+
+    padding-top: 20px;
+
+    border-top:
+
+        1px solid
+        rgba(255, 255, 255, 0.16);
+
+    color: #f59e0b;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.proposal-cover-confidential small {
+
+    color:
+
+        rgba(255, 255, 255, 0.55);
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: 0;
+
+}
+
+
+/* =========================================================
+   Legacy Header Support
+   ========================================================= */
+
+.proposal-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    padding-bottom: 24px;
+
+    margin-bottom: 40px;
+
+    border-bottom: 4px solid #f59e0b;
+
+}
+
+
+.proposal-logo {
+
+    margin: 0;
+
+    color: #f59e0b;
+
+    font-size: 44px;
+
+}
+
+
+.proposal-subtitle {
+
+    margin-top: 8px;
+
+    color: #6b7280;
+
+    font-size: 18px;
+
+}
+
+
+.proposal-reference table {
+
+    border-collapse: collapse;
+
+}
+
+
+.proposal-reference td {
+
+    padding: 6px 12px;
+
+}
+
+
+.proposal-reference td:first-child {
+
+    color: #6b7280;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   Proposal Sections
+   ========================================================= */
+
+.proposal-section {
+
+    margin-bottom: 48px;
+
+}
+
+
+.proposal-section h2 {
+
+    margin: 0 0 18px;
+
+    color: #0f2747;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+}
+
+
+.proposal-section h3 {
+
+    color: #0f2747;
+
+}
+
+
+/* =========================================================
+   General Grids
+   ========================================================= */
+
+.proposal-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(220px, 1fr)
+        );
+
+    gap: 18px;
+
+}
+
+
+.proposal-grid > div {
+
+    padding: 20px;
+
+    border:
+
+        1px solid
+        #e5e7eb;
+
+    border-radius: 12px;
+
+    background: #fafafa;
+
+}
+
+
+.proposal-grid label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+}
+
+
+.proposal-grid strong {
+
+    color: #111827;
+
+    font-size: 22px;
+
+}
+
+
+/* =========================================================
+   Recommendation Banner
+   ========================================================= */
+
+.recommendation-banner {
+
+    padding: 30px;
+
+    margin-bottom: 40px;
+
+    border-radius: 14px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f59e0b,
+            #d97706
+        );
+
+    color: #ffffff;
+
+}
+
+
+.recommendation-banner h2 {
+
+    margin: 0 0 12px;
+
+    color: #ffffff;
+
+}
+
+
+.recommendation-banner p {
+
+    margin: 0;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   Overview Cards
+   ========================================================= */
+
+.overview-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px, 1fr)
+        );
+
+    gap: 18px;
+
+}
+
+
+.overview-card {
+
+    padding: 24px;
+
+    border:
+
+        1px solid
+        #e5e7eb;
+
+    border-radius: 14px;
+
+    background: #f8fafc;
+
+    text-align: center;
+
+}
+
+
+.overview-icon {
+
+    margin-bottom: 10px;
+
+    color: #f59e0b;
+
+    font-size: 40px;
+
+}
+
+
+.overview-card label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #6b7280;
+
+}
+
+
+.overview-card strong {
+
+    color: #0f2747;
+
+    font-size: 24px;
+
+}
+
+
+/* =========================================================
+   Equipment Cards
+   ========================================================= */
+
+.equipment-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(280px, 1fr)
+        );
+
+    gap: 24px;
+
+}
+
+
+.equipment-card {
+
+    padding: 24px;
+
+    border:
+
+        1px solid
+        #e5e7eb;
+
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    text-align: center;
+
+    box-shadow:
+        0 4px 10px
+        rgba(15, 39, 71, 0.05);
+
+}
+
+
+.equipment-card img {
+
+    display: block;
+
+    width: 180px;
+    height: 180px;
+
+    margin: 0 auto 18px;
+
+    object-fit: contain;
+
+}
+
+
+.equipment-icon {
+
+    margin-bottom: 14px;
+
+    color: #f59e0b;
+
+    font-size: 48px;
+
+}
+
+
+.equipment-card h3 {
+
+    margin: 0 0 12px;
+
+    color: #374151;
+
+    font-size: 18px;
+
+}
+
+
+.equipment-card h4 {
+
+    margin: 18px 0 0;
+
+    color: #f59e0b;
+
+    font-size: 24px;
+
+}
+
+
+.equipment-card strong {
+
+    display: block;
+
+    color: #111827;
+
+    font-size: 20px;
+
+    line-height: 1.4;
+
+}
+
+
+.equipment-details {
+
+    margin: 18px 0 0;
+
+    padding: 0;
+
+    list-style: none;
+
+    text-align: left;
+
+}
+
+
+.equipment-details li {
+
+    padding: 7px 0;
+
+    border-top:
+
+        1px solid
+        #ececec;
+
+    color: #555;
+
+    font-size: 15px;
+
+}
+
+
+/* =========================================================
+   Savings Cards
+   ========================================================= */
+
+.savings-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(240px, 1fr)
+        );
+
+    gap: 24px;
+
+}
+
+
+.saving-card {
+
+    padding: 28px;
+
+    border:
+
+        1px solid
+        #e5e7eb;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #f8fafc
+        );
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 14px
+        rgba(15, 39, 71, 0.06);
+
+}
+
+
+.saving-card span {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #f59e0b;
+
+    font-size: 42px;
+
+}
+
+
+.saving-card label {
+
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #6b7280;
+
+    font-size: 15px;
+
+}
+
+
+.saving-card strong {
+
+    display: block;
+
+    color: #0f2747;
+
+    font-size: 30px;
+
+}
+
+
+/* =========================================================
+   Print / PDF Preparation
+   ========================================================= */
+
+@media print {
+
+    .proposal {
+
+        width: 100%;
+
+        max-width: none;
+
+        margin: 0;
+
+        padding: 0;
+
+        border-radius: 0;
+
+        box-shadow: none;
+
+    }
+
+    .proposal-cover {
+
+        min-height: 100vh;
+
+        margin: 0;
+
+        border-radius: 0;
+
+        page-break-after: always;
+
+    }
+
+    .proposal-section {
+
+        break-inside: avoid;
+
+    }
+
+    .equipment-card,
+    .saving-card,
+    .overview-card {
+
+        break-inside: avoid;
+
+    }
+
+}
+
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .proposal {
+
+        margin: 0;
+
+        padding: 20px;
+
+        border-radius: 0;
+
+    }
+
+    .proposal-cover {
+
+        grid-template-columns: 1fr;
+
+        gap: 36px;
+
+        min-height: auto;
+
+        padding: 40px 30px;
+
+    }
+
+    .proposal-cover-details {
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .proposal {
+
+        padding: 12px;
+
+    }
+
+    .proposal-cover {
+
+        padding: 30px 22px;
+
+        border-radius: 12px;
+
+    }
+
+    .proposal-logo-image {
+
+        width: 170px;
+
+    }
+
+    .proposal-cover h1 {
+
+        font-size: 36px;
+
+    }
+
+    .proposal-cover-description {
+
+        font-size: 16px;
+
+    }
+
+    .proposal-section h2 {
+
+        font-size: 24px;
+
+    }
 
 }

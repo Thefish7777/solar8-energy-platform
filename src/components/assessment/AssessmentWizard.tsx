@@ -43,11 +43,16 @@ export default function AssessmentWizard() {
 
                 <h2>FREE Solar Assessment</h2>
 
-                <p>
+                <p className="assessment-step">
+    Step {step} of 7
+</p>
 
-                    Step {step} of 7
-
-                </p>
+<div className="progress-bar">
+    <div
+        className="progress-fill"
+        style={{ width: `${(step / 7) * 100}%` }}
+    />
+</div>
 
                 {/* =======================================================
                     STEP 1
@@ -55,183 +60,258 @@ export default function AssessmentWizard() {
 
                 {step === 1 && (
 
-                    <>
+    <>
 
-                        <h3>
+        <h3>
+            What type of property do you have?
+        </h3>
 
-                            What type of property do you have?
+        <div className="assessment-options">
 
-                        </h3>
+            <div
+                className={`assessment-option ${answers.propertyType==="home"?"active":""}`}
+                onClick={() => setAnswers({...answers,propertyType:"home"})}
+            >
+                <div className="assessment-option-icon">🏠</div>
+                <div className="assessment-option-title">Home</div>
+                <div className="assessment-option-description">
+                    Residential property
+                </div>
+            </div>
 
-                        <button
-                            onClick={() =>
-                                setAnswers({
-                                    ...answers,
-                                    propertyType: "home"
-                                })
-                            }
-                        >
-                            Home
-                        </button>
+            <div
+                className={`assessment-option ${answers.propertyType==="business"?"active":""}`}
+                onClick={() => setAnswers({...answers,propertyType:"business"})}
+            >
+                <div className="assessment-option-icon">🏢</div>
+                <div className="assessment-option-title">Business</div>
+                <div className="assessment-option-description">
+                    Commercial premises
+                </div>
+            </div>
 
-                        <button
-                            onClick={() =>
-                                setAnswers({
-                                    ...answers,
-                                    propertyType: "business"
-                                })
-                            }
-                        >
-                            Business
-                        </button>
+            <div
+                className={`assessment-option ${answers.propertyType==="farm"?"active":""}`}
+                onClick={() => setAnswers({...answers,propertyType:"farm"})}
+            >
+                <div className="assessment-option-icon">🌾</div>
+                <div className="assessment-option-title">Farm</div>
+                <div className="assessment-option-description">
+                    Agricultural property
+                </div>
+            </div>
 
-                        <button
-                            onClick={() =>
-                                setAnswers({
-                                    ...answers,
-                                    propertyType: "farm"
-                                })
-                            }
-                        >
-                            Farm
-                        </button>
+        </div>
 
-                    </>
+    </>
 
-                )}
+)}
 
                 {/* =======================================================
                     STEP 2
                 ======================================================== */}
 
-                {step === 2 && (
+                {/* =======================================================
+    STEP 2
+======================================================= */}
 
-                    <>
+{step === 2 && (
 
-                        <h3>
+    <>
 
-                            Monthly Electricity Bill
+        <h3>
+            What is your average monthly electricity bill?
+        </h3>
 
-                        </h3>
+        <p className="assessment-question">
+            This helps Solar8 estimate your home's energy consumption.
+        </p>
 
-                        <input
+        <div className="bill-control">
 
-                            type="range"
+            <div className="bill-value">
+                R{answers.monthlyBill.toLocaleString("en-ZA")}
+            </div>
 
-                            min="500"
+            <input
+                className="slider"
+                type="range"
+                min="500"
+                max="10000"
+                step="100"
+                value={answers.monthlyBill}
+                onChange={(e) =>
+                    setAnswers({
+                        ...answers,
+                        monthlyBill: Number(e.target.value)
+                    })
+                }
+            />
 
-                            max="10000"
+            <div className="slider-labels">
+                <span>R500</span>
+                <span>R10,000+</span>
+            </div>
 
-                            step="100"
+        </div>
 
-                            value={answers.monthlyBill}
+        <p className="assessment-help">
+            Move the slider to your approximate monthly electricity spend.
+        </p>
 
-                            onChange={(e) =>
-                                setAnswers({
-                                    ...answers,
-                                    monthlyBill: Number(e.target.value)
-                                })
-                            }
+    </>
 
-                        />
-
-                        <p>
-
-                            R{answers.monthlyBill.toLocaleString()}
-
-                        </p>
-
-                    </>
-
-                )}
+)}
 
                 {/* =======================================================
-                    STEP 3
-                ======================================================== */}
+    STEP 3
+======================================================= */}
 
-                {step === 3 && (
+{step === 3 && (
 
-                    <>
+    <>
 
-                        <h3>
+        <h3>
+            How many people live or work at the property?
+        </h3>
 
-                            Number of Occupants
+        <p className="assessment-question">
+            This helps us estimate your typical electricity demand.
+        </p>
 
-                        </h3>
+        <div className="occupants-control">
 
-                        <input
+            <label htmlFor="occupants">
+                Number of occupants
+            </label>
 
-                            type="number"
+            <input
+                id="occupants"
+                className="number-input"
+                type="number"
+                min="1"
+                max="20"
+                value={answers.occupants}
+                onChange={(e) =>
+                    setAnswers({
+                        ...answers,
+                        occupants: Math.max(
+                            1,
+                            Math.min(20, Number(e.target.value))
+                        )
+                    })
+                }
+            />
 
-                            min="1"
+            <p className="assessment-help">
+                Enter a number between 1 and 20.
+            </p>
 
-                            max="20"
+        </div>
 
-                            value={answers.occupants}
+    </>
 
-                            onChange={(e) =>
-                                setAnswers({
-                                    ...answers,
-                                    occupants: Number(e.target.value)
-                                })
-                            }
-
-                        />
-
-                    </>
-
-                )}
+)}
 
                 {/* =======================================================
-                    STEP 4
-                ======================================================== */}
+    STEP 4
+======================================================= */}
 
-                {step === 4 && (
+{step === 4 && (
 
-                    <>
+    <>
 
-                        <h3>
+        <h3>
+            What is your main solar goal?
+        </h3>
 
-                            What is your main goal?
+        <p className="assessment-question">
+            Choose the option that best describes what you want
+            your Solar8 system to achieve.
+        </p>
 
-                        </h3>
+        <div className="assessment-options">
 
-                        <button
-                            onClick={() =>
-                                setAnswers({
-                                    ...answers,
-                                    goal: "backup"
-                                })
-                            }
-                        >
-                            Backup Power
-                        </button>
+            <div
+                className={`assessment-option ${
+                    answers.goal === "backup" ? "active" : ""
+                }`}
+                onClick={() =>
+                    setAnswers({
+                        ...answers,
+                        goal: "backup"
+                    })
+                }
+            >
+                <div className="assessment-option-icon">
+                    🔋
+                </div>
 
-                        <button
-                            onClick={() =>
-                                setAnswers({
-                                    ...answers,
-                                    goal: "save"
-                                })
-                            }
-                        >
-                            Reduce My Bill
-                        </button>
+                <div className="assessment-option-title">
+                    Backup Power
+                </div>
 
-                        <button
-                            onClick={() =>
-                                setAnswers({
-                                    ...answers,
-                                    goal: "independence"
-                                })
-                            }
-                        >
-                            Energy Independence
-                        </button>
+                <div className="assessment-option-description">
+                    Keep your essential appliances running
+                    during power outages.
+                </div>
+            </div>
 
-                    </>
+            <div
+                className={`assessment-option ${
+                    answers.goal === "save" ? "active" : ""
+                }`}
+                onClick={() =>
+                    setAnswers({
+                        ...answers,
+                        goal: "save"
+                    })
+                }
+            >
+                <div className="assessment-option-icon">
+                    💰
+                </div>
 
-                )}
+                <div className="assessment-option-title">
+                    Reduce My Bill
+                </div>
+
+                <div className="assessment-option-description">
+                    Reduce your monthly electricity costs
+                    through solar generation.
+                </div>
+            </div>
+
+            <div
+                className={`assessment-option ${
+                    answers.goal === "independence" ? "active" : ""
+                }`}
+                onClick={() =>
+                    setAnswers({
+                        ...answers,
+                        goal: "independence"
+                    })
+                }
+            >
+                <div className="assessment-option-icon">
+                    ☀️
+                </div>
+
+                <div className="assessment-option-title">
+                    Energy Independence
+                </div>
+
+                <div className="assessment-option-description">
+                    Generate more of your own electricity
+                    and rely less on the grid.
+                </div>
+            </div>
+
+        </div>
+
+    </>
+
+)}
 
                 {/* =======================================================
                     STEP 5
@@ -240,6 +320,7 @@ export default function AssessmentWizard() {
                 {step === 5 && (
 
                     <ApplianceSelector
+    value={answers.appliances}
     onChange={(applianceArray) =>
         setAnswers({
             ...answers,
@@ -314,13 +395,14 @@ export default function AssessmentWizard() {
 
                 )}
 
-                <div style={{ marginTop: "2rem" }}>
+                <div className="assessment-buttons">
 
                     {step > 1 && (
 
                         <button
+    className="assessment-btn assessment-btn-secondary"
+    onClick={() => setStep(step - 1)}
 
-                            onClick={() => setStep(step - 1)}
 
                         >
 
@@ -333,10 +415,9 @@ export default function AssessmentWizard() {
                     {step < 7 && (
 
                         <button
-
-                            onClick={() => setStep(step + 1)}
-
-                        >
+    className="assessment-btn assessment-btn-primary"
+    onClick={() => setStep(step + 1)}
+>
 
                             Next
 
