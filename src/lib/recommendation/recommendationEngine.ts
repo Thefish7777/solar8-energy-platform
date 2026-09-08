@@ -103,15 +103,23 @@ export function generateRecommendation(
 
         selectBatteryProduct();
 
-    const batteryQuantity =
+    // Minimum battery bank:
+// At least 2 × inverter size in kWh
+const minimumBatteryCapacity =
+    inverter.size * 2;
 
-        calculateBatteryQuantity(
+// Use whichever requirement is larger:
+// calculated backup requirement OR inverter-based minimum
+const requiredBatteryCapacity = Math.max(
+    batteryRequirement.requiredCapacity,
+    minimumBatteryCapacity
+);
 
-            batteryRequirement.requiredCapacity,
-
-            battery
-
-        );
+const batteryQuantity =
+    calculateBatteryQuantity(
+        requiredBatteryCapacity,
+        battery
+    );
 
     const panel =
 

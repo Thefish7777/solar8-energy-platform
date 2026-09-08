@@ -15,34 +15,188 @@ import ResidentialTrust from "../components/residential/ResidentialTrust.astro";
 import CTASection from "../components/CTASection.astro";
 ---
 
-<MainLayout title="Residential Solar | Solar8">
+<MainLayout
+    title="Residential Solar | Solar8"
+>
 
-    <main>
+    <div class="residential-page">
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
 
         <ResidentialHero />
 
+
+        <!-- =====================================================
+             RESIDENTIAL BENEFITS
+        ====================================================== -->
+
         <ResidentialBenefits />
+
+
+        <!-- =====================================================
+             POPULAR SOLAR SYSTEMS
+        ====================================================== -->
 
         <ResidentialSystems />
 
+
+        <!-- =====================================================
+             WHY SOLAR8
+        ====================================================== -->
+
         <ResidentialComparison />
+
+
+        <!-- =====================================================
+             SAVINGS CALCULATOR
+        ====================================================== -->
 
         <ResidentialCalculator />
 
+
+        <!-- =====================================================
+             RESIDENTIAL PACKAGES
+        ====================================================== -->
+
         <ResidentialPackages />
+
+
+        <!-- =====================================================
+             PROPERTY VALUE
+        ====================================================== -->
 
         <ResidentialValue />
 
+
+        <!-- =====================================================
+             THE SOLAR8 JOURNEY
+        ====================================================== -->
+
         <ResidentialJourney />
+
+
+        <!-- =====================================================
+             SOLAR8 GALLERY
+        ====================================================== -->
 
         <ResidentialGallery />
 
+
+        <!-- =====================================================
+             CLIENT TESTIMONIALS
+        ====================================================== -->
+
         <ResidentialTestimonials />
+
+
+        <!-- =====================================================
+             SOLAR8 TRUST
+        ====================================================== -->
 
         <ResidentialTrust />
 
+
+        <!-- =====================================================
+             FINAL CALL TO ACTION
+        ====================================================== -->
+
         <CTASection />
 
-    </main>
+    </div>
 
 </MainLayout>
+
+
+<style>
+
+/* =========================================================
+   RESIDENTIAL PAGE
+========================================================= */
+
+.residential-page {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CONSISTENT SECTION HEADINGS
+========================================================= */
+
+/*
+   These rules apply to the residential page sections
+   without requiring us to rewrite every component.
+*/
+
+.residential-page :global(.section-heading.centered) {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.residential-page :global(.section-heading.centered h2),
+.residential-page :global(.section-heading.centered h3),
+.residential-page :global(.section-heading.centered p) {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+/* =========================================================
+   GENERIC CENTRED CONTENT
+========================================================= */
+
+.residential-page :global(.text-center) {
+    text-align: center;
+}
+
+
+/* =========================================================
+   SECTION TAGS
+========================================================= */
+
+.residential-page :global(.section-tag) {
+    text-align: center;
+}
+
+
+/* =========================================================
+   REMOVE ACCIDENTAL DARK OVERLAYS
+========================================================= */
+
+/*
+   The Residential page itself must not introduce an overlay.
+   Individual sections are responsible for their own backgrounds.
+*/
+
+.residential-page::before,
+.residential-page::after {
+    content: none !important;
+}
+
+
+/* =========================================================
+   IMAGE SAFETY
+========================================================= */
+
+.residential-page img {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .residential-page {
+        overflow-x: hidden;
+    }
+
+}
+
+</style>

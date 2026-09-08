@@ -1,0 +1,165 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const systems = [
+  {
+    size: "10–20 kW",
+    title: "Small Business",
+    description:
+      "A practical starting point for offices, retail stores, guesthouses and smaller commercial properties.",
+    features: ["Daytime solar generation", "Battery backup for essential loads", "Designed for future expansion"]
+  },
+  {
+    size: "20–100 kW",
+    title: "Growing Business",
+    description:
+      "Balanced solar and storage solutions for larger offices, warehouses, farms and operational sites.",
+    features: ["Higher daytime energy offset", "Load management and backup", "Remote system monitoring"]
+  },
+  {
+    size: "100 kW+",
+    title: "Large Commercial",
+    description:
+      "Engineered systems for high-energy users where production, demand and return on investment are the priority.",
+    features: ["Custom engineering", "Large-scale battery options", "Project and commissioning support"]
+  }
+];
+---
+
+<section class="systems-section commercial-systems-section">
+  <div class="solar-container">
+    <SectionHeading
+      tag="COMMERCIAL SYSTEMS"
+      title="Designed around how your business uses electricity."
+      intro="These system ranges are starting points. Your final design is determined by your electricity profile, operating hours, available roof area and backup requirements."
+    />
+
+    <div class="commercial-system-grid">
+      {systems.map((system, index) => (
+        <article class:list={["commercial-system-card", index === 1 && "featured"]}>
+          <div class="system-size">{system.size}</div>
+          <h3>{system.title}</h3>
+          <p>{system.description}</p>
+          <ul>
+            {system.features.map((feature) => <li><span>✓</span>{feature}</li>)}
+          </ul>
+          <a href="/assessment/">Assess my business <span>→</span></a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .systems-section {
+    padding: 110px 0;
+    background: #fff;
+  }
+
+  .solar-container {
+    width: min(1440px, calc(100% - 48px));
+    margin-inline: auto;
+  }
+
+  .commercial-system-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 60px;
+  }
+
+  .commercial-system-card {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    padding: 34px;
+    border: 1px solid #e5e7eb;
+    border-radius: 26px;
+    background: #fafafa;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .commercial-system-card:hover {
+    transform: translateY(-6px);
+    border-color: #ffd0b0;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  }
+
+  .commercial-system-card.featured {
+    border: 2px solid #ff6800;
+    background: #fff9f5;
+    box-shadow: 0 18px 50px rgba(255, 104, 0, 0.08);
+  }
+
+  .system-size {
+    color: #ff6800;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .commercial-system-card h3 {
+    margin-top: 12px;
+    color: #111827;
+    font-family: Poppins, sans-serif;
+    font-size: 28px;
+  }
+
+  .commercial-system-card p {
+    margin-top: 14px;
+    color: #6b7280;
+    line-height: 1.7;
+  }
+
+  .commercial-system-card ul {
+    display: grid;
+    gap: 12px;
+    margin-top: 26px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .commercial-system-card li {
+    display: flex;
+    gap: 10px;
+    color: #374151;
+    line-height: 1.55;
+  }
+
+  .commercial-system-card li span {
+    color: #16a34a;
+    font-weight: 800;
+  }
+
+  .commercial-system-card a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 30px;
+    color: #ff6800;
+    font-weight: 800;
+  }
+
+  .commercial-system-card a span {
+    font-size: 20px;
+  }
+
+  @media (max-width: 900px) {
+    .systems-section {
+      padding: 80px 0;
+    }
+
+    .commercial-system-grid {
+      grid-template-columns: 1fr;
+      margin-top: 44px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .solar-container {
+      width: calc(100% - 32px);
+    }
+  }
+</style>

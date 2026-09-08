@@ -1,1 +1,28 @@
-CommercialFAQ.astro
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+const faqs = [
+  ["How does Solar8 size a commercial solar system?", "We start with your electricity usage, operating hours, tariff structure and backup requirements. The system is then designed around the loads that matter most to your business rather than using a one-size-fits-all package."],
+  ["Can solar help reduce peak electricity costs?", "Yes. A correctly designed solar and battery system can reduce the amount of grid electricity used during expensive periods and help manage demand, subject to your tariff and operating profile."],
+  ["Will my business still have power during load shedding?", "A hybrid solar and battery system can provide backup power to selected or essential loads. The backup design depends on the equipment, battery capacity and electrical configuration required by your business."],
+  ["Can the system be expanded later?", "Many systems can be designed with future expansion in mind. During the design process we consider available roof space, inverter capacity, battery expansion and expected future energy requirements."],
+  ["How long does a commercial installation take?", "Project duration varies according to system size, site conditions, electrical requirements and approvals. Solar8 will provide a project schedule after the site and technical requirements have been assessed."],
+  ["Do you provide monitoring and ongoing support?", "Yes. Where supported by the selected equipment, systems can include remote monitoring. Solar8 also provides ongoing technical assistance and support after commissioning."]
+];
+---
+<section class="commercial-faq-section">
+  <div class="solar-container">
+    <SectionHeading tag="COMMERCIAL SOLAR FAQ" title="Questions before you invest?" intro="Here are some of the questions businesses commonly ask when considering a commercial solar installation." />
+    <div class="commercial-faq-grid">
+      {faqs.map(([question, answer]) => (
+        <details class="commercial-faq-item">
+          <summary><span>{question}</span><b>+</b></summary>
+          <p>{answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+<style>
+.commercial-faq-section{padding:110px 0;background:#fff}.commercial-faq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.commercial-faq-item{border:1px solid #E5E7EB;border-radius:20px;background:#fff;box-shadow:0 5px 18px rgba(0,0,0,.04)}.commercial-faq-item summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 24px;cursor:pointer;list-style:none;color:#111827;font-family:Poppins,sans-serif;font-weight:700}.commercial-faq-item summary::-webkit-details-marker{display:none}.commercial-faq-item b{display:grid;place-items:center;width:30px;height:30px;flex:0 0 30px;border-radius:50%;background:#FFF3EA;color:#FF6800;font-size:20px;font-weight:500}.commercial-faq-item p{margin:-2px 24px 24px;color:#6B7280;line-height:1.7}.commercial-faq-item[open]{border-color:#FFBF91;box-shadow:0 14px 32px rgba(0,0,0,.07)}
+@media(max-width:800px){.commercial-faq-section{padding:80px 0}.commercial-faq-grid{grid-template-columns:1fr}}@media(max-width:640px){.commercial-faq-item summary{padding:20px;font-size:16px}.commercial-faq-item p{margin:-2px 20px 20px;font-size:15px}}
+</style>

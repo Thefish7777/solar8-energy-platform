@@ -1,75 +1,123 @@
 import "./Proposal.css";
 
-export default function ProposalHeader() {
+import solar8Logo from "../../assets/logos/solar8-logo-light.svg?url";
+
+interface Props {
+    customerName?: string;
+    consultantName?: string;
+    reportReference?: string;
+}
+
+export default function ProposalHeader({
+    customerName = "Residential Customer",
+    consultantName = "Solar8 Energy",
+    reportReference
+}: Props) {
 
     const today = new Date();
 
-    const proposalNumber =
-        `S8-${today.getFullYear()}${String(today.getMonth()+1).padStart(2,"0")}${String(today.getDate()).padStart(2,"0")}-${Math.floor(Math.random()*9000+1000)}`;
+    const formattedDate = today.toLocaleDateString("en-ZA", {
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    });
+
+    const reference =
+        reportReference ??
+        `S8-${today.getFullYear()}${String(today.getMonth() + 1).padStart(2, "0")}${String(today.getDate()).padStart(2, "0")}`;
 
     return (
 
         <header className="proposal-cover">
 
-            <div className="cover-left">
+            <div className="proposal-cover-brand">
+
+                <img
+                    src={solar8Logo}
+                    alt="Solar8 Energy"
+                    className="proposal-logo-image"
+                />
+
+                <div className="proposal-cover-divider" />
+
+                <p className="proposal-document-label">
+                    RESIDENTIAL ENERGY REPORT
+                </p>
 
                 <h1>
-
-                    Solar8
-
+                    Your Solar Energy Assessment
                 </h1>
 
-                <h2>
-
-                    Residential Solar Recommendation
-
-                </h2>
-
-                <p>
-
-                    Smart Solar Solutions for South African Homes
-
+                <p className="proposal-cover-description">
+                    A personalised assessment of your home's energy
+                    requirements, backup needs and recommended solar solution.
                 </p>
 
             </div>
 
-            <div className="cover-right">
+            <div className="proposal-cover-details">
 
-                <table>
+                <div className="proposal-cover-details-heading">
+                    SOLAR8 ENERGY
+                </div>
 
-                    <tbody>
+                <div className="proposal-cover-detail">
 
-                        <tr>
+                    <span>
+                        Prepared For
+                    </span>
 
-                            <td>Proposal</td>
+                    <strong>
+                        {customerName}
+                    </strong>
 
-                            <td>{proposalNumber}</td>
+                </div>
 
-                        </tr>
+                <div className="proposal-cover-detail">
 
-                        <tr>
+                    <span>
+                        Report Reference
+                    </span>
 
-                            <td>Date</td>
+                    <strong>
+                        {reference}
+                    </strong>
 
-                            <td>
+                </div>
 
-                                {today.toLocaleDateString("en-ZA",{
+                <div className="proposal-cover-detail">
 
-                                    day:"2-digit",
+                    <span>
+                        Prepared By
+                    </span>
 
-                                    month:"long",
+                    <strong>
+                        {consultantName}
+                    </strong>
 
-                                    year:"numeric"
+                </div>
 
-                                })}
+                <div className="proposal-cover-detail">
 
-                            </td>
+                    <span>
+                        Date
+                    </span>
 
-                        </tr>
+                    <strong>
+                        {formattedDate}
+                    </strong>
 
-                    </tbody>
+                </div>
 
-                </table>
+                <div className="proposal-cover-confidential">
+
+                    CONFIDENTIAL
+
+                    <small>
+                        Prepared exclusively for the recipient
+                    </small>
+
+                </div>
 
             </div>
 

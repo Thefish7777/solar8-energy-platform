@@ -2,21 +2,21 @@
 import commercial from "../../assets/images/commercial-solar.jpg";
 ---
 
-<section class="bg-white py-24">
+<section class="commercial-hero">
 
-    <div class="container">
+    <div class="solar-container">
 
-        <div class="grid items-center gap-16 lg:grid-cols-2">
+        <div class="commercial-hero-grid">
 
             <!-- Left -->
 
-            <div>
+            <div class="commercial-hero-copy">
 
-                <p class="mb-4 text-sm font-bold uppercase tracking-[0.3em] text-orange-500">
+                <span class="eyebrow">
                     COMMERCIAL SOLAR
-                </p>
+                </span>
 
-                <h1 class="text-5xl font-extrabold leading-tight tracking-tight text-slate-900 md:text-6xl">
+                <h1>
 
                     Reduce operating costs.
                     <br />
@@ -24,7 +24,7 @@ import commercial from "../../assets/images/commercial-solar.jpg";
 
                 </h1>
 
-                <p class="mt-8 max-w-2xl text-lg leading-8 text-slate-600">
+                <p class="commercial-hero-text">
 
                     Solar8 designs and installs commercial solar systems that
                     reduce electricity costs, improve energy security and
@@ -32,7 +32,7 @@ import commercial from "../../assets/images/commercial-solar.jpg";
 
                 </p>
 
-                <div class="mt-10 grid gap-4 sm:grid-cols-2">
+                <div class="commercial-industries-mini">
 
                     {[
                         "Offices",
@@ -63,11 +63,11 @@ import commercial from "../../assets/images/commercial-solar.jpg";
 
                 </div>
 
-                <div class="mt-12 flex flex-col gap-4 sm:flex-row">
+                <div class="commercial-hero-actions">
 
                     <a
-                        href="/assessment"
-                        class="inline-flex items-center justify-center rounded-xl bg-orange-500 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-orange-600 hover:shadow-2xl"
+                        href="/assessment/"
+                        class="primary-button"
                     >
 
                         Request Commercial Assessment
@@ -75,8 +75,8 @@ import commercial from "../../assets/images/commercial-solar.jpg";
                     </a>
 
                     <a
-                        href="/contact"
-                        class="inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-8 py-4 text-lg font-semibold text-slate-700 transition-all duration-300 hover:border-orange-500 hover:text-orange-500"
+                        href="/contact/"
+                        class="secondary-button"
                     >
 
                         Speak to an Engineer
@@ -89,7 +89,7 @@ import commercial from "../../assets/images/commercial-solar.jpg";
 
             <!-- Right -->
 
-            <div>
+            <div class="commercial-hero-image">
 
                 <img
                     src={commercial.src}
@@ -103,4 +103,7 @@ import commercial from "../../assets/images/commercial-solar.jpg";
 
     </div>
 
-</section>
+</section><style>
+.commercial-hero{padding:110px 0 110px;background:radial-gradient(circle at 82% 18%,rgba(255,104,0,.14),transparent 35%),linear-gradient(180deg,#fff 0%,#FAFAFA 100%)}.commercial-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:70px;align-items:center}.commercial-hero-copy{max-width:760px;text-align:center;margin-inline:auto}.commercial-hero h1{margin:18px 0 0;color:#111827;font-family:Poppins,sans-serif;font-size:clamp(2.8rem,5vw,5rem);font-weight:800;line-height:1.05;letter-spacing:-.04em}.commercial-hero-text{max-width:700px;margin:24px auto 0;color:#6B7280;font-size:18px;line-height:1.7}.commercial-industries-mini{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:30px;text-align:left}.commercial-industries-mini>div{display:flex;align-items:center;gap:10px;padding:13px 14px;border:1px solid #E5E7EB;border-radius:16px;background:#fff}.commercial-industries-mini>div>div{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#FFF3EA;color:#FF6800;font-weight:800}.commercial-hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:34px}.commercial-hero-image img{width:100%;border-radius:26px;box-shadow:0 20px 55px rgba(0,0,0,.12)}
+@media(max-width:900px){.commercial-hero{padding:88px 0}.commercial-hero-grid{grid-template-columns:1fr;gap:48px}.commercial-hero-copy{max-width:780px}.commercial-hero h1{font-size:clamp(2.6rem,8vw,4rem)}}@media(max-width:640px){.commercial-hero{padding:72px 0}.commercial-hero .solar-container{width:calc(100% - 32px)}.commercial-industries-mini{grid-template-columns:1fr}.commercial-hero-actions{flex-direction:column}.commercial-hero-actions>*{width:100%}}
+</style>

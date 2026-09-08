@@ -8,22 +8,8 @@ interface Props {
 const { tag, title, intro } = Astro.props;
 ---
 
-<div class="mx-auto max-w-3xl text-center">
-
-    <p class="section-tag">
-        {tag}
-    </p>
-
-    <h2 class="section-title">
-        {title}
-    </h2>
-
-    {
-        intro && (
-            <p class="section-intro">
-                {intro}
-            </p>
-        )
-    }
-
+<div class="section-heading centered">
+    <span class="eyebrow">{tag}</span>
+    <h2>{title}</h2>
+    {intro && <p>{intro}</p>}
 </div>

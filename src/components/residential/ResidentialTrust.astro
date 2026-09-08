@@ -1,95 +1,265 @@
-<section class="trust">
+---
+const trustPoints = [
+    {
+        title: "Engineered Systems",
+        description:
+            "Every system is designed around your home's actual electricity usage, backup requirements and future energy needs.",
+        icon: "engineering",
+    },
+    {
+        title: "Premium Equipment",
+        description:
+            "We use globally recognised solar and battery brands selected for reliability, performance and long-term support.",
+        icon: "sun",
+    },
+    {
+        title: "Qualified Installers",
+        description:
+            "Professional workmanship completed safely, carefully and in accordance with the relevant industry requirements.",
+        icon: "wrench",
+    },
+    {
+        title: "Maximum Savings",
+        description:
+            "System design focuses on reducing your electricity costs while making the best use of your available solar generation.",
+        icon: "trend",
+    },
+    {
+        title: "Warranty Support",
+        description:
+            "Manufacturer warranties are supported by ongoing technical assistance when you need help with your system.",
+        icon: "shield",
+    },
+    {
+        title: "Customer First",
+        description:
+            "Honest advice and practical recommendations focused on your home, your budget and your long-term goals.",
+        icon: "heart",
+    },
+];
+---
 
-    <div class="container">
-
-        <p class="section-tag">
-            WHY SOLAR8
-        </p>
-
-        <h2 class="section-title">
-            Built differently from the average installer.
-        </h2>
-
-        <p class="section-intro">
-            Our reputation is built on engineering excellence, premium equipment and exceptional customer support.
-        </p>
-
-        <div class="trust-grid">
-
-            <div class="trust-card">
-
-                <div class="trust-icon">⚙</div>
-
-                <h3>Engineered Systems</h3>
-
-                <p>
-                    Every system is designed around your home's actual electricity usage.
-                </p>
-
-            </div>
-
-            <div class="trust-card">
-
-                <div class="trust-icon">🏆</div>
-
-                <h3>Premium Equipment</h3>
-
-                <p>
-                    We install globally recognised Tier-1 brands with excellent local support.
-                </p>
-
-            </div>
-
-            <div class="trust-card">
-
-                <div class="trust-icon">👷</div>
-
-                <h3>Qualified Installers</h3>
-
-                <p>
-                    Professional workmanship completed safely and to industry standards.
-                </p>
-
-            </div>
-
-            <div class="trust-card">
-
-                <div class="trust-icon">📈</div>
-
-                <h3>Maximum Savings</h3>
-
-                <p>
-                    Systems designed to deliver the greatest long-term financial return.
-                </p>
-
-            </div>
-
-            <div class="trust-card">
-
-                <div class="trust-icon">🛡</div>
-
-                <h3>Warranty Support</h3>
-
-                <p>
-                    Manufacturer warranties backed by ongoing technical support.
-                </p>
-
-            </div>
-
-            <div class="trust-card">
-
-                <div class="trust-icon">❤️</div>
-
-                <h3>Customer First</h3>
-
-                <p>
-                    Honest advice with solutions designed for your needs, not ours.
-                </p>
-
-            </div>
-
+<section class="residential-trust">
+    <div class="trust-container">
+        <div class="section-heading centered light-heading">
+            <span class="eyebrow">THE SOLAR8 DIFFERENCE</span>
+            <h2>More than solar equipment. A better way to go solar.</h2>
+            <p>
+                We combine careful system design, quality equipment and professional
+                installation to give homeowners confidence in their energy investment.
+            </p>
         </div>
 
-    </div>
+        <div class="trust-grid">
+            {trustPoints.map((point) => (
+                <article class="trust-card">
+                    <div class="trust-icon" aria-hidden="true">
+                        {point.icon === "engineering" && (
+                            <svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z" /><path d="M8 9h8M8 13h5M8 17h3" /></svg>
+                        )}
+                        {point.icon === "sun" && (
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.5" /><path d="M12 2v3M12 19v3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M2 12h3M19 12h3M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12" /></svg>
+                        )}
+                        {point.icon === "wrench" && (
+                            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.1 5.1L4 17l3 3 5.6-5.6a4 4 0 0 0 5.1-5.1l-2.1 2.1-2.2-.8-.8-2.2z" /></svg>
+                        )}
+                        {point.icon === "trend" && (
+                            <svg viewBox="0 0 24 24"><path d="M4 18l6-6 4 4 6-8" /><path d="M15 8h5v5" /></svg>
+                        )}
+                        {point.icon === "shield" && (
+                            <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-2.9 7.9-7 10-4.1-2.1-7-5.4-7-10V6z" /><path d="M9 12l2 2 4-4" /></svg>
+                        )}
+                        {point.icon === "heart" && (
+                            <svg viewBox="0 0 24 24"><path d="M20 11.5c0 5-8 9-8 9s-8-4-8-9a4.5 4.5 0 0 1 8-2.7 4.5 4.5 0 0 1 8 2.7z" /><path d="M8.5 12.5l2 2 4-4" /></svg>
+                        )}
+                    </div>
+                    <h3>{point.title}</h3>
+                    <p>{point.description}</p>
+                </article>
+            ))}
+        </div>
 
+        <div class="trust-statement">
+            <div>
+                <span>THE SOLAR8 PROMISE</span>
+                <h3>Advice you can trust. Systems built to last.</h3>
+                <p>
+                    We focus on getting the design right before recommending equipment.
+                </p>
+            </div>
+        </div>
+    </div>
 </section>
+
+<style>
+.residential-trust {
+    background: var(--color-heading);
+    padding: var(--section-padding) 0;
+}
+
+.trust-container {
+    width: min(var(--container-width), calc(100% - 48px));
+    margin-inline: auto;
+}
+
+.section-heading {
+    max-width: 760px;
+    margin-bottom: 60px;
+}
+
+.section-heading.centered {
+    margin-inline: auto;
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin: 16px 0 0;
+    color: var(--color-heading);
+    font-family: var(--font-heading);
+    font-size: clamp(2.3rem, 4vw, 3.3rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.section-heading p {
+    max-width: 720px;
+    margin: 20px auto 0;
+    color: var(--color-muted);
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.light-heading h2 {
+    color: var(--color-white);
+}
+
+.light-heading p {
+    color: #D1D5DB;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.trust-card {
+    min-width: 0;
+    padding: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-large);
+    background: rgba(255, 255, 255, 0.045);
+    transition: var(--transition);
+}
+
+.trust-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 104, 0, 0.45);
+    background: rgba(255, 255, 255, 0.065);
+}
+
+.trust-icon {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 24px;
+    place-items: center;
+    border-radius: 16px;
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.trust-icon svg {
+    width: 27px;
+    height: 27px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.trust-card h3 {
+    margin: 0 0 12px;
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: 20px;
+}
+
+.trust-card p {
+    margin: 0;
+    color: #D1D5DB;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.trust-statement {
+    margin-top: 40px;
+    padding: 36px 40px;
+    border: 1px solid rgba(255, 104, 0, 0.25);
+    border-radius: var(--radius-large);
+    background: linear-gradient(135deg, rgba(255, 104, 0, 0.16), rgba(255, 104, 0, 0.05));
+}
+
+.trust-statement span {
+    color: #FFB27D;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+}
+
+.trust-statement h3 {
+    margin: 10px 0 8px;
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.trust-statement p {
+    margin: 0;
+    color: #D1D5DB;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+@media (max-width: 1023px) {
+    .residential-trust {
+        padding: var(--section-padding-small) 0;
+    }
+
+    .trust-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .trust-container {
+        width: min(var(--container-width), calc(100% - 32px));
+    }
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+        font-size: 2.25rem;
+    }
+
+    .section-heading p {
+        font-size: 16px;
+    }
+
+    .trust-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trust-card {
+        padding: 28px 24px;
+    }
+
+    .trust-statement {
+        margin-top: 24px;
+        padding: 28px 24px;
+    }
+}
+</style>

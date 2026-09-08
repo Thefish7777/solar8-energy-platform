@@ -1,0 +1,141 @@
+/* =========================================================
+   SOLAR8 CTA SECTION
+========================================================= */
+
+.cta-section {
+    padding: 120px 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255, 104, 0, 0.08),
+            transparent 40%
+        ),
+        #111827;
+}
+
+.cta-content {
+    max-width: 900px;
+
+    margin-inline: auto;
+
+    text-align: center;
+}
+
+.cta-content > .mx-auto {
+    width: 100%;
+    max-width: 760px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.cta-content .section-tag,
+.cta-content .section-title,
+.cta-content .section-intro {
+    text-align: center;
+}
+
+.cta-content .section-tag {
+    color: #ff6800;
+}
+
+.cta-content .section-title {
+    color: #ffffff;
+}
+
+.cta-content .section-intro {
+    color: #d1d5db;
+}
+
+
+/* =========================================================
+   FEATURE PILLS
+========================================================= */
+
+.cta-features {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 42px;
+}
+
+.cta-feature {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 11px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.cta-check {
+    color: #ff6800;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.cta-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    margin-top: 48px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 640px) {
+
+    .cta-section {
+        padding: 85px 0;
+    }
+
+    .cta-features {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .cta-feature {
+        justify-content: center;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .cta-buttons > * {
+        width: 100%;
+    }
+}

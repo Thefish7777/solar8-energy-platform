@@ -26,20 +26,6 @@
 
 }
 
-<div className="logo">
-
-    <img
-
-        src="/images/logo.png"
-
-        alt="Solar8"
-
-        height="55"
-
-    />
-
-</div>
-
 .recommendation-header h2{
 
     margin:0;

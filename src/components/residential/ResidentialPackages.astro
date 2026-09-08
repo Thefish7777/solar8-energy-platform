@@ -1,171 +1,449 @@
 ---
-import SectionHeading from "../ui/SectionHeading.astro";
-import {
-    ShieldCheck,
-    Sun,
-    House,
-    Zap
-} from "lucide-react";
-
 const packages = [
     {
-        icon: ShieldCheck,
         title: "Essential Backup",
-        subtitle: "Perfect for apartments and small homes.",
+        subtitle: "Reliable backup for the essentials in smaller homes.",
         features: [
-            "Lights & Plug Circuits",
-            "Wi-Fi & Entertainment",
-            "Fridge Protection",
-            "Battery Backup"
+            "Lights & plug circuits",
+            "Wi-Fi & entertainment",
+            "Fridge protection",
+            "Battery backup",
         ],
-        featured: false
+        featured: false,
     },
     {
-        icon: Sun,
         title: "Smart Home",
-        subtitle: "Reduce your electricity bill every day.",
+        subtitle: "A balanced solar and battery solution for everyday savings.",
         features: [
-            "Solar Panels",
-            "Hybrid Inverter",
-            "Battery Storage",
-            "Expandable System"
+            "Solar panels",
+            "Hybrid inverter",
+            "Battery storage",
+            "Expandable system",
         ],
-        featured: true
+        featured: true,
     },
     {
-        icon: House,
         title: "Family Energy",
-        subtitle: "Designed for larger family homes.",
+        subtitle: "Designed for larger family homes with higher energy demand.",
         features: [
-            "Air Conditioning",
-            "Pool Equipment",
-            "Geyser Integration",
-            "Maximum Savings"
+            "Air conditioning",
+            "Pool equipment",
+            "Geyser integration",
+            "Maximum savings",
         ],
-        featured: false
+        featured: false,
     },
     {
-        icon: Zap,
         title: "Premium Hybrid",
-        subtitle: "Near off-grid energy independence.",
+        subtitle: "A high-capacity system for greater energy independence.",
         features: [
-            "Whole Home Backup",
-            "Premium Components",
-            "Long Runtime",
-            "Future Ready"
+            "Whole-home backup",
+            "Premium components",
+            "Longer runtime",
+            "Future ready",
         ],
-        featured: false
-    }
+        featured: false,
+    },
 ];
 ---
 
-<section class="bg-slate-50 py-24">
-
+<section class="residential-packages">
     <div class="container">
 
-        <SectionHeading
-            tag="SOLAR PACKAGES"
-            title="Residential systems designed around the way you live."
-            intro="Every home is different. These packages provide a starting point before our engineers design the ideal solar solution specifically for your property."
-        />
+        <div class="section-heading centered residential-packages-heading">
+            <span class="eyebrow">SOLAR PACKAGES</span>
 
-        <div class="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+            <h2>
+                Residential systems designed around the way you live.
+            </h2>
+
+            <p>
+                Every home is different. These packages provide a starting
+                point before our engineers design the ideal solar solution
+                specifically for your property.
+            </p>
+        </div>
+
+        <div class="residential-packages-grid">
 
             {
-                packages.map((pkg) => {
+                packages.map((pkg) => (
+                    <article
+                        class:list={[
+                            "residential-package-card",
+                            pkg.featured && "featured",
+                        ]}
+                    >
 
-                    const Icon = pkg.icon;
+                        {pkg.featured && (
+                            <div class="package-popular">
+                                MOST POPULAR
+                            </div>
+                        )}
 
-                    return (
+                        <div class="package-icon" aria-hidden="true">
+                            {pkg.featured ? (
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="M12 7v10" />
+                                    <path d="M8.5 12h7" />
+                                </svg>
+                            ) : (
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path d="M3 11.5 12 4l9 7.5" />
+                                    <path d="M5.5 10.5V20h13v-9.5" />
+                                    <path d="M9.5 20v-5.5h5V20" />
+                                </svg>
+                            )}
+                        </div>
 
-                        <article
+                        <h3>{pkg.title}</h3>
+
+                        <p class="package-subtitle">
+                            {pkg.subtitle}
+                        </p>
+
+                        <ul class="package-features">
+                            {
+                                pkg.features.map((feature) => (
+                                    <li>
+                                        <span
+                                            class="package-check"
+                                            aria-hidden="true"
+                                        >
+                                            <svg
+                                                viewBox="0 0 20 20"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            >
+                                                <path d="m5 10 3 3 7-7" />
+                                            </svg>
+                                        </span>
+
+                                        <span>{feature}</span>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+
+                        <a
+                            href="/assessment/"
                             class:list={[
-                                "relative rounded-3xl border p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl",
-                                pkg.featured
-                                    ? "border-orange-500 bg-orange-50 shadow-xl"
-                                    : "border-slate-200 bg-white shadow-sm"
+                                "package-button",
+                                pkg.featured && "featured-button",
                             ]}
                         >
+                            View Solution
+                        </a>
 
-                            {
-                                pkg.featured && (
-
-                                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 rounded-full bg-orange-500 px-5 py-2 text-sm font-bold tracking-wide text-white shadow-lg">
-
-                                        MOST POPULAR
-
-                                    </div>
-
-                                )
-                            }
-
-                            <div class="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-100 text-orange-500">
-
-                                <Icon size={34} strokeWidth={2.2} />
-
-                            </div>
-
-                            <h3 class="mb-3 text-3xl font-bold text-slate-900">
-
-                                {pkg.title}
-
-                            </h3>
-
-                            <p class="mb-8 leading-7 text-slate-600">
-
-                                {pkg.subtitle}
-
-                            </p>
-
-                            <ul class="mb-10 space-y-4">
-
-                                {
-                                    pkg.features.map((feature) => (
-
-                                        <li class="flex items-center gap-3">
-
-                                            <span class="flex h-7 w-7 items-center justify-center rounded-full bg-orange-500 text-sm font-bold text-white">
-
-                                                ✓
-
-                                            </span>
-
-                                            <span class="font-medium text-slate-700">
-
-                                                {feature}
-
-                                            </span>
-
-                                        </li>
-
-                                    ))
-                                }
-
-                            </ul>
-
-                            <a
-                                href="/assessment"
-                                class:list={[
-                                    "inline-flex w-full justify-center rounded-xl px-6 py-4 text-lg font-semibold transition-all duration-300",
-                                    pkg.featured
-                                        ? "bg-orange-500 text-white shadow-lg hover:bg-orange-600 hover:shadow-xl"
-                                        : "border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white"
-                                ]}
-                            >
-
-                                View Solution
-
-                            </a>
-
-                        </article>
-
-                    );
-
-                })
+                    </article>
+                ))
             }
 
         </div>
 
-    </div>
+        <p class="packages-note">
+            Package examples are indicative only. Your final system will be
+            sized according to your home's electricity usage, backup
+            requirements, available roof space and future energy needs.
+        </p>
 
+    </div>
 </section>
+
+<style>
+.residential-packages {
+    width: 100%;
+    padding: 112px 0;
+    background: #f8f9fa;
+}
+
+.residential-packages-heading {
+    max-width: 820px;
+    margin-bottom: 56px;
+}
+
+.residential-packages-heading h2 {
+    color: var(--color-heading);
+    font-family: var(--font-heading);
+    font-size: clamp(2.35rem, 4vw, 3.25rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+}
+
+.residential-packages-heading p {
+    max-width: 720px;
+}
+
+.residential-packages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+.residential-package-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 560px;
+    padding: 34px 30px 30px;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-light);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.residential-package-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 104, 0, 0.25);
+    box-shadow: var(--shadow-medium);
+}
+
+.residential-package-card.featured {
+    border-color: var(--color-primary);
+    background: #fff8f4;
+    box-shadow: var(--shadow-medium);
+}
+
+.residential-package-card.featured:hover {
+    box-shadow: var(--shadow-heavy);
+}
+
+.package-popular {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    padding: 7px 17px;
+    border-radius: 999px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    box-shadow: 0 8px 20px rgba(255, 104, 0, 0.22);
+}
+
+.package-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 28px;
+    border-radius: 18px;
+    background: rgba(255, 104, 0, 0.1);
+    color: var(--color-primary);
+}
+
+.package-icon svg {
+    width: 30px;
+    height: 30px;
+}
+
+.residential-package-card h3 {
+    margin: 0;
+    color: var(--color-heading);
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+}
+
+.package-subtitle {
+    min-height: 82px;
+    margin: 16px 0 26px;
+    color: var(--color-muted);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.package-features {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.package-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-text);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.package-check {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(255, 104, 0, 0.1);
+    color: var(--color-primary);
+}
+
+.package-check svg {
+    width: 15px;
+    height: 15px;
+}
+
+.package-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 54px;
+    margin-top: auto;
+    padding: 0 22px;
+    border: 1px solid var(--color-primary);
+    border-radius: var(--button-radius);
+    background: var(--color-white);
+    color: var(--color-primary);
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.package-button:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-1px);
+}
+
+.package-button.featured-button {
+    background: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: 0 8px 20px rgba(255, 104, 0, 0.18);
+}
+
+.package-button.featured-button:hover {
+    background: var(--color-primary-dark);
+}
+
+.packages-note {
+    max-width: 850px;
+    margin: 42px auto 0;
+    color: var(--color-muted);
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+    .residential-packages-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .residential-package-card {
+        min-height: 520px;
+    }
+}
+
+@media (max-width: 900px) {
+    .residential-packages {
+        padding: 88px 0;
+    }
+
+    .residential-packages-heading {
+        margin-bottom: 44px;
+    }
+
+    .residential-package-card {
+        min-height: 0;
+    }
+
+    .package-subtitle {
+        min-height: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .residential-packages {
+        padding: 72px 0;
+    }
+
+    .residential-packages-heading {
+        margin-bottom: 36px;
+    }
+
+    .residential-packages-heading h2 {
+        font-size: 2.2rem;
+    }
+
+    .residential-packages-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .residential-package-card {
+        padding: 28px 24px;
+        border-radius: 20px;
+    }
+
+    .package-popular {
+        top: -13px;
+        font-size: 11px;
+    }
+
+    .package-icon {
+        width: 58px;
+        height: 58px;
+        margin-bottom: 22px;
+        border-radius: 16px;
+    }
+
+    .package-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .residential-package-card h3 {
+        font-size: 23px;
+    }
+
+    .package-subtitle {
+        margin: 14px 0 24px;
+    }
+
+    .packages-note {
+        margin-top: 32px;
+        font-size: 13px;
+    }
+}
+</style>

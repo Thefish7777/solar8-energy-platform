@@ -5,126 +5,368 @@ import PrimaryButton from "../ui/PrimaryButton.astro";
 import SecondaryButton from "../ui/SecondaryButton.astro";
 ---
 
-<section class="bg-gradient-to-b from-white to-slate-50 pt-36 pb-24">
-
+<section class="residential-hero">
     <div class="container">
+        <div class="residential-hero-inner">
 
-        <div class="grid items-center gap-16 lg:grid-cols-2">
-
-            <!-- LEFT -->
-
-            <div>
-
-                <p class="section-tag">
+            <div class="section-heading centered">
+                <span class="eyebrow">
                     RESIDENTIAL SOLAR
-                </p>
+                </span>
 
-                <h1 class="mb-8 text-5xl font-extrabold leading-tight tracking-tight text-slate-900 lg:text-6xl">
-
+                <h1>
                     Lower your electricity bill.
                     <br />
                     Protect your family from load shedding.
-
                 </h1>
 
-                <p class="mb-10 max-w-xl text-xl leading-9 text-slate-600">
-
-                    Every Solar8 residential system is custom designed to maximise
-                    savings, provide uninterrupted backup power and deliver reliable
-                    clean energy for decades using premium Tier-1 equipment.
-
+                <p>
+                    Every Solar8 residential system is custom designed to
+                    maximise savings, provide uninterrupted backup power and
+                    deliver reliable clean energy for decades using premium
+                    Tier-1 equipment.
                 </p>
+            </div>
 
-                <div class="mb-12 grid gap-5 sm:grid-cols-2">
+            <!-- BENEFITS -->
+            <div class="residential-hero-benefits">
 
-                    <div class="flex items-center gap-3 rounded-xl bg-white p-4 shadow-sm">
-
-                        <span class="text-xl text-orange-500">✓</span>
-
-                        <span class="font-medium">
-                            Lower electricity costs
-                        </span>
-
-                    </div>
-
-                    <div class="flex items-center gap-3 rounded-xl bg-white p-4 shadow-sm">
-
-                        <span class="text-xl text-orange-500">✓</span>
-
-                        <span class="font-medium">
-                            Battery backup
-                        </span>
-
-                    </div>
-
-                    <div class="flex items-center gap-3 rounded-xl bg-white p-4 shadow-sm">
-
-                        <span class="text-xl text-orange-500">✓</span>
-
-                        <span class="font-medium">
-                            Increase property value
-                        </span>
-
-                    </div>
-
-                    <div class="flex items-center gap-3 rounded-xl bg-white p-4 shadow-sm">
-
-                        <span class="text-xl text-orange-500">✓</span>
-
-                        <span class="font-medium">
-                            Premium Tier-1 equipment
-                        </span>
-
-                    </div>
-
+                <div class="residential-hero-benefit">
+                    <span class="residential-check">&#10003;</span>
+                    <span>Lower electricity costs</span>
                 </div>
 
-                <div class="flex flex-wrap gap-5">
+                <div class="residential-hero-benefit">
+                    <span class="residential-check">&#10003;</span>
+                    <span>Battery backup</span>
+                </div>
 
-                    <PrimaryButton href="/assessment">
-                        Book Free Assessment
-                    </PrimaryButton>
+                <div class="residential-hero-benefit">
+                    <span class="residential-check">&#10003;</span>
+                    <span>Increase property value</span>
+                </div>
 
-                    <SecondaryButton href="#systems">
-                        View Popular Systems
-                    </SecondaryButton>
-
+                <div class="residential-hero-benefit">
+                    <span class="residential-check">&#10003;</span>
+                    <span>Premium Tier-1 equipment</span>
                 </div>
 
             </div>
 
-            <!-- RIGHT -->
+            <!-- ACTIONS -->
+            <div class="residential-hero-buttons">
 
-            <div class="relative">
+                <PrimaryButton href="/assessment/">
+                    Book Free Assessment
+                </PrimaryButton>
+
+                <SecondaryButton href="#systems">
+                    View Popular Systems
+                </SecondaryButton>
+
+            </div>
+
+            <!-- HERO IMAGE -->
+            <div class="residential-hero-image">
 
                 <img
                     src={hero.src}
                     alt="Residential Solar Installation"
-                    class="rounded-3xl shadow-2xl"
                 />
 
-                <!-- Floating Card -->
+                <div class="residential-savings-card">
+                    <p>30&ndash;70%</p>
 
-                <div class="absolute bottom-8 right-8 rounded-2xl bg-white px-8 py-6 shadow-2xl">
-
-                    <p class="text-4xl font-extrabold text-orange-500">
-
-                        30–70%
-
-                    </p>
-
-                    <p class="mt-2 font-semibold text-slate-700">
-
+                    <span>
                         Typical Electricity Savings
-
-                    </p>
-
+                    </span>
                 </div>
 
             </div>
 
         </div>
-
     </div>
-
 </section>
+
+<style>
+.residential-hero {
+    width: 100%;
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f8f9fa 100%
+        );
+}
+
+.residential-hero-inner {
+    width: 100%;
+    padding: 48px 0 104px;
+}
+
+/* ==========================================
+   HEADING
+========================================== */
+
+.residential-hero .section-heading {
+    width: 100%;
+    max-width: 900px;
+    margin-inline: auto;
+}
+
+.residential-hero h1 {
+    margin-top: 16px;
+    color: var(--color-heading);
+    font-family: var(--font-heading);
+    font-size: clamp(2.65rem, 4.4vw, 4.35rem);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -0.045em;
+}
+
+.residential-hero .section-heading p {
+    width: 100%;
+    max-width: 760px;
+    margin: 24px auto 0;
+    color: var(--color-muted);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   BENEFITS
+========================================== */
+
+.residential-hero-benefits {
+    width: 100%;
+    max-width: 900px;
+    margin: 42px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.residential-hero-benefit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    min-height: 60px;
+    padding: 14px 20px;
+
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+
+    color: var(--color-text);
+    font-size: 15px;
+    font-weight: 600;
+
+    box-shadow: var(--shadow-light);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.residential-hero-benefit:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 104, 0, 0.25);
+    box-shadow: var(--shadow-medium);
+}
+
+.residential-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 24px;
+
+    width: 24px;
+    height: 24px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 104, 0, 0.10);
+    color: var(--color-primary);
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.residential-hero-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 16px;
+    margin-top: 32px;
+}
+
+/* ==========================================
+   HERO IMAGE
+========================================== */
+
+.residential-hero-image {
+    position: relative;
+
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 56px auto 0;
+}
+
+.residential-hero-image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: var(--image-radius);
+    box-shadow: var(--shadow-hero);
+}
+
+/* ==========================================
+   SAVINGS CARD
+========================================== */
+
+.residential-savings-card {
+    position: absolute;
+
+    right: 28px;
+    bottom: 28px;
+
+    min-width: 230px;
+
+    padding: 22px 26px;
+
+    background: rgba(255, 255, 255, 0.97);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: var(--radius-medium);
+
+    box-shadow: var(--shadow-heavy);
+}
+
+.residential-savings-card p {
+    margin: 0;
+
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+
+    font-size: 2.3rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.residential-savings-card span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: var(--color-text);
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+
+    .residential-hero-inner {
+        padding: 40px 0 88px;
+    }
+
+    .residential-hero h1 {
+        font-size: clamp(2.4rem, 7vw, 3.7rem);
+    }
+
+    .residential-hero-benefits {
+        grid-template-columns: 1fr;
+        max-width: 680px;
+    }
+
+    .residential-hero-image {
+        margin-top: 48px;
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 640px) {
+
+    .residential-hero-inner {
+        padding: 32px 0 72px;
+    }
+
+    .residential-hero h1 {
+        font-size: clamp(2.15rem, 10vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.035em;
+    }
+
+    .residential-hero .section-heading p {
+        margin-top: 20px;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .residential-hero-benefits {
+        margin-top: 32px;
+        gap: 12px;
+    }
+
+    .residential-hero-benefit {
+        justify-content: flex-start;
+        min-height: 56px;
+        padding: 13px 16px;
+        font-size: 14px;
+    }
+
+    .residential-hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 28px;
+    }
+
+    .residential-hero-buttons > * {
+        width: 100%;
+    }
+
+    .residential-hero-image {
+        margin-top: 40px;
+    }
+
+    .residential-hero-image img {
+        border-radius: 20px;
+    }
+
+    .residential-savings-card {
+        position: relative;
+
+        right: auto;
+        bottom: auto;
+
+        min-width: 0;
+        margin-top: 14px;
+
+        text-align: center;
+        border-radius: 18px;
+    }
+
+}
+</style>
