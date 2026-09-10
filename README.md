@@ -1,46 +1,31 @@
-# Astro Starter Kit: Basics
+# Solar8 FAQ v1.0
 
-```sh
-npm create astro@latest -- --template basics
+This is an update package for the Solar8 website.
+
+## Replace these files
+
+Copy these files into your existing project, replacing the current versions:
+
+- `src/pages/faq.astro`
+- `src/data/faq.ts`
+
+## What changed
+
+- New Solar8 FAQ hero with solar/energy graphic treatment.
+- Category filter chips for Solar & Savings, Systems, Installation, Batteries and Support.
+- Larger FAQ cards with numbered labels and clear expand/collapse controls.
+- Responsive mobile layout.
+- 14 practical Solar8-specific questions and answers.
+- Contact and FREE Assessment calls to action.
+- No new dependencies required.
+
+## Verify
+
+Run:
+
+```bash
+npm run check
+npm run build
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Then open `/faq/` and test every category filter and accordion item on desktop and mobile.

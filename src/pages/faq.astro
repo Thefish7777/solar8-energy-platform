@@ -1,0 +1,223 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SectionHeading from "../components/ui/SectionHeading.astro";
+import CTASection from "../components/CTASection.astro";
+import { faqs } from "../data/faq";
+
+const categories = ["All", "Solar & Savings", "Systems", "Installation", "Batteries", "Support"];
+const categoryIcons: Record<string, string> = {
+  "All": "✦",
+  "Solar & Savings": "☀",
+  "Systems": "⚡",
+  "Installation": "⌂",
+  "Batteries": "▰",
+  "Support": "✓",
+};
+---
+
+<MainLayout title="Solar FAQ | Solar8">
+  <section class="faq-hero">
+    <div class="solar-container faq-hero-inner">
+      <div class="faq-hero-copy">
+        <span class="eyebrow">SOLAR8 FAQ</span>
+        <h1>Solar questions.<br /><span>Clear answers.</span></h1>
+        <p>Everything you need to know about solar, batteries, installation, savings and getting started with Solar8.</p>
+        <div class="faq-hero-actions">
+          <a class="btn btn-primary" href="/assessment/">Get My FREE Assessment</a>
+          <a class="btn btn-secondary" href="/contact/">Speak to an Expert</a>
+        </div>
+      </div>
+
+      <div class="faq-hero-graphic" aria-hidden="true">
+        <div class="sun-orbit orbit-one"></div>
+        <div class="sun-orbit orbit-two"></div>
+        <div class="faq-sun"><span>☀</span></div>
+        <div class="faq-bolt">⚡</div>
+        <div class="faq-battery">▰</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="solar-container">
+      <SectionHeading
+        tag="FREQUENTLY ASKED QUESTIONS"
+        title="Everything you need to know"
+        intro="Browse the questions below or filter by topic to find the information you're looking for."
+      />
+
+      <div class="faq-toolbar" aria-label="FAQ categories">
+        {categories.map((category) => (
+          <button class:list={{ "faq-filter": true, active: category === "All" }} data-category={category} type="button">
+            <span class="filter-icon">{categoryIcons[category]}</span>
+            {category}
+          </button>
+        ))}
+      </div>
+
+      <div class="faq-list" id="faq-list">
+        {faqs.map((faq, index) => (
+          <details class="faq-item" data-category={faq.category}>
+            <summary>
+              <span class="faq-number">{String(index + 1).padStart(2, "0")}</span>
+              <span class="faq-question">{faq.question}</span>
+              <span class="faq-toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-answer">
+              <span class="answer-icon">✓</span>
+              <p>{faq.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+
+      <div class="faq-empty" id="faq-empty" hidden>
+        <div class="empty-icon">?</div>
+        <h3>No questions found</h3>
+        <p>Try another category.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-help">
+    <div class="solar-container">
+      <div class="help-card">
+        <div class="help-icon" aria-hidden="true">?</div>
+        <div>
+          <span class="eyebrow">STILL HAVE QUESTIONS?</span>
+          <h2>Let's talk about your property.</h2>
+          <p>If you can't find the answer you're looking for, our team can help you work through your specific requirements.</p>
+        </div>
+        <a class="btn btn-primary" href="/contact/">Contact Solar8</a>
+      </div>
+    </div>
+  </section>
+
+  <CTASection />
+</MainLayout>
+
+<script>
+  const filters = Array.from(document.querySelectorAll<HTMLButtonElement>(".faq-filter"));
+  const items = Array.from(document.querySelectorAll<HTMLElement>(".faq-item"));
+  const empty = document.querySelector<HTMLElement>("#faq-empty");
+
+  filters.forEach((filter) => {
+    filter.addEventListener("click", () => {
+      const category = filter.dataset.category ?? "All";
+
+      filters.forEach((button) => button.classList.toggle("active", button === filter));
+
+      let visible = 0;
+      items.forEach((item) => {
+        const matches = category === "All" || item.dataset.category === category;
+        item.hidden = !matches;
+        if (matches) visible += 1;
+      });
+
+      if (empty) empty.hidden = visible > 0;
+    });
+  });
+</script>
+
+<style>
+  .faq-hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at 72% 48%, rgba(255, 104, 0, .12), transparent 32%), linear-gradient(180deg, #fff 0%, #fafafa 100%);
+  }
+
+  .faq-hero-inner { width: min(1440px, calc(100% - 48px)); margin: 0 auto; display: grid; grid-template-columns: 1.05fr .95fr; gap: 60px; align-items: center; padding: 78px 0 88px; }
+  .faq-hero-copy { max-width: 760px; }
+  .eyebrow { display: inline-block; margin-bottom: 16px; color: #ff6800; font-size: 13px; font-weight: 800; letter-spacing: .13em; }
+  h1 { margin: 0; color: #111827; font-family: Poppins, sans-serif; font-size: clamp(3rem, 6vw, 5.4rem); line-height: 1.02; letter-spacing: -.045em; }
+  h1 span { color: #ff6800; }
+  .faq-hero-copy > p { max-width: 650px; margin: 28px 0 0; color: #6b7280; font-size: 18px; line-height: 1.75; }
+  .faq-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 24px; border-radius: 14px; font-weight: 800; text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { color: #fff; background: #ff6800; box-shadow: 0 10px 24px rgba(255,104,0,.2); }
+  .btn-primary:hover { background: #e65e00; }
+  .btn-secondary { color: #111827; background: #fff; border: 1px solid #e5e7eb; }
+
+  .faq-hero-graphic { position: relative; min-height: 390px; display: grid; place-items: center; }
+  .faq-sun { position: relative; z-index: 3; width: 178px; height: 178px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: linear-gradient(135deg, #ff6800, #ff9a4b); box-shadow: 0 25px 70px rgba(255,104,0,.28); }
+  .faq-sun span { font-size: 76px; line-height: 1; }
+  .sun-orbit { position: absolute; border: 1px solid rgba(255,104,0,.22); border-radius: 50%; }
+  .orbit-one { width: 310px; height: 210px; transform: rotate(-22deg); }
+  .orbit-two { width: 410px; height: 285px; transform: rotate(24deg); }
+  .faq-bolt, .faq-battery { position: absolute; z-index: 4; display: grid; place-items: center; width: 64px; height: 64px; border-radius: 18px; background: #fff; color: #ff6800; border: 1px solid #f3f4f6; box-shadow: 0 16px 35px rgba(17,24,39,.1); font-size: 29px; }
+  .faq-bolt { top: 48px; right: 15%; }
+  .faq-battery { bottom: 44px; left: 13%; }
+
+  .faq-section { padding: 110px 0; background: #fff; }
+  .solar-container { width: min(1440px, calc(100% - 48px)); margin: 0 auto; }
+  .section-heading { max-width: 760px; margin: 0 auto; text-align: center; }
+  .section-heading h2 { margin: 0; color: #111827; font-family: Poppins, sans-serif; font-size: clamp(2.2rem, 4vw, 3rem); line-height: 1.12; }
+  .section-heading p { margin: 18px auto 0; color: #6b7280; font-size: 17px; line-height: 1.7; }
+
+  .faq-toolbar { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 52px auto 30px; }
+  .faq-filter { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; padding: 0 16px; border: 1px solid #e5e7eb; border-radius: 999px; background: #fff; color: #374151; font: 700 14px/1 Inter, sans-serif; cursor: pointer; transition: all .2s ease; }
+  .faq-filter:hover { border-color: #ffbf91; color: #ff6800; }
+  .faq-filter.active { border-color: #ff6800; background: #fff3ea; color: #ff6800; }
+  .filter-icon { font-size: 15px; }
+
+  .faq-list { max-width: 1000px; margin: 0 auto; display: grid; gap: 14px; }
+  .faq-item { overflow: hidden; border: 1px solid #e5e7eb; border-radius: 22px; background: #fff; box-shadow: 0 5px 18px rgba(0,0,0,.035); transition: border-color .2s ease, box-shadow .2s ease; }
+  .faq-item:hover, .faq-item[open] { border-color: #ffbf91; box-shadow: 0 14px 34px rgba(0,0,0,.07); }
+  .faq-item summary { display: grid; grid-template-columns: 42px 1fr 38px; gap: 18px; align-items: center; padding: 22px 24px; cursor: pointer; list-style: none; }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-number { color: #ff6800; font: 800 12px/1 Inter, sans-serif; letter-spacing: .08em; }
+  .faq-question { color: #111827; font: 700 17px/1.4 Poppins, sans-serif; }
+  .faq-toggle { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: #fff3ea; color: #ff6800; font-size: 24px; font-weight: 400; transition: transform .2s ease; }
+  .faq-item[open] .faq-toggle { transform: rotate(45deg); }
+  .faq-answer { display: grid; grid-template-columns: 42px 1fr; gap: 18px; padding: 0 24px 24px; }
+  .answer-icon { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: #111827; color: #fff; font-size: 14px; font-weight: 800; }
+  .faq-answer p { margin: 0; color: #6b7280; line-height: 1.75; }
+  .faq-item[hidden] { display: none; }
+  .faq-empty { max-width: 1000px; margin: 20px auto 0; padding: 55px 30px; text-align: center; border: 1px dashed #d1d5db; border-radius: 22px; background: #fafafa; }
+  .empty-icon { width: 48px; height: 48px; display: grid; place-items: center; margin: 0 auto 15px; border-radius: 50%; background: #fff3ea; color: #ff6800; font-size: 22px; font-weight: 800; }
+  .faq-empty h3 { margin: 0; color: #111827; font: 700 20px/1.3 Poppins, sans-serif; }
+  .faq-empty p { margin: 8px 0 0; color: #6b7280; }
+
+  .faq-help { padding: 0 0 110px; background: #fff; }
+  .help-card { display: grid; grid-template-columns: 64px 1fr auto; gap: 26px; align-items: center; padding: 34px 40px; border-radius: 26px; background: #f4f5f7; }
+  .help-icon { width: 64px; height: 64px; display: grid; place-items: center; border-radius: 20px; background: #fff; color: #ff6800; font-size: 30px; font-weight: 800; box-shadow: 0 8px 20px rgba(0,0,0,.05); }
+  .help-card .eyebrow { margin-bottom: 6px; }
+  .help-card h2 { margin: 0; color: #111827; font: 700 clamp(1.5rem, 3vw, 2.1rem)/1.2 Poppins, sans-serif; }
+  .help-card p { max-width: 720px; margin: 8px 0 0; color: #6b7280; line-height: 1.65; }
+
+  @media (max-width: 900px) {
+    .faq-hero-inner { grid-template-columns: 1fr; text-align: center; padding: 70px 0; }
+    .faq-hero-copy { margin: 0 auto; }
+    .faq-hero-copy > p { margin-left: auto; margin-right: auto; }
+    .faq-hero-actions { justify-content: center; }
+    .faq-hero-graphic { min-height: 310px; }
+    .faq-section { padding: 80px 0; }
+    .faq-help { padding-bottom: 80px; }
+    .help-card { grid-template-columns: 56px 1fr; }
+    .help-card .btn { grid-column: 2; justify-self: start; }
+  }
+
+  @media (max-width: 640px) {
+    .solar-container, .faq-hero-inner { width: calc(100% - 32px); }
+    .faq-hero { min-height: auto; }
+    h1 { font-size: clamp(2.7rem, 13vw, 4rem); }
+    .faq-hero-copy > p { font-size: 16px; }
+    .faq-hero-actions { flex-direction: column; align-items: stretch; }
+    .btn { width: 100%; }
+    .faq-hero-graphic { min-height: 250px; transform: scale(.82); margin: -10px 0 -20px; }
+    .faq-toolbar { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 6px; margin-top: 38px; }
+    .faq-filter { flex: 0 0 auto; }
+    .faq-item summary { grid-template-columns: 30px 1fr 34px; gap: 12px; padding: 20px; }
+    .faq-question { font-size: 15px; }
+    .faq-answer { grid-template-columns: 30px 1fr; gap: 12px; padding: 0 20px 20px; }
+    .faq-number { font-size: 10px; }
+    .faq-toggle, .answer-icon { width: 30px; height: 30px; }
+    .faq-answer p { font-size: 15px; }
+    .help-card { grid-template-columns: 1fr; padding: 28px; }
+    .help-card .btn { grid-column: auto; width: 100%; }
+  }
+</style>

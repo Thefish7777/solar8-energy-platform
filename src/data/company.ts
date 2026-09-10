@@ -18,6 +18,16 @@ export const company = {
   email: "info@solar8.co.za",
   emailHref: "mailto:info@solar8.co.za",
 
+  // Address
+  address: {
+    line1: "Retief Avenue",
+    suburb: "Lyttelton Manor",
+    city: "Centurion",
+    province: "Gauteng",
+    postalCode: "0157",
+    country: "South Africa"
+  },
+
   // Website
   website: "https://solar8.co.za",
 

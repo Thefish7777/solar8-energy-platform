@@ -1,10 +1,10 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import AssessmentHero from "../components/assessment/AssessmentHero.astro";
 import AssessmentWizard from "../components/assessment/AssessmentWizard";
 ---
 
-<MainLayout title="FREE Solar Assessment">
-
+<MainLayout title="FREE Solar Assessment | Solar8">
+    <AssessmentHero />
     <AssessmentWizard client:load />
-
 </MainLayout>
