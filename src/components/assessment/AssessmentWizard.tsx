@@ -1,5 +1,5 @@
 import "./ApplianceSelector.css";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import "./AssessmentWizard.css";
 
 import ApplianceSelector from "./ApplianceSelector";
@@ -22,6 +22,7 @@ interface ContactDetails {
 
 export default function AssessmentWizard() {
     const [step, setStep] = useState(1);
+    const assessmentCardRef = useRef<HTMLDivElement>(null);
     const [answers, setAnswers] = useState<AssessmentAnswers>({
         propertyType: "home",
         monthlyBill: 3500,
@@ -42,6 +43,14 @@ export default function AssessmentWizard() {
     const recommendation = useMemo(() => generateRecommendation(answers), [answers]);
     const load = useMemo(() => calculateLoad(answers), [answers]);
     const progress = (step / TOTAL_STEPS) * 100;
+
+    useEffect(() => {
+        const card = assessmentCardRef.current;
+        if (!card) return;
+
+        const top = card.getBoundingClientRect().top + window.scrollY - 96;
+        window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+    }, [step]);
 
     function updateContact(field: keyof ContactDetails, value: string) {
         setContact((current) => ({ ...current, [field]: value }));
@@ -95,7 +104,7 @@ export default function AssessmentWizard() {
 
     return (
         <section className="assessment" aria-labelledby="assessment-title">
-            <div className="assessment-card">
+            <div ref={assessmentCardRef} className="assessment-card">
                 <div className="assessment-header">
                     <div>
                         <span className="assessment-eyebrow">SOLAR8 ASSESSMENT</span>
@@ -128,7 +137,7 @@ export default function AssessmentWizard() {
                                     type="button"
                                     className={`assessment-option ${answers.propertyType === value ? "active" : ""}`}
                                     aria-pressed={answers.propertyType === value}
-                                    onClick={() => setAnswers({ ...answers, propertyType: value as AssessmentAnswers["propertyType"] })}
+                                    onClick={() => setAnswers((current) => ({ ...current, propertyType: value as AssessmentAnswers["propertyType"] }))}
                                 >
                                     <span className="assessment-option-icon" aria-hidden="true">{icon}</span>
                                     <span className="assessment-option-title">{title}</span>
@@ -146,7 +155,7 @@ export default function AssessmentWizard() {
                         <p className="assessment-question">This gives Solar8 a starting point for estimating your energy consumption.</p>
                         <div className="bill-control">
                             <div className="bill-value">R{answers.monthlyBill.toLocaleString("en-ZA")}</div>
-                            <input className="slider" type="range" min="500" max="10000" step="100" value={answers.monthlyBill} aria-label="Average monthly electricity bill" onChange={(e) => setAnswers({ ...answers, monthlyBill: Number(e.target.value) })} />
+                            <input className="slider" type="range" min="500" max="10000" step="100" value={answers.monthlyBill} aria-label="Average monthly electricity bill" onChange={(e) => setAnswers((current) => ({ ...current, monthlyBill: Number(e.target.value) }))} />
                             <div className="slider-labels"><span>R500</span><span>R10,000+</span></div>
                         </div>
                         <p className="assessment-help">Use the closest estimate. Your final recommendation will be refined during the site assessment.</p>
@@ -160,7 +169,7 @@ export default function AssessmentWizard() {
                         <p className="assessment-question">This helps us estimate typical electricity demand.</p>
                         <div className="occupants-control">
                             <label htmlFor="occupants">Number of occupants / regular users</label>
-                            <input id="occupants" className="number-input" type="number" min="1" max="20" value={answers.occupants} onChange={(e) => setAnswers({ ...answers, occupants: Math.max(1, Math.min(20, Number(e.target.value) || 1)) })} />
+                            <input id="occupants" className="number-input" type="number" min="1" max="20" value={answers.occupants} onChange={(e) => setAnswers((current) => ({ ...current, occupants: Math.max(1, Math.min(20, Number(e.target.value) || 1)) }))} />
                             <p className="assessment-help">Enter a number between 1 and 20.</p>
                         </div>
                     </div>
@@ -177,7 +186,7 @@ export default function AssessmentWizard() {
                                 ["save", "R", "Reduce My Bill", "Use solar generation to reduce your electricity costs."],
                                 ["independence", "☀", "Energy Independence", "Generate more of your own electricity and rely less on the grid."]
                             ].map(([value, icon, title, description]) => (
-                                <button key={value} type="button" className={`assessment-option ${answers.goal === value ? "active" : ""}`} aria-pressed={answers.goal === value} onClick={() => setAnswers({ ...answers, goal: value as AssessmentAnswers["goal"] })}>
+                                <button key={value} type="button" className={`assessment-option ${answers.goal === value ? "active" : ""}`} aria-pressed={answers.goal === value} onClick={() => setAnswers((current) => ({ ...current, goal: value as AssessmentAnswers["goal"] }))}>
                                     <span className="assessment-option-icon" aria-hidden="true">{icon}</span>
                                     <span className="assessment-option-title">{title}</span>
                                     <span className="assessment-option-description">{description}</span>
@@ -188,7 +197,7 @@ export default function AssessmentWizard() {
                             <div className="backup-control">
                                 <label htmlFor="backup-hours">How many hours of backup would you like?</label>
                                 <div className="backup-value">{answers.backupHours} hours</div>
-                                <input id="backup-hours" className="slider" type="range" min="2" max="24" step="1" value={answers.backupHours} onChange={(e) => setAnswers({ ...answers, backupHours: Number(e.target.value) })} />
+                                <input id="backup-hours" className="slider" type="range" min="2" max="24" step="1" value={answers.backupHours} onChange={(e) => setAnswers((current) => ({ ...current, backupHours: Number(e.target.value) }))} />
                                 <div className="slider-labels"><span>2 hours</span><span>24 hours</span></div>
                             </div>
                         )}
@@ -198,7 +207,7 @@ export default function AssessmentWizard() {
                 {step === 5 && (
                     <div className="assessment-step-content">
                         <span className="step-number">05</span>
-                        <ApplianceSelector value={answers.appliances} onChange={(applianceArray) => setAnswers({ ...answers, appliances: applianceArray })} />
+                        <ApplianceSelector value={answers.appliances} onChange={(applianceArray) => setAnswers((current) => ({ ...current, appliances: applianceArray }))} />
                     </div>
                 )}
 

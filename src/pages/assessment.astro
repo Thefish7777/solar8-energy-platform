@@ -4,7 +4,7 @@ import AssessmentHero from "../components/assessment/AssessmentHero.astro";
 import AssessmentWizard from "../components/assessment/AssessmentWizard";
 ---
 
-<MainLayout title="FREE Solar Assessment | Solar8">
+<MainLayout title="FREE Solar Assessment | Solar8" description="Get a free solar assessment from Solar8. Tell us about your home, electricity use and backup needs and receive a tailored solar system recommendation.">
     <AssessmentHero />
-    <AssessmentWizard client:load />
+    <AssessmentWizard client:only="react" />
 </MainLayout>

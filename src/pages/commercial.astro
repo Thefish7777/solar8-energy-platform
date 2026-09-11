@@ -9,11 +9,14 @@ import CommercialFAQ from "../components/commercial/CommercialFAQ.astro";
 import CTASection from "../components/CTASection.astro";
 ---
 
-<MainLayout>
+<MainLayout title="Commercial Solar Solutions in Gauteng | Solar8" description="Commercial solar systems for businesses across Gauteng. Solar8 designs scalable solar, battery and backup solutions to reduce electricity costs and protect business operations.">
+
+    <div class="commercial-page">
 
     <CommercialHero />
 
     <CommercialIndustries />
+
 
       <CommercialWhy />
 
@@ -21,4 +24,29 @@ import CTASection from "../components/CTASection.astro";
 
     <CTASection />
 
+    </div>
+
 </MainLayout>
+
+<style>
+.commercial-page { width: 100%; }
+
+.commercial-page :global(.section-heading h2) {
+    font-family: var(--font-heading);
+    font-size: clamp(2.3rem, 4vw, 3.3rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+}
+
+.commercial-page :global(.kc-card h3) {
+    font-family: var(--font-heading);
+    font-size: 27px;
+    line-height: 1.2;
+}
+
+@media (max-width: 640px) {
+    .commercial-page :global(.section-heading h2) { font-size: 2.3rem; }
+    .commercial-page :global(.kc-card h3) { font-size: 24px; }
+}
+</style>

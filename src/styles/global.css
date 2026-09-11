@@ -185,6 +185,27 @@ strong{
 }
 
 .primary-button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:56px;
+    padding:0 28px;
+    border:1px solid #FF6800;
+    border-radius:14px;
+    background:#FF6800;
+    color:#FFFFFF;
+    font-weight:700;
+    text-decoration:none;
+    transition:transform .25s ease, background .25s ease, border-color .25s ease, box-shadow .25s ease;
+    box-shadow:0 10px 24px rgba(255,104,0,.16);
+}
+
+.primary-button:hover{
+    background:#E65E00;
+    border-color:#E65E00;
+    color:#FFFFFF;
+    transform:translateY(-2px);
+    box-shadow:0 14px 30px rgba(255,104,0,.22);
 }
 
 .secondary-button{

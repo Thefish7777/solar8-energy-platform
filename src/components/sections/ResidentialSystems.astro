@@ -7,24 +7,54 @@ import SystemCard from "../SystemCard.astro";
 
     <div class="solar-container">
 
-        <div class="section-heading centered">
+        <div class="residential-systems-intro">
 
-            <span class="eyebrow">RESIDENTIAL SYSTEMS</span>
+            <div class="section-heading centered">
 
-            <h2>
+                <span class="eyebrow">RESIDENTIAL SYSTEMS</span>
 
-                Residential Solar Systems
+                <h2>
 
-            </h2>
+                    Residential Solar Systems
 
-            <p class="">
+                </h2>
 
-                Every home is different.
-                These recommended systems provide a great starting point,
-                but every Solar8 recommendation is customised to your
-                electricity usage.
+                <p>
 
-            </p>
+                    Every home is different.
+                    These recommended systems provide a great starting point,
+                    but every Solar8 recommendation is customised to your
+                    electricity usage.
+
+                </p>
+
+            </div>
+
+            <div class="residential-systems-graphic" aria-hidden="true">
+                <svg viewBox="0 0 520 330" role="img">
+                    <defs>
+                        <linearGradient id="solar8-systems-sky" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#fff7ef" />
+                            <stop offset="100%" stop-color="#f3f4f6" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="10" y="10" width="500" height="310" rx="30" fill="url(#solar8-systems-sky)" />
+                    <circle cx="420" cy="76" r="34" fill="#ff6800" opacity=".14" />
+                    <circle cx="420" cy="76" r="20" fill="#ff6800" opacity=".25" />
+                    <path d="M95 185 L210 105 L325 185 V265 H95 Z" fill="#ffffff" stroke="#d1d5db" stroke-width="4" />
+                    <path d="M78 188 L210 94 L342 188" fill="none" stroke="#111827" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M155 142 L265 142 L294 198 L184 198 Z" fill="#374151" stroke="#111827" stroke-width="4" />
+                    <path d="M183 198 L294 198" stroke="#ff6800" stroke-width="5" />
+                    <path d="M210 216 V265" stroke="#9ca3af" stroke-width="4" />
+                    <rect x="226" y="216" width="54" height="49" rx="7" fill="#fff3ea" stroke="#ff6800" stroke-width="3" />
+                    <path d="M245 229 H261 M245 241 H261 M245 253 H261" stroke="#ff6800" stroke-width="3" stroke-linecap="round" />
+                    <path d="M356 177 C389 177 405 195 405 218" fill="none" stroke="#ff6800" stroke-width="5" stroke-linecap="round" stroke-dasharray="7 8" />
+                    <circle cx="356" cy="177" r="9" fill="#ff6800" />
+                    <circle cx="405" cy="218" r="9" fill="#ff6800" />
+                    <text x="355" y="252" fill="#111827" font-family="Poppins, sans-serif" font-size="17" font-weight="700">Solar + Battery</text>
+                    <text x="328" y="275" fill="#6b7280" font-family="Inter, sans-serif" font-size="12">Designed around your home</text>
+                </svg>
+            </div>
 
         </div>
 
@@ -43,6 +73,6 @@ import SystemCard from "../SystemCard.astro";
     </div>
 
 </section><style>
-.residential-systems-master{padding:110px 0;background:#F4F5F7}.residential-systems-master-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}.residential-systems-master .section-heading{max-width:760px}.residential-systems-master .section-heading>p{max-width:720px;margin-left:auto;margin-right:auto}
-@media(max-width:1100px){.residential-systems-master-grid{grid-template-columns:1fr 1fr}}@media(max-width:900px){.residential-systems-master{padding:80px 0}.residential-systems-master-grid{grid-template-columns:1fr;max-width:680px;margin-inline:auto}}@media(max-width:640px){.residential-systems-master{padding:72px 0}}
+.residential-systems-master{padding:110px 0;background:#F4F5F7}.residential-systems-intro{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);gap:64px;align-items:center;margin-bottom:60px}.residential-systems-master .section-heading{max-width:760px;margin-bottom:0}.residential-systems-master .section-heading>p{max-width:720px;margin-left:auto;margin-right:auto}.residential-systems-graphic{overflow:hidden;border:1px solid #e5e7eb;border-radius:26px;background:#fff;box-shadow:0 12px 35px rgba(0,0,0,.06)}.residential-systems-graphic svg{display:block;width:100%;height:auto}.residential-systems-master-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+@media(max-width:1100px){.residential-systems-intro{grid-template-columns:1fr;gap:40px}.residential-systems-graphic{max-width:760px;margin-inline:auto}.residential-systems-master-grid{grid-template-columns:1fr 1fr}}@media(max-width:900px){.residential-systems-master{padding:80px 0}.residential-systems-intro{margin-bottom:44px}.residential-systems-master-grid{grid-template-columns:1fr;max-width:680px;margin-inline:auto}}@media(max-width:640px){.residential-systems-master{padding:72px 0}}
 </style>
