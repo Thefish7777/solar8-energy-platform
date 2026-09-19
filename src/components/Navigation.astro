@@ -43,7 +43,7 @@ const knowledgeNavigation = [
 
     <div
         id="headerInner"
-        class="site-container flex h-20 items-center justify-between transition-all duration-300"
+        class="site-container flex h-20 items-center justify-between px-2 transition-all duration-300"
     >
 
         <!-- Logo -->
@@ -51,7 +51,7 @@ const knowledgeNavigation = [
         <a
             href="/"
             aria-label="Solar8 Home"
-            class="flex shrink-0 items-center"
+            class="flex shrink-0 items-center translate-x-2"
         >
 
             <img
@@ -122,7 +122,7 @@ const knowledgeNavigation = [
 
             <a
                 href="/assessment/"
-                class="inline-flex min-h-[52px] w-[170px] shrink-0 items-center justify-center rounded-xl bg-orange-500 px-4 text-center text-[15px] font-bold leading-[1.15] text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-600 hover:shadow-xl"
+                class="inline-flex min-h-[52px] w-[170px] shrink-0 -translate-x-2 items-center justify-center rounded-xl bg-orange-500 px-3 text-center text-[15px] font-bold leading-[1.15] tracking-[0.08em] [word-spacing:0.12em] text-white shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-600 hover:shadow-xl"
             >
 
                 Get My FREE Assessment
@@ -512,3 +512,15 @@ const knowledgeNavigation = [
     updateHeader();
 
 </script>
+<style>
+.site-container {
+    width: min(1440px, calc(100% - 32px));
+    margin-inline: auto;
+}
+@media (min-width: 1024px) {
+    .site-container { width: min(1440px, calc(100% - 48px)); }
+}
+@media (max-width: 640px) {
+    .site-container { width: calc(100% - 24px); }
+}
+</style>

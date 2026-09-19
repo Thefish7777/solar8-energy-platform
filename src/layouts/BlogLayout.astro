@@ -1,0 +1,75 @@
+---
+import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import { getBlogPost } from "../data/blog";
+
+interface Props {
+    slug: string;
+}
+
+const { slug } = Astro.props;
+const post = getBlogPost(slug);
+
+if (!post) {
+    throw new Error(`Blog post not found: ${slug}`);
+}
+
+const canonicalURL = new URL(`/blog/${post.slug}/`, Astro.site ?? "https://solar8.co.za");
+const imageURL = new URL(post.imageUrl ?? post.image ?? "/images/hero-home.jpg", Astro.site ?? "https://solar8.co.za");
+---
+
+<!doctype html>
+<html lang="en-ZA" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{post.title} | Solar8</title>
+    <meta name="description" content={post.description} />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href={canonicalURL.toString()} />
+    <meta name="theme-color" content="#FF6800" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={post.title} />
+    <meta property="og:description" content={post.description} />
+    <meta property="og:image" content={imageURL.toString()} />
+    <meta property="og:url" content={canonicalURL.toString()} />
+    <meta property="og:site_name" content="Solar8" />
+    <meta property="og:locale" content="en_ZA" />
+    <meta property="article:published_time" content={post.publishedAt} />
+    {post.updatedAt && <meta property="article:modified_time" content={post.updatedAt} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={post.title} />
+    <meta name="twitter:description" content={post.description} />
+    <meta name="twitter:image" content={imageURL.toString()} />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: post.title,
+        description: post.description,
+        datePublished: post.publishedAt,
+        ...(post.updatedAt ? { dateModified: post.updatedAt } : {}),
+        mainEntityOfPage: canonicalURL.toString(),
+        image: [imageURL.toString()],
+        author: { "@type": "Organization", name: "Solar8", url: "https://solar8.co.za/" },
+        publisher: { "@type": "Organization", name: "Solar8", url: "https://solar8.co.za/", logo: { "@type": "ImageObject", url: "https://solar8.co.za/favicon.svg" } },
+    })} />
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-orange-500 selection:text-white">
+    <Navigation />
+    <main class="site-main">
+        <slot />
+    </main>
+    <Footer />
+</body>
+</html>
+
+<style>
+.site-main{padding-top:0}
+</style>

@@ -1,0 +1,109 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
+import BlogCard from "../../components/blog/BlogCard.astro";
+import { blogCategories, blogPosts } from "../../data/blog";
+---
+
+<BaseLayout
+    title="Solar Advice & Energy Guides | Solar8"
+    description="Practical solar advice for South African homes and businesses. Learn about solar panels, inverters, batteries, system sizing, electricity savings and backup power from Solar8."
+>
+    <Navigation />
+
+    <main>
+        <section class="blog-hero">
+            <div class="solar-container">
+                <div class="blog-hero-content">
+                    <span class="eyebrow">SOLAR8 BLOG</span>
+                    <h1>Solar Advice. <span>Clear Answers.</span></h1>
+                    <p>
+                        Practical guides to solar power, battery storage, inverters,
+                        electricity savings and energy independence for South African
+                        homes and businesses.
+                    </p>
+                    <div class="blog-hero-actions">
+                        <a href="/knowledge-centre/" class="primary-button">Visit the Knowledge Centre</a>
+                        <a href="/assessment/" class="secondary-button">Get My FREE Assessment</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-intro">
+            <div class="solar-container">
+                <div class="section-heading centered">
+                    <span class="eyebrow">SOLAR INSIGHTS</span>
+                    <h2>Information to help you make better energy decisions.</h2>
+                    <p>
+                        We are building the Solar8 blog around the questions homeowners
+                        and businesses ask before investing in solar. New articles will
+                        be added regularly, with practical South African context rather
+                        than generic solar advice.
+                    </p>
+                </div>
+
+                <div class="blog-category-grid">
+                    {blogCategories.map((category) => (
+                        <a class="blog-category-card" href={`/blog/category/${category.slug}/`}>
+                            <span class="blog-category-number">{String(blogCategories.indexOf(category) + 1).padStart(2, "0")}</span>
+                            <h3>{category.name}</h3>
+                            <p>{category.description}</p>
+                            <span class="blog-category-link">Explore articles →</span>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-latest">
+            <div class="solar-container">
+                <div class="section-heading centered">
+                    <span class="eyebrow">LATEST ARTICLES</span>
+                    <h2>Solar8 insights are coming soon.</h2>
+                    <p>
+                        Our first articles will focus on high-value questions around
+                        system sizing, solar costs, battery storage and reducing electricity bills.
+                    </p>
+                </div>
+
+                {blogPosts.length > 0 ? (
+                    <div class="blog-post-grid">
+                        {blogPosts.map((post) => <BlogCard post={post} />)}
+                    </div>
+                ) : (
+                    <div class="blog-empty-card">
+                        <span class="blog-empty-icon">✦</span>
+                        <h3>The first Solar8 articles are being prepared.</h3>
+                        <p>
+                            Check back soon for practical guides written specifically for
+                            South African electricity users, homeowners and businesses.
+                        </p>
+                        <a href="/knowledge-centre/" class="primary-button">Explore the Knowledge Centre</a>
+                    </div>
+                )}
+            </div>
+        </section>
+
+        <section class="blog-cta">
+            <div class="solar-container">
+                <div class="blog-cta-card">
+                    <div>
+                        <span class="eyebrow">READY FOR SOLAR?</span>
+                        <h2>Not sure what your property needs?</h2>
+                        <p>Tell us about your electricity use and backup requirements and get a tailored starting point.</p>
+                    </div>
+                    <a href="/assessment/" class="primary-button">Get My FREE Assessment</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</BaseLayout>
+
+<style>
+.blog-hero{position:relative;overflow:hidden;background:radial-gradient(circle at 78% 28%,rgba(255,104,0,.16),transparent 30%),linear-gradient(180deg,#fff,#f7f9fc);padding:92px 0 86px}.blog-hero:after{content:"";position:absolute;width:360px;height:360px;right:-150px;bottom:-210px;border-radius:50%;background:rgba(255,104,0,.07);pointer-events:none}.blog-hero-content{position:relative;z-index:1;max-width:850px;margin:0 auto;text-align:center}.blog-hero h1{margin:14px 0 20px;font-family:Poppins,sans-serif;font-size:clamp(42px,5.2vw,72px);line-height:1.06;letter-spacing:-.035em;color:#0f172a}.blog-hero h1 span{color:#ff6800}.blog-hero p{max-width:760px;margin:0 auto;color:#64748b;font-size:19px;line-height:1.75}.blog-hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:30px}.blog-intro,.blog-latest{padding:108px 0}.blog-latest{background:#f8fafc}.blog-category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.blog-category-card{position:relative;display:flex;flex-direction:column;min-height:255px;padding:30px;background:#fff;border:1px solid #e7eaf0;border-radius:26px;box-shadow:0 10px 28px rgba(15,23,42,.05);text-decoration:none;transition:transform .25s ease,box-shadow .25s ease}.blog-category-card:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(15,23,42,.09)}.blog-category-number{color:#ff6800;font-family:Poppins,sans-serif;font-size:13px;font-weight:800;letter-spacing:.08em}.blog-category-card h3{margin:22px 0 10px;color:#0f172a;font-family:Poppins,sans-serif;font-size:22px}.blog-category-card p{margin:0;color:#64748b;line-height:1.65}.blog-category-link{margin-top:auto;padding-top:20px;color:#ff6800;font-size:14px;font-weight:800}.blog-post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.blog-empty-card{max-width:760px;margin:0 auto;padding:54px 44px;text-align:center;background:#fff;border:1px solid #e7eaf0;border-radius:26px;box-shadow:0 12px 30px rgba(15,23,42,.06)}.blog-empty-icon{display:grid;place-items:center;width:54px;height:54px;margin:0 auto 18px;border-radius:16px;background:#fff1e8;color:#ff6800;font-size:25px}.blog-empty-card h3{margin:0;font-family:Poppins,sans-serif;font-size:28px;color:#0f172a}.blog-empty-card p{max-width:580px;margin:14px auto 26px;color:#64748b;line-height:1.75}.blog-cta{padding:0 0 110px;background:#f8fafc}.blog-cta-card{display:flex;align-items:center;justify-content:space-between;gap:36px;padding:44px 48px;background:#fff;border:1px solid #e7eaf0;border-radius:26px;box-shadow:0 12px 30px rgba(15,23,42,.06)}.blog-cta-card h2{margin:8px 0 8px;font-family:Poppins,sans-serif;font-size:32px;color:#0f172a}.blog-cta-card p{margin:0;color:#64748b;line-height:1.65}.blog-cta-card .primary-button{flex:0 0 auto}
+@media(max-width:1050px){.blog-category-grid{grid-template-columns:repeat(2,1fr)}.blog-post-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:760px){.blog-hero{padding:72px 0}.blog-hero p{font-size:17px}.blog-intro,.blog-latest{padding:78px 0}.blog-category-grid,.blog-post-grid{grid-template-columns:1fr}.blog-cta{padding-bottom:78px}.blog-cta-card{flex-direction:column;align-items:flex-start;padding:32px 26px}.blog-cta-card h2{font-size:27px}}
+</style>

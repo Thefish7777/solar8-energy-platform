@@ -9,7 +9,10 @@ export default defineConfig({
         css: {
             transformer: 'postcss'
         },
-        plugins: [tailwindcss()]
+        plugins: [tailwindcss()],
+        optimizeDeps: {
+            force: true
+        }
     },
     integrations: [react()]
 });

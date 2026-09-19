@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { company } from "../data/company";
 
 import Hero from "../components/Hero.astro";
 import CTASection from "../components/CTASection.astro";
@@ -9,6 +10,17 @@ import CTASection from "../components/CTASection.astro";
 
     <main>
 
+        <div class="home-contact-bar" aria-label="Solar8 contact details">
+            <div class="container home-contact-inner">
+                <a href={company.phoneHref} aria-label={`Call Solar8 on ${company.phone}`}>
+                    <span aria-hidden="true">☎</span> {company.phone}
+                </a>
+                <a href={company.emailHref} aria-label={`Email Solar8 at ${company.email}`}>
+                    <span aria-hidden="true">✉</span> {company.email}
+                </a>
+            </div>
+        </div>
+
         <Hero />
 
         <CTASection />
@@ -16,3 +28,32 @@ import CTASection from "../components/CTASection.astro";
     </main>
 
 </MainLayout>
+<style>
+.home-contact-bar {
+    background: #111827;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    position: relative;
+    z-index: 10;
+    margin-top: 80px;
+}
+.home-contact-inner {
+    min-height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 28px;
+}
+.home-contact-inner a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color .2s ease;
+}
+.home-contact-inner a:hover { color: #ff6800; }
+.home-contact-inner span { color: #ff6800; margin-right: 5px; }
+@media (max-width: 640px) {
+    .home-contact-bar { margin-top: 80px; }
+    .home-contact-inner { justify-content: center; gap: 14px; flex-wrap: wrap; min-height: 54px; padding-block: 7px; }
+    .home-contact-inner a { font-size: 12px; }
+}
+</style>
