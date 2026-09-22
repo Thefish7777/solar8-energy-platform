@@ -39,6 +39,7 @@ export default function AssessmentWizard() {
         address: "",
         message: ""
     });
+    const [submissionState, setSubmissionState] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
     const recommendation = useMemo(() => generateRecommendation(answers), [answers]);
     const load = useMemo(() => calculateLoad(answers), [answers]);
@@ -99,6 +100,42 @@ export default function AssessmentWizard() {
     ].join("\n");
 
     const mailtoHref = `mailto:${ASSESSMENT_EMAIL}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+    async function submitAssessmentEmail() {
+        if (!canContinue() || submissionState === "sending") return;
+
+        setSubmissionState("sending");
+
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/info@solar8.co.za", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                    name: contact.name,
+                    email: contact.email,
+                    phone: contact.phone,
+                    address: contact.address,
+                    message: emailBody,
+                    _subject: emailSubject,
+                    _replyto: contact.email,
+                    _template: "table",
+                    _url: window.location.href
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error("Assessment email submission failed.");
+            }
+
+            setSubmissionState("sent");
+        } catch {
+            setSubmissionState("error");
+        }
+    }
+
     const whatsappMessage = `Hi Solar8, I have completed the FREE Solar Assessment. My name is ${contact.name || "a prospective customer"}. I would like to discuss my recommendation.`;
     const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -249,10 +286,27 @@ export default function AssessmentWizard() {
                         <p className="required-note">Required: name, phone, email and property address.</p>
 
                         <div className="submission-actions">
-                            <a className={`assessment-btn assessment-btn-primary ${!canContinue() ? "disabled" : ""}`} href={canContinue() ? mailtoHref : undefined} aria-disabled={!canContinue()}>Email My Assessment</a>
+                            <button
+                                type="button"
+                                className={`assessment-btn assessment-btn-primary ${!canContinue() || submissionState === "sending" ? "disabled" : ""}`}
+                                onClick={submitAssessmentEmail}
+                                disabled={!canContinue() || submissionState === "sending"}
+                            >
+                                {submissionState === "sending" ? "Sending Assessment..." : submissionState === "sent" ? "Assessment Sent" : "Email My Assessment"}
+                            </button>
                             <a className={`assessment-btn assessment-btn-whatsapp ${!canContinue() ? "disabled" : ""}`} href={canContinue() ? whatsappHref : undefined} target="_blank" rel="noopener noreferrer" aria-disabled={!canContinue()}>Continue on WhatsApp</a>
                         </div>
-                        <p className="submission-note">Your email app will open with your assessment details ready to send to Solar8. No information is sent automatically from this static website.</p>
+                        {submissionState === "sent" && (
+                            <p className="submission-note submission-success">Your assessment has been sent to Solar8. We will review your details and contact you.</p>
+                        )}
+                        {submissionState === "error" && (
+                            <p className="submission-note submission-error">
+                                We couldn't send the assessment automatically. <a href={canContinue() ? mailtoHref : undefined}>Click here to open your email app with the assessment ready to send.</a>
+                            </p>
+                        )}
+                        {submissionState === "idle" && (
+                            <p className="submission-note">Click <strong>Email My Assessment</strong> to send your completed assessment directly to Solar8.</p>
+                        )}
                     </div>
                 )}
 

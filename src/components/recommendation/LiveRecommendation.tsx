@@ -50,7 +50,7 @@ export default function LiveRecommendation({ solution, inverter, battery, panels
                 <ul className="reasons-list">{reasons.map((reason, index) => <li key={index}>{reason}</li>)}</ul>
             </div>
 
-            {showAction && <a className="assessment-button" href="/assessment/">Continue with FREE Assessment</a>}
+            {showAction && <a className="assessment-button" href="/assessment">Continue with FREE Assessment</a>}
         </section>
     );
 }

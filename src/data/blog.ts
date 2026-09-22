@@ -252,7 +252,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><a href="/residential/">See Solar8 Residential Solar Solutions</a> or explore our <a href="/knowledge-centre/system-sizing/">System Sizing guide</a> to learn more about how solar systems are matched to household requirements.</p>
 
-<p>When you're ready to find out what your home actually needs, <a href="/assessment/">request your FREE Solar8 Assessment</a>. We'll help you work out the right system before you commit to a purchase.</p>`,
+<p>When you're ready to find out what your home actually needs, <a href="/assessment">request your FREE Solar8 Assessment</a>. We'll help you work out the right system before you commit to a purchase.</p>`,
     },
 
     {
@@ -468,7 +468,7 @@ export const blogPosts: BlogPost[] = [
 
 <p><a href="/knowledge-centre/panels/">Learn more about Solar Panels</a> or explore our <a href="/knowledge-centre/system-sizing/">System Sizing guide</a> to understand the factors that influence a solar installation.</p>
 
-<p>When you are ready to find out what your home actually needs, <a href="/assessment/">request your FREE Solar8 Assessment</a>. We can help you work out the right balance of solar generation, inverter capacity and battery storage before you commit to a system.</p>`,
+<p>When you are ready to find out what your home actually needs, <a href="/assessment">request your FREE Solar8 Assessment</a>. We can help you work out the right balance of solar generation, inverter capacity and battery storage before you commit to a system.</p>`,
     },
 
     {
@@ -674,7 +674,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Explore our <a href="/knowledge-centre/batteries/">Battery Storage guide</a> and <a href="/knowledge-centre/system-sizing/">System Sizing guide</a>, or visit our <a href="/systems/">Complete Solar Systems</a> page to see how the components work together.</p>
 
-<p>When you're ready to stop guessing and find out what your home actually needs, <a href="/assessment/">request your FREE Solar8 Assessment</a>.</p>`,
+<p>When you're ready to stop guessing and find out what your home actually needs, <a href="/assessment">request your FREE Solar8 Assessment</a>.</p>`,
     },
     {
         slug: "what-size-solar-inverter-do-i-need-south-africa",
@@ -915,7 +915,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Explore our <a href="/knowledge-centre/inverters/">Inverter guide</a> and <a href="/knowledge-centre/system-sizing/">System Sizing guide</a>, or see our <a href="/systems/">Complete Solar Systems</a>.</p>
 
-<p>When you're ready to stop guessing and find out what inverter size makes sense for your home, <a href="/assessment/">request your FREE Solar8 Assessment</a>.</p>`,
+<p>When you're ready to stop guessing and find out what inverter size makes sense for your home, <a href="/assessment">request your FREE Solar8 Assessment</a>.</p>`,
     },
 
     {
@@ -1144,7 +1144,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Read our <a href="/blog/how-many-solar-panels-do-i-need-south-africa/">guide to choosing the right number of solar panels</a>, learn more about <a href="/blog/what-size-solar-inverter-do-i-need-south-africa/">inverter sizing</a>, or explore our <a href="/knowledge-centre/system-sizing/">System Sizing guide</a>.</p>
 
-<p>When you're ready to see what your property could realistically generate, <a href="/assessment/">request your FREE Solar8 Assessment</a>.</p>`,
+<p>When you're ready to see what your property could realistically generate, <a href="/assessment">request your FREE Solar8 Assessment</a>.</p>`,
     },
 
     {
@@ -1316,7 +1316,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>At Solar8, we look at your electricity use, backup requirements, inverter, battery capacity and future plans together rather than choosing a battery from its headline capacity alone.</p>
 
-<p>When you're ready to find out what battery configuration makes sense for your home, <a href="/assessment/">request your FREE Solar8 Assessment</a>.</p>`,
+<p>When you're ready to find out what battery configuration makes sense for your home, <a href="/assessment">request your FREE Solar8 Assessment</a>.</p>`,
     },
     {
         slug: "how-much-can-solar-panels-save-electricity-bill-south-africa",
@@ -1499,7 +1499,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>At Solar8, we look at the complete picture before recommending a system — including your electricity usage, roof, solar generation potential, inverter requirements, battery needs and the way your household actually uses electricity.</p>
 
-<p><a href="/assessment/">Get your FREE Solar8 Assessment</a> and find out what a properly sized solar system could do for your home.</p>`,
+<p><a href="/assessment">Get your FREE Solar8 Assessment</a> and find out what a properly sized solar system could do for your home.</p>`,
     },
 
     {
@@ -1704,7 +1704,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Whether your priority is reducing electricity costs, improving backup capability or moving towards greater energy independence, the starting point is understanding how your home uses electricity.</p>
 
-<p><strong>Not sure which solar system is right for your property?</strong> Get your <a href="/assessment/">FREE Solar8 Assessment</a> and let us help you work out the right system for your home.</p>
+<p><strong>Not sure which solar system is right for your property?</strong> Get your <a href="/assessment">FREE Solar8 Assessment</a> and let us help you work out the right system for your home.</p>
 
 <p><a href="/residential/">Explore Solar8 residential solar systems</a> or continue reading our guides on <a href="/blog/5kw-solar-system-cost-south-africa/">5kW solar system costs</a>, <a href="/blog/how-much-can-solar-panels-save-electricity-bill-south-africa/">solar electricity savings</a> and <a href="/blog/how-much-battery-storage-do-i-need-south-africa/">battery sizing</a>.</p>`,
     },
@@ -1924,7 +1924,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Instead of starting with a fixed package, start with the property and let the system be designed around what you actually need.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and take the next step towards understanding the right solar system for your home.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and take the next step towards understanding the right solar system for your home.</p>`
     },
 {
         slug: "5kw-vs-8kw-vs-10kw-solar-system-south-africa",
@@ -2135,7 +2135,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>We focus on the complete system rather than simply selling you a larger inverter or more panels than you need.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and find out what system size makes sense for your home.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and find out what system size makes sense for your home.</p>`
     },
 
     {
@@ -2309,7 +2309,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Bring your electricity usage, your main appliances and your backup requirements into the assessment, and we can work from there.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and find out what solar system is right for your home.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and find out what solar system is right for your home.</p>`
     },
 
     {
@@ -2525,7 +2525,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>We can look at your electricity usage, appliance loads, backup requirements, roof space, solar potential and future plans before recommending the appropriate system size.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and find out what solar system makes sense for your home.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and find out what solar system makes sense for your home.</p>`
     },
     {
         slug: "hybrid-vs-grid-tied-vs-off-grid-solar-south-africa",
@@ -2763,7 +2763,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>We can help you understand whether grid-tied, hybrid or off-grid makes sense for your property and what the complete system needs to achieve your goals.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and let us help you choose the right solar system for your home.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and let us help you choose the right solar system for your home.</p>`
     },
 
     {
@@ -2993,7 +2993,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>We can look at your electricity usage, essential loads, appliance requirements and backup goals before recommending a complete solar and battery solution.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and let us help you design a battery backup system around your home.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and let us help you design a battery backup system around your home.</p>`
     },
     {
         slug: "solar-battery-vs-generator-load-shedding-south-africa",
@@ -3206,7 +3206,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>We deliberately do not try to choose a system from a single number such as your monthly electricity bill. The better approach is to understand how your home uses electricity and what you want to keep running when the grid goes down.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and let us help you find the right backup solution for your home.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and let us help you find the right backup solution for your home.</p>`
     },
     {
         slug: "8kw-solar-system-cost-south-africa",
@@ -3382,7 +3382,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>If you are considering an 8kW system, the most useful next step is to have the property and electricity usage assessed before choosing the equipment.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and let us help you determine whether 8kW is the right size for your home and what complete system would make the most sense.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and let us help you determine whether 8kW is the right size for your home and what complete system would make the most sense.</p>`
     },
 
 {
@@ -3599,7 +3599,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>We can look at your electricity usage, appliances, backup requirements and property conditions and then recommend a complete solar system around your needs.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and find out whether a 5kW, 8kW or larger system is the right fit for your home.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and find out whether a 5kW, 8kW or larger system is the right fit for your home.</p>`
     },
 
 {
@@ -3761,7 +3761,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>We can look at your electricity usage, appliances, backup requirements and property conditions and recommend a complete solar system around your needs.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and find out whether an 8kW, 10kW or another system size is the right fit for your home.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and find out whether an 8kW, 10kW or another system size is the right fit for your home.</p>`
 },
 
 {
@@ -3949,7 +3949,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>We can look at your electricity consumption, high-power appliances, backup requirements and property conditions and recommend a complete solar system around your needs.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and find out what size solar system is right for your home.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and find out what size solar system is right for your home.</p>`
 },
 
 {
@@ -4187,7 +4187,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Solar8 can assess your electricity consumption, property, appliances and backup requirements and recommend a complete solar system around your needs.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and find out what type and size of solar system makes sense for your home.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and find out what type and size of solar system makes sense for your home.</p>`
 },
 
     {
@@ -4412,7 +4412,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>If you are considering a 10kW solar system, Solar8 can look at your electricity use, roof, appliances and backup requirements before recommending the system configuration.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and find out how many panels, what inverter size and how much battery storage make sense for your property.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and find out how many panels, what inverter size and how much battery storage make sense for your property.</p>`
     },
 
     {
@@ -4588,7 +4588,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>If you are considering a 15kW solar system, Solar8 can assess your electricity usage, appliances, roof, electrical supply and backup requirements before recommending the appropriate system configuration.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and find out what size solar system makes sense for your property.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and find out what size solar system makes sense for your property.</p>`
     },
     {
         slug: '20kw-solar-system-cost-south-africa',
@@ -4791,7 +4791,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>If you are considering a 20kW solar system, Solar8 can assess your electricity usage, appliances, roof, electrical supply and backup requirements before recommending the appropriate system configuration.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and find out what size solar system makes sense for your property.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and find out what size solar system makes sense for your property.</p>`
     },
     {
         slug: 'how-much-battery-storage-for-10kw-solar-system-south-africa',
@@ -5068,7 +5068,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Solar8 can assess your electricity usage, appliances, solar requirements and backup priorities before recommending the appropriate combination of inverter, panels and battery storage.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and find out how much battery storage your property really needs.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and find out how much battery storage your property really needs.</p>`
     },
 
     {
@@ -5270,7 +5270,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Solar8 can assess your electricity usage, appliances, roof and backup priorities and recommend the appropriate combination of panels, inverter and battery storage.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and find out what type and size of solar system makes sense for your property.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and find out what type and size of solar system makes sense for your property.</p>`
     },
 
     {
@@ -5480,7 +5480,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Solar8 can assess your electricity usage, appliances, existing solar equipment and backup priorities to determine whether 5kWh, 10kWh or a larger battery bank makes sense for your property.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and find out what battery and solar system configuration is appropriate for your home.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and find out what battery and solar system configuration is appropriate for your home.</p>`
     },
     {
         slug: 'how-long-will-10kwh-solar-battery-last-load-shedding-south-africa',
@@ -5664,7 +5664,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Solar8 can assess your electricity usage, appliances, backup priorities and property to determine the appropriate combination of inverter and battery storage for your home.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and find out what type and size of battery-backed solar system makes sense for your property.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and find out what type and size of battery-backed solar system makes sense for your property.</p>`
     },
     {
         slug: '6kw-solar-system-cost-south-africa',
@@ -5896,7 +5896,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Solar8 can assess your electricity consumption, appliances, property and backup requirements and recommend a complete solar system around the way your home actually uses electricity.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and find out whether a 5kW, 6kW, 8kW or larger system makes sense for your home.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and find out whether a 5kW, 6kW, 8kW or larger system makes sense for your home.</p>`
     },
     {
         slug: '12kw-solar-system-cost-south-africa',
@@ -6124,7 +6124,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Solar8 can assess your electricity consumption, appliances, property and backup requirements and recommend a complete system around the way you actually use electricity.</p>
 
-<p><strong><a href="/assessment/">Get My FREE Solar8 Assessment</a></strong> and find out whether a 10kW, 12kW, 15kW or larger system makes sense for your property.</p>`
+<p><strong><a href="/assessment">Get My FREE Solar8 Assessment</a></strong> and find out whether a 10kW, 12kW, 15kW or larger system makes sense for your property.</p>`
     },
     {
         slug: "how-many-solar-panels-for-8kw-system-south-africa",
@@ -6240,7 +6240,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Get the right 8kW solar system for your property</h2>
 <p>Panel count is only one part of a complete solar design. Your electricity usage, roof, inverter, battery, backup requirements and electrical installation all need to work together.</p>
 <p>Solar8 can help you work through those requirements before recommending a complete solar system for your property.</p>
-<p><strong><a href="/assessment/">Get My FREE Assessment</a></strong> and find out what size solar system makes sense for your home.</p>`
+<p><strong><a href="/assessment">Get My FREE Assessment</a></strong> and find out what size solar system makes sense for your home.</p>`
     },
 
     {
@@ -6393,7 +6393,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Get the right 15kW solar system for your property</h2>
 <p>Choosing the right number of panels is only one part of designing a large solar system. Your inverter, PV array, battery, roof, electrical supply and backup loads all need to work together.</p>
 <p>Solar8 can help you assess your electricity usage and property requirements before recommending a complete solar system.</p>
-<p><strong><a href="/assessment/">Get My FREE Assessment</a></strong> and find out what size solar system makes sense for your property.</p>`
+<p><strong><a href="/assessment">Get My FREE Assessment</a></strong> and find out what size solar system makes sense for your property.</p>`
     },
 
     {
@@ -6591,7 +6591,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Solar8 supplies complete solar systems for South African homes and businesses, with solutions built around the property's actual requirements.</p>
 
-<p><a href="/assessment/">Get My FREE Assessment</a> and let Solar8 help you determine the right panel count, inverter size and battery configuration for your property.</p>
+<p><a href="/assessment">Get My FREE Assessment</a> and let Solar8 help you determine the right panel count, inverter size and battery configuration for your property.</p>
 `
     },
     {
@@ -6665,7 +6665,7 @@ export const blogPosts: BlogPost[] = [
 <p>The right design balances <strong>panel capacity, inverter limits, roof space, electricity consumption, shading, battery storage and your backup requirements</strong>.</p>
 <h2>Get the right 5kW solar system for your property</h2>
 <p>Solar8 supplies complete solar systems for South African homes and businesses. Instead of choosing a panel count from a generic calculator, Solar8 can help you match the system to your property's actual electricity usage, roof and backup requirements.</p>
-<p><a href="/assessment/">Get My FREE Assessment</a> and let Solar8 help you determine the right panel count, inverter and battery configuration for your property.</p>
+<p><a href="/assessment">Get My FREE Assessment</a> and let Solar8 help you determine the right panel count, inverter and battery configuration for your property.</p>
 `
     },
 
@@ -6819,7 +6819,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Get the right 6kW solar system for your property</h2>
 <p>Solar8 supplies complete solar systems for South African homes and businesses. We can help you choose the right panel count, inverter and battery configuration based on your property's electricity usage, roof and backup requirements.</p>
-<p><a href="/assessment/">Get My FREE Assessment</a> and let Solar8 help you determine the right 6kW solar system for your property.</p>
+<p><a href="/assessment">Get My FREE Assessment</a> and let Solar8 help you determine the right 6kW solar system for your property.</p>
 `
     },
     {
@@ -6966,7 +6966,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Get the right 12kW solar system for your property</h2>
 <p>Solar8 supplies complete solar systems for South African homes and businesses. We can help you determine the right panel count, inverter and battery configuration based on your electricity usage, roof and backup requirements.</p>
-<p><a href="/assessment/">Get My FREE Assessment</a> and let Solar8 help you determine the right 12kW solar system for your property.</p>
+<p><a href="/assessment">Get My FREE Assessment</a> and let Solar8 help you determine the right 12kW solar system for your property.</p>
 `
     },
 
@@ -7196,7 +7196,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Get the right 15kW solar system for your property</h2>
 <p>Solar8 supplies complete solar systems for South African homes and businesses. We can help you choose the right inverter, solar panel array and battery configuration based on your electricity usage, roof, electrical supply and backup requirements.</p>
-<p><a href="/assessment/">Get My FREE Assessment</a> and let Solar8 help you determine the right 15kW solar system and battery size for your property.</p>
+<p><a href="/assessment">Get My FREE Assessment</a> and let Solar8 help you determine the right 15kW solar system and battery size for your property.</p>
 `
     },
 
@@ -7374,7 +7374,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Get the right 20kW solar system for your property</h2>
 <p>Solar8 supplies complete solar systems for South African homes and businesses. We can help you determine the right combination of inverter capacity, solar panels and battery storage based on your electricity usage, electrical supply, property and backup requirements.</p>
-<p><a href="/assessment/">Get My FREE Assessment</a> and let Solar8 help you determine the right 20kW solar system and battery size for your property.</p>
+<p><a href="/assessment">Get My FREE Assessment</a> and let Solar8 help you determine the right 20kW solar system and battery size for your property.</p>
 `
     },
 
@@ -7519,7 +7519,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Get the right 12kW solar system for your property</h2>
 <p>Solar8 supplies complete solar systems for South African homes and businesses. We can help you determine the right combination of inverter capacity, solar panels and battery storage based on your electricity usage, electrical supply, property and backup requirements.</p>
-<p><a href="/assessment/">Get My FREE Assessment</a> and let Solar8 help you determine the right 12kW solar system and battery size for your property.</p>
+<p><a href="/assessment">Get My FREE Assessment</a> and let Solar8 help you determine the right 12kW solar system and battery size for your property.</p>
 `
     },
 
@@ -7679,7 +7679,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Get the right 5kW solar system for your property</h2>
 <p>Solar8 supplies complete solar systems for South African homes and businesses. We can help you determine the right combination of inverter capacity, solar panels and battery storage based on your electricity usage, electrical supply, property and backup requirements.</p>
-<p><a href="/assessment/">Get My FREE Assessment</a> and let Solar8 help you determine the right 5kW solar system and battery size for your property.</p>
+<p><a href="/assessment">Get My FREE Assessment</a> and let Solar8 help you determine the right 5kW solar system and battery size for your property.</p>
 `
     },
 
@@ -7918,7 +7918,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Get the right 8kW solar system for your property</h2>
 <p>Solar8 supplies complete solar systems for South African homes and businesses. We can help you determine the right combination of inverter capacity, solar panels and battery storage based on your electricity usage, electrical supply, property and backup requirements.</p>
 
-<p><a href="/assessment/">Get My FREE Assessment</a> and let Solar8 help you determine the right 8kW solar system and battery size for your property.</p>
+<p><a href="/assessment">Get My FREE Assessment</a> and let Solar8 help you determine the right 8kW solar system and battery size for your property.</p>
 `
     },
 
@@ -8062,7 +8062,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Get a 5kW solar system designed for your property</h2>
 <p>Solar8 supplies complete solar systems for South African homes and businesses. Rather than choosing a battery size from a generic table, we can help match the inverter, solar array and battery to your electricity usage, property, electrical supply and backup requirements.</p>
 
-<p><a href="/assessment/">Get My FREE Assessment</a> and let Solar8 help you determine the right 5kW solar system and battery configuration for your property.</p>
+<p><a href="/assessment">Get My FREE Assessment</a> and let Solar8 help you determine the right 5kW solar system and battery configuration for your property.</p>
 `
     },
     {
@@ -8215,7 +8215,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Get an 8kW solar system designed for your property</h2>
 <p>Solar8 supplies complete solar systems for South African homes and businesses. Our systems are designed around the property and the way you actually use electricity, rather than simply selecting a standard inverter and battery combination.</p>
 
-<p><a href="/assessment/">Get My FREE Assessment</a> and let Solar8 help you determine the right 8kW solar system, battery capacity and solar array for your property.</p>
+<p><a href="/assessment">Get My FREE Assessment</a> and let Solar8 help you determine the right 8kW solar system, battery capacity and solar array for your property.</p>
 `
     },
 
@@ -8405,7 +8405,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Get a 10kW solar system designed for your property</h2>
 <p>Solar8 supplies complete solar systems for South African homes and businesses. We can help you determine the right combination of inverter capacity, solar panels and battery storage for the way you actually use electricity.</p>
 
-<p><a href="/assessment/">Get My FREE Assessment</a> and let Solar8 help you work out the right 10kW solar system and battery configuration for your property.</p>
+<p><a href="/assessment">Get My FREE Assessment</a> and let Solar8 help you work out the right 10kW solar system and battery configuration for your property.</p>
 `
     },
 
@@ -8658,7 +8658,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Get a 12kW solar system designed for your property</h2>
 <p>Solar8 supplies complete solar systems for South African homes and businesses. The right combination of inverter, solar panels and battery storage depends on your electricity usage, property, roof, electrical supply and backup requirements.</p>
 
-<p><a href="/assessment/">Get My FREE Assessment</a> and let Solar8 help you determine the right 12kW solar system, battery capacity and solar array for your property.</p>
+<p><a href="/assessment">Get My FREE Assessment</a> and let Solar8 help you determine the right 12kW solar system, battery capacity and solar array for your property.</p>
 `
     },
     {
@@ -8936,7 +8936,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Instead of choosing a 15kW system simply because it is a popular size, have the complete system designed around how your property actually uses electricity.</p>
 
-<p><a href="/assessment/">Get My FREE Assessment</a> and let Solar8 help you determine the right 15kW solar array, inverter and battery configuration for your property.</p>
+<p><a href="/assessment">Get My FREE Assessment</a> and let Solar8 help you determine the right 15kW solar array, inverter and battery configuration for your property.</p>
 `
     },
 
@@ -9184,7 +9184,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Instead of choosing a 20kW system simply because it is a large system, have the complete solution designed around how your property actually uses electricity.</p>
 
-<p><a href="/assessment/">Get My FREE Assessment</a> and let Solar8 help you determine the right solar array, inverter and battery configuration for your property.</p>
+<p><a href="/assessment">Get My FREE Assessment</a> and let Solar8 help you determine the right solar array, inverter and battery configuration for your property.</p>
 `
     },
     {
@@ -9390,7 +9390,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Rather than choosing a battery or panel count from a generic package, have the complete solution designed around how your property actually uses electricity.</p>
 
-<p><a href="/assessment/">Get My FREE Assessment</a> and let Solar8 help you determine the right solar array, inverter and battery configuration for your property.</p>
+<p><a href="/assessment">Get My FREE Assessment</a> and let Solar8 help you determine the right solar array, inverter and battery configuration for your property.</p>
 `
     },
     {
@@ -9590,7 +9590,7 @@ export const blogPosts: BlogPost[] = [
 
 <p>Instead of choosing a generic 10kW + 20kWh package, have the complete solution designed around how your property actually uses electricity.</p>
 
-<p><a href="/assessment/">Get My FREE Assessment</a> and let Solar8 help you determine the right solar array, inverter and battery configuration for your property.</p>
+<p><a href="/assessment">Get My FREE Assessment</a> and let Solar8 help you determine the right solar array, inverter and battery configuration for your property.</p>
 `
     },
 ];

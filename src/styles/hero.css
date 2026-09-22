@@ -7,7 +7,7 @@
     position: relative;
     overflow: hidden;
 
-    padding: 120px 0 120px;
+    padding: 64px 0 120px;
 
     background:
         radial-gradient(
@@ -246,7 +246,7 @@
 @media (max-width: 1100px) {
 
     .hero {
-        padding: 105px 0 100px;
+        padding: 56px 0 100px;
     }
 
     .hero-grid {
@@ -274,7 +274,7 @@
 @media (max-width: 900px) {
 
     .hero {
-        padding: 96px 0 80px;
+        padding: 48px 0 80px;
     }
 
     .hero-grid {
@@ -332,7 +332,7 @@
 @media (max-width: 640px) {
 
     .hero {
-        padding: 88px 0 65px;
+        padding: 44px 0 65px;
     }
 
     .hero-grid {
