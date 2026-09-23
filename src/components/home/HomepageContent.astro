@@ -1,0 +1,945 @@
+---
+const solutions = [
+    {
+        number: "01",
+        title: "Residential Solar",
+        text: "Solar systems designed around your home's electricity use, backup requirements and future energy needs.",
+        href: "/residential/",
+        link: "Explore Residential Solar"
+    },
+    {
+        number: "02",
+        title: "Commercial Solar",
+        text: "Scalable solar and battery solutions designed around business electricity consumption and operating requirements.",
+        href: "/commercial/",
+        link: "Explore Commercial Solar"
+    },
+    {
+        number: "03",
+        title: "Solar & Battery Systems",
+        text: "Combine solar generation with battery storage to reduce grid consumption and provide backup power when required.",
+        href: "/systems/",
+        link: "Explore Solar Systems"
+    },
+    {
+        number: "04",
+        title: "Solar Assessment",
+        text: "Not sure what size system you need? Start with an assessment based on your property, electricity use and backup requirements.",
+        href: "/assessment/",
+        link: "Get My Free Assessment"
+    }
+];
+
+const systemComponents = [
+    {
+        number: "01",
+        title: "Solar Panels",
+        text: "Generate electricity from the sun and reduce your dependence on grid power."
+    },
+    {
+        number: "02",
+        title: "Hybrid Inverters",
+        text: "Manage solar generation, battery storage, household loads and grid electricity."
+    },
+    {
+        number: "03",
+        title: "Lithium Batteries",
+        text: "Store solar energy for later use and provide backup power when required."
+    },
+    {
+        number: "04",
+        title: "Protection & Cabling",
+        text: "Essential system components selected to support safe and reliable operation."
+    },
+    {
+        number: "05",
+        title: "Mounting Equipment",
+        text: "Quality mounting solutions for installing solar panels securely on suitable roofs or structures."
+    }
+];
+
+const reasons = [
+    {
+        number: "01",
+        title: "Designed Around Your Needs",
+        text: "Your electricity usage, property and backup priorities guide the system design."
+    },
+    {
+        number: "02",
+        title: "Quality Equipment",
+        text: "We work with established solar, inverter and battery manufacturers."
+    },
+    {
+        number: "03",
+        title: "Complete Solutions",
+        text: "We can combine generation, storage and backup equipment into one integrated solar system."
+    },
+    {
+        number: "04",
+        title: "Long-Term Support",
+        text: "Solar8 remains available after installation for technical support and system assistance."
+    }
+];
+
+const knowledge = [
+    {
+        number: "01",
+        title: "Solar Basics",
+        text: "Understand how solar power systems work and how the main components work together.",
+        href: "/knowledge-centre/solar-basics/"
+    },
+    {
+        number: "02",
+        title: "Solar Panels",
+        text: "Learn about solar panels, generation and the factors that affect system sizing.",
+        href: "/knowledge-centre/panels/"
+    },
+    {
+        number: "03",
+        title: "Solar Inverters",
+        text: "Understand hybrid, backup and other inverter technologies used in solar systems.",
+        href: "/knowledge-centre/inverters/"
+    },
+    {
+        number: "04",
+        title: "Solar Batteries",
+        text: "Learn how battery storage works and how to think about your backup requirements.",
+        href: "/knowledge-centre/batteries/"
+    }
+];
+---
+
+<!-- =========================================================
+     SOLAR SOLUTIONS
+========================================================= -->
+
+<section class="home-section solutions-section">
+    <div class="home-container">
+
+        <div class="section-heading centered">
+            <span class="section-tag">SOLAR SOLUTIONS</span>
+
+            <h2>
+                Solar Solutions for Homes and Businesses
+            </h2>
+
+            <p>
+                From residential backup power to complete commercial solar
+                systems, Solar8 designs solutions around your electricity
+                consumption, property and energy goals.
+            </p>
+        </div>
+
+
+        <div class="solution-grid">
+
+            {solutions.map((solution) => (
+                <article class="solution-card">
+
+                    <span class="card-number">
+                        {solution.number}
+                    </span>
+
+                    <h3>
+                        {solution.title}
+                    </h3>
+
+                    <p>
+                        {solution.text}
+                    </p>
+
+                    <a href={solution.href}>
+                        {solution.link}
+                        <span aria-hidden="true"> →</span>
+                    </a>
+
+                </article>
+            ))}
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     COMPLETE SOLAR SYSTEMS
+========================================================= -->
+
+<section class="home-section systems-section">
+    <div class="home-container">
+
+        <div class="systems-layout">
+
+            <div class="systems-copy">
+
+                <span class="section-tag">
+                    COMPLETE SOLAR SYSTEMS
+                </span>
+
+                <h2>
+                    A Complete Solar System Designed Around Your Property
+                </h2>
+
+                <p>
+                    Solar8 supplies complete solar solutions rather than
+                    simply individual pieces of equipment. Your system can
+                    combine solar panels, a hybrid inverter, battery storage,
+                    protection equipment, mounting and cabling according to
+                    your property's requirements.
+                </p>
+
+                <p>
+                    We design the system around your electricity consumption,
+                    available roof space, backup requirements and future
+                    energy needs.
+                </p>
+
+                <a
+                    href="/systems/"
+                    class="primary-link"
+                >
+                    Explore Complete Solar Systems
+                    <span aria-hidden="true"> →</span>
+                </a>
+
+            </div>
+
+
+            <div class="component-grid">
+
+                {systemComponents.map((component) => (
+                    <article class="component-card">
+
+                        <span>
+                            {component.number}
+                        </span>
+
+                        <h3>
+                            {component.title}
+                        </h3>
+
+                        <p>
+                            {component.text}
+                        </p>
+
+                    </article>
+                ))}
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     RESIDENTIAL + COMMERCIAL
+========================================================= -->
+
+<section class="home-section property-section">
+    <div class="home-container">
+
+        <div class="section-heading centered">
+            <span class="section-tag">
+                SOLAR FOR YOUR PROPERTY
+            </span>
+
+            <h2>
+                Solar for Homes and Businesses
+            </h2>
+
+            <p>
+                Different properties have different electricity demands.
+                Solar8 designs systems around the way your home or business
+                uses energy.
+            </p>
+        </div>
+
+
+        <div class="property-grid">
+
+            <article class="property-card residential-card">
+
+                <div class="property-card-content">
+
+                    <span class="section-tag">
+                        RESIDENTIAL
+                    </span>
+
+                    <h3>
+                        Solar Power for Your Home
+                    </h3>
+
+                    <p>
+                        Take greater control of your household electricity
+                        costs with a solar and battery system designed around
+                        the way your home uses energy.
+                    </p>
+
+                    <a href="/residential/">
+                        Explore Residential Solar
+                        <span aria-hidden="true"> →</span>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="property-card commercial-card">
+
+                <div class="property-card-content">
+
+                    <span class="section-tag">
+                        COMMERCIAL
+                    </span>
+
+                    <h3>
+                        Solar Power for Your Business
+                    </h3>
+
+                    <p>
+                        Reduce dependence on grid electricity with a scalable
+                        solar and battery solution designed around your
+                        business's operating requirements.
+                    </p>
+
+                    <a href="/commercial/">
+                        Explore Commercial Solar
+                        <span aria-hidden="true"> →</span>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     WHY SOLAR8
+========================================================= -->
+
+<section class="home-section why-section">
+    <div class="home-container">
+
+        <div class="section-heading centered">
+
+            <span class="section-tag">
+                WHY SOLAR8
+            </span>
+
+            <h2>
+                A Solar System Should Be Designed for the Way You Live and Work
+            </h2>
+
+            <p>
+                We focus on the right balance of solar generation, battery
+                storage, backup and future flexibility rather than simply
+                selling the biggest system.
+            </p>
+
+        </div>
+
+
+        <div class="reason-grid">
+
+            {reasons.map((reason) => (
+                <article class="reason-card">
+
+                    <span class="card-number">
+                        {reason.number}
+                    </span>
+
+                    <h3>
+                        {reason.title}
+                    </h3>
+
+                    <p>
+                        {reason.text}
+                    </p>
+
+                </article>
+            ))}
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================================================
+     KNOWLEDGE CENTRE
+========================================================= -->
+
+<section class="home-section knowledge-section">
+    <div class="home-container">
+
+        <div class="section-heading centered">
+
+            <span class="section-tag">
+                SOLAR KNOWLEDGE CENTRE
+            </span>
+
+            <h2>
+                Understand Solar Before You Invest
+            </h2>
+
+            <p>
+                Learn how solar systems work, how to choose the right
+                equipment and how to think about solar generation, inverter
+                capacity and battery storage.
+            </p>
+
+        </div>
+
+
+        <div class="knowledge-grid">
+
+            {knowledge.map((item) => (
+                <a
+                    href={item.href}
+                    class="knowledge-card"
+                >
+
+                    <span class="card-number">
+                        {item.number}
+                    </span>
+
+                    <h3>
+                        {item.title}
+                    </h3>
+
+                    <p>
+                        {item.text}
+                    </p>
+
+                    <span class="knowledge-link">
+                        Learn More
+                        <span aria-hidden="true"> →</span>
+                    </span>
+
+                </a>
+            ))}
+
+        </div>
+
+
+        <div class="knowledge-footer">
+
+            <a
+                href="/knowledge-centre/"
+                class="primary-link"
+            >
+                Visit the Solar Knowledge Centre
+                <span aria-hidden="true"> →</span>
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+
+<style>
+    /* =====================================================
+       SHARED
+    ====================================================== */
+
+    .home-section {
+        width: 100%;
+    }
+
+    .home-container {
+        width: min(1440px, calc(100% - 48px));
+        margin-inline: auto;
+    }
+
+    .section-heading {
+        max-width: 900px;
+    }
+
+    .section-heading.centered {
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .section-tag {
+        display: inline-block;
+        color: #ff6800;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        line-height: 1.4;
+    }
+
+    .section-heading h2 {
+        margin: 18px 0 0;
+        color: #111827;
+        font-family: Poppins, sans-serif;
+        font-size: clamp(2.35rem, 4vw, 3.8rem);
+        font-weight: 800;
+        line-height: 1.08;
+        letter-spacing: -0.035em;
+    }
+
+    .section-heading p {
+        max-width: 780px;
+        margin: 24px auto 0;
+        color: #6b7280;
+        font-size: 18px;
+        line-height: 1.75;
+    }
+
+    /* =====================================================
+       SOLAR SOLUTIONS
+    ====================================================== */
+
+    .solutions-section {
+        padding: 110px 0;
+        background: #ffffff;
+    }
+
+    .solution-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+        margin-top: 60px;
+    }
+
+    .solution-card {
+        display: flex;
+        flex-direction: column;
+        min-height: 310px;
+        padding: 30px;
+        border: 1px solid #e5e7eb;
+        border-radius: 24px;
+        background: #fafafa;
+        transition:
+            transform 0.25s ease,
+            border-color 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+    .solution-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(255, 104, 0, 0.35);
+        box-shadow: 0 18px 40px rgba(17, 24, 39, 0.08);
+    }
+
+    .card-number {
+        color: #ff6800;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+    }
+
+    .solution-card h3 {
+        margin-top: 24px;
+        color: #111827;
+        font-family: Poppins, sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    .solution-card p {
+        margin-top: 14px;
+        color: #6b7280;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .solution-card a,
+    .property-card a,
+    .primary-link {
+        color: #ff6800;
+        font-size: 14px;
+        font-weight: 800;
+        text-decoration: none;
+    }
+
+    .solution-card a {
+        margin-top: auto;
+        padding-top: 24px;
+    }
+
+    .solution-card a:hover,
+    .property-card a:hover,
+    .primary-link:hover {
+        color: #d95700;
+    }
+
+    /* =====================================================
+       COMPLETE SYSTEMS
+    ====================================================== */
+
+    .systems-section {
+        padding: 120px 0;
+        background: #f7f7f8;
+    }
+
+    .systems-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 80px;
+        align-items: center;
+    }
+
+    .systems-copy {
+        max-width: 620px;
+    }
+
+    .systems-copy h2 {
+        margin-top: 18px;
+        color: #111827;
+        font-family: Poppins, sans-serif;
+        font-size: clamp(2.35rem, 4vw, 3.7rem);
+        font-weight: 800;
+        line-height: 1.08;
+        letter-spacing: -0.035em;
+    }
+
+    .systems-copy p {
+        margin-top: 22px;
+        color: #6b7280;
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    .systems-copy .primary-link {
+        display: inline-block;
+        margin-top: 30px;
+    }
+
+    .component-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .component-card {
+        padding: 26px;
+        border: 1px solid #e5e7eb;
+        border-radius: 20px;
+        background: #ffffff;
+    }
+
+    .component-card:last-child {
+        grid-column: span 2;
+    }
+
+    .component-card > span {
+        color: #ff6800;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+    }
+
+    .component-card h3 {
+        margin-top: 15px;
+        color: #111827;
+        font-family: Poppins, sans-serif;
+        font-size: 20px;
+        line-height: 1.25;
+    }
+
+    .component-card p {
+        margin-top: 10px;
+        color: #6b7280;
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    /* =====================================================
+       PROPERTY TYPES
+    ====================================================== */
+
+    .property-section {
+        padding: 120px 0;
+        background: #ffffff;
+    }
+
+    .property-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+        margin-top: 60px;
+    }
+
+    .property-card {
+        min-height: 390px;
+        display: flex;
+        align-items: flex-end;
+        padding: 48px;
+        border-radius: 28px;
+        overflow: hidden;
+        position: relative;
+        isolation: isolate;
+    }
+
+    .residential-card {
+        background:
+            linear-gradient(
+                135deg,
+                #f3f4f6 0%,
+                #e5e7eb 100%
+            );
+    }
+
+    .commercial-card {
+        background:
+            linear-gradient(
+                135deg,
+                #111827 0%,
+                #1f2937 100%
+            );
+    }
+
+    .property-card-content {
+        position: relative;
+        z-index: 1;
+        max-width: 580px;
+    }
+
+    .commercial-card .property-card-content h3,
+    .commercial-card .property-card-content p {
+        color: #ffffff;
+    }
+
+    .property-card h3 {
+        margin-top: 16px;
+        color: #111827;
+        font-family: Poppins, sans-serif;
+        font-size: clamp(2rem, 3vw, 2.7rem);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.025em;
+    }
+
+    .property-card p {
+        margin-top: 18px;
+        color: #4b5563;
+        font-size: 16px;
+        line-height: 1.75;
+    }
+
+    .property-card a {
+        display: inline-block;
+        margin-top: 28px;
+    }
+
+    /* =====================================================
+       WHY SOLAR8
+    ====================================================== */
+
+    .why-section {
+        padding: 110px 0;
+        background: #f7f7f8;
+    }
+
+    .reason-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+        margin-top: 60px;
+    }
+
+    .reason-card {
+        padding: 30px;
+        border: 1px solid #e5e7eb;
+        border-radius: 24px;
+        background: #ffffff;
+    }
+
+    .reason-card h3 {
+        margin-top: 20px;
+        color: #111827;
+        font-family: Poppins, sans-serif;
+        font-size: 21px;
+        line-height: 1.25;
+    }
+
+    .reason-card p {
+        margin-top: 12px;
+        color: #6b7280;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    /* =====================================================
+       KNOWLEDGE CENTRE
+    ====================================================== */
+
+    .knowledge-section {
+        padding: 120px 0;
+        background: #ffffff;
+    }
+
+    .knowledge-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 20px;
+        margin-top: 60px;
+    }
+
+    .knowledge-card {
+        display: flex;
+        flex-direction: column;
+        min-height: 300px;
+        padding: 30px;
+        border: 1px solid #e5e7eb;
+        border-radius: 24px;
+        background: #ffffff;
+        text-decoration: none;
+        transition:
+            transform 0.25s ease,
+            border-color 0.25s ease,
+            box-shadow 0.25s ease;
+    }
+
+    .knowledge-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(255, 104, 0, 0.35);
+        box-shadow: 0 18px 40px rgba(17, 24, 39, 0.08);
+    }
+
+    .knowledge-card h3 {
+        margin-top: 24px;
+        color: #111827;
+        font-family: Poppins, sans-serif;
+        font-size: 23px;
+        line-height: 1.2;
+    }
+
+    .knowledge-card p {
+        margin-top: 14px;
+        color: #6b7280;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .knowledge-link {
+        margin-top: auto;
+        padding-top: 24px;
+        color: #ff6800;
+        font-size: 14px;
+        font-weight: 800;
+    }
+
+    .knowledge-footer {
+        margin-top: 42px;
+        text-align: center;
+    }
+
+    /* =====================================================
+       RESPONSIVE
+    ====================================================== */
+
+    @media (max-width: 1100px) {
+        .solution-grid,
+        .knowledge-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .reason-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .systems-layout {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        .systems-copy {
+            max-width: 800px;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .solutions-section,
+        .property-section,
+        .knowledge-section {
+            padding: 90px 0;
+        }
+
+        .systems-section,
+        .why-section {
+            padding: 90px 0;
+        }
+
+        .property-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .property-card {
+            min-height: 340px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .home-container {
+            width: calc(100% - 32px);
+        }
+
+        .section-heading h2,
+        .systems-copy h2 {
+            font-size: 2.25rem;
+        }
+
+        .section-heading p {
+            font-size: 16px;
+        }
+
+        .solution-grid,
+        .knowledge-grid,
+        .reason-grid {
+            grid-template-columns: 1fr;
+            margin-top: 44px;
+        }
+
+        .solution-card,
+        .knowledge-card {
+            min-height: 270px;
+        }
+
+        .systems-section {
+            padding: 80px 0;
+        }
+
+        .component-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .component-card:last-child {
+            grid-column: auto;
+        }
+
+        .property-section {
+            padding: 80px 0;
+        }
+
+        .property-grid {
+            margin-top: 44px;
+        }
+
+        .property-card {
+            min-height: 330px;
+            padding: 30px;
+            border-radius: 22px;
+        }
+
+        .why-section {
+            padding: 80px 0;
+        }
+
+        .knowledge-section {
+            padding: 80px 0;
+        }
+    }
+</style>

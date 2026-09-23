@@ -3,57 +3,122 @@ import MainLayout from "../layouts/MainLayout.astro";
 import { company } from "../data/company";
 
 import Hero from "../components/Hero.astro";
+import HomepageContent from "../components/home/HomepageContent.astro";
 import CTASection from "../components/CTASection.astro";
 ---
 
-<MainLayout title="Solar8 | Solar Energy Solutions in Gauteng" description="Solar8 provides complete residential and commercial solar systems, battery backup and energy solutions across Gauteng. Reduce electricity costs and take control of your energy.">
+<MainLayout
+    title="Solar Systems Gauteng | Residential & Commercial Solar | Solar8"
+    description="Complete residential and commercial solar systems in Gauteng. Explore solar inverter and battery solutions, backup power systems and professional installation support from Solar8."
+>
 
     <main>
 
+        <!-- =====================================================
+             CONTACT BAR
+        ====================================================== -->
+
         <div class="home-contact-bar" aria-label="Solar8 contact details">
             <div class="container home-contact-inner">
-                <a href={company.phoneHref} aria-label={`Call Solar8 on ${company.phone}`}>
-                    <span aria-hidden="true">☎</span> {company.phone}
+
+                <a
+                    href={company.phoneHref}
+                    aria-label={`Call Solar8 on ${company.phone}`}
+                >
+                    <span aria-hidden="true">☎</span>
+                    {company.phone}
                 </a>
-                <a href={company.emailHref} aria-label={`Email Solar8 at ${company.email}`}>
-                    <span aria-hidden="true">✉</span> {company.email}
+
+                <a
+                    href={company.emailHref}
+                    aria-label={`Email Solar8 at ${company.email}`}
+                >
+                    <span aria-hidden="true">✉</span>
+                    {company.email}
                 </a>
+
             </div>
         </div>
 
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
         <Hero />
+
+
+        <!-- =====================================================
+             HOMEPAGE SEO / CONTENT SECTIONS
+        ====================================================== -->
+
+        <HomepageContent />
+
+
+        <!-- =====================================================
+             FINAL CTA
+        ====================================================== -->
 
         <CTASection />
 
     </main>
 
 </MainLayout>
+
+
 <style>
-.home-contact-bar {
-    background: #111827;
-    border-bottom: 1px solid rgba(255,255,255,.08);
-    position: relative;
-    z-index: 10;
-    margin-top: 80px;
-}
-.home-contact-inner {
-    min-height: 46px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 28px;
-}
-.home-contact-inner a {
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    transition: color .2s ease;
-}
-.home-contact-inner a:hover { color: #ff6800; }
-.home-contact-inner span { color: #ff6800; margin-right: 5px; }
-@media (max-width: 640px) {
-    .home-contact-bar { margin-top: 80px; }
-    .home-contact-inner { justify-content: center; gap: 14px; flex-wrap: wrap; min-height: 54px; padding-block: 7px; }
-    .home-contact-inner a { font-size: 12px; }
-}
+    .home-contact-bar {
+        background: #111827;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        position: relative;
+        z-index: 10;
+        margin-top: 80px;
+    }
+
+    .home-contact-inner {
+        width: min(1440px, calc(100% - 48px));
+        min-height: 46px;
+        margin-inline: auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 28px;
+    }
+
+    .home-contact-inner a {
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .home-contact-inner a:hover {
+        color: #ff6800;
+    }
+
+    .home-contact-inner span {
+        color: #ff6800;
+        margin-right: 5px;
+    }
+
+    @media (max-width: 640px) {
+        .home-contact-bar {
+            margin-top: 80px;
+        }
+
+        .home-contact-inner {
+            width: calc(100% - 24px);
+            min-height: 54px;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            padding-block: 7px;
+        }
+
+        .home-contact-inner a {
+            font-size: 12px;
+        }
+    }
 </style>
